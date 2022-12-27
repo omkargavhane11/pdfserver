@@ -775,9 +775,104 @@ const factfindData = [
   }
 ];
 
+const plan_selection_comparison_data = [
+  {
+    will:true, 
+    will_trust:true,
+    lifetime_trust:true,
+    lpa:false
+  }, //1
+  {
+    will:false, 
+    will_trust:true,
+    lifetime_trust:true,
+    lpa:false
+  },  //2
+  {
+    will:false, 
+    will_trust:true,
+    lifetime_trust:true,
+    lpa:false
+  }, //3
+  {
+    will:false, 
+    will_trust:true,
+    lifetime_trust:true,
+    lpa:false
+  }, //4
+  {
+    will:false, 
+    will_trust:true,
+    lifetime_trust:true,
+    lpa:false
+  }, //5
+  {
+    will:false, 
+    will_trust:false,
+    lifetime_trust:true,
+    lpa:false
+  }, //6
+  {
+    will:false, 
+    will_trust:false,
+    lifetime_trust:true,
+    lpa:false
+  }, //7
+  {
+    will:false, 
+    will_trust:true,
+    lifetime_trust:true,
+    lpa:false
+  }, //8
+  {
+    will:false, 
+    will_trust:true,
+    lifetime_trust:true,
+    lpa:false
+  }, //9
+  {
+    will:false, 
+    will_trust:false,
+    lifetime_trust:true,
+    lpa:false
+  }, //10
+  {
+    will:false, 
+    will_trust:false,
+    lifetime_trust:true,
+    lpa:false
+  }, //11
+  {
+    will:false, 
+    will_trust:false,
+    lifetime_trust:false,
+    lpa:true
+  }, //12
+  {
+    will:false, 
+    will_trust:false,
+    lifetime_trust:false,
+    lpa:true
+  }, //13
+  {
+    will:false, 
+    will_trust:false,
+    lifetime_trust:false,
+    lpa:true
+  }, //14
+  {
+    will:false, 
+    will_trust:false,
+    lifetime_trust:false,
+    lpa:true
+  }, //15
+
+] 
+
 const plan_selection_data = {
   moment : moment, 
   data :{
+    plan_selection_comparison_data,
     _id: "63a3f3fa158681eb75951ecb",
     name: "ritesh_roopa_opp",
     applicationType: "Joint",

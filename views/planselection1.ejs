@@ -162,7 +162,6 @@
         </div>
     </div>
 
-    
     <!-- WHAT IF ? -->
     <div class="type">
 
@@ -580,18 +579,22 @@
                             <div class="plan_tick center text-small">LPA</div>
                         </div>      
                         </div>
+                        <% plan_selection_data.data.selectedPlan.plansAndPricing.selectedPlan.questionaire.forEach(function(item, index){ %>
+                            <!-- something -->
+                            <div class="plan_item">
+                                <div class="plan_text text-small width-50p"><%= item.questionText %></div>
+                                <div class="plan_checks width-50p">
+                                    <div class=<%= item.answer === true ? 'plan_boolean_text-small_center_green' : 'plan_boolean_text-small_center_red' %>><%= item.answer ? 'Yes' : 'No' %></div>
+                                    <div class=<%= plan_selection_data.data.plan_selection_comparison_data[index].will === true ? "plan_tick_center_green" : "plan_tick_center_red" %>><%= plan_selection_data.data.plan_selection_comparison_data[index].will === true ? '✔' : '✖' %></div>
+                                    <div class=<%= plan_selection_data.data.plan_selection_comparison_data[index].will_trust === true ? "plan_tick_center_green" : "plan_tick_center_red" %>><%= plan_selection_data.data.plan_selection_comparison_data[index].will_trust === true ? '✔' : '✖' %></div>
+                                    <div class=<%= plan_selection_data.data.plan_selection_comparison_data[index].lifetime_trust === true ? "plan_tick_center_green" : "plan_tick_center_red" %>><%= plan_selection_data.data.plan_selection_comparison_data[index].lifetime_trust === true ? '✔' : '✖' %></div>
+                                    <div class=<%= plan_selection_data.data.plan_selection_comparison_data[index].lpa === true ? "plan_tick_center_green" : "plan_tick_center_red" %>><%= plan_selection_data.data.plan_selection_comparison_data[index].lpa === true ? '✔' : '✖' %></div>
+                                </div>      
+                            </div>
+                        <%});%>
                     
-                    <div class="plan_item">
-                        <div class="plan_text text-small width-50p">Does client have their own "What If"?</div>
-                        <div class="plan_checks width-50p">
-                            <div class=<%= plan_selection_data.data.selectedPlan.whatIf.questionaire.haveOwnWhatIf.status === true ? 'plan_boolean_text-small_center_green' : 'plan_boolean_text-small_center_red' %>><%= plan_selection_data.data.selectedPlan.whatIf.questionaire.haveOwnWhatIf.status ? 'Yes' : 'No' %></div>
-                            <div class=<%= plan_selection_data.data.selectedPlan.whatIf.questionaire.haveOwnWhatIf.status === "Yes" ? "plan_tick_center_green" : "plan_tick_center_red" %>>✔</div>
-                            <div class=<%= plan_selection_data.data.selectedPlan.whatIf.questionaire.haveOwnWhatIf.status === "Yes" ? "plan_tick_center_green" : "plan_tick_center_red" %>>✔</div>
-                            <div class=<%= plan_selection_data.data.selectedPlan.whatIf.questionaire.haveOwnWhatIf.status === "Yes" ? "plan_tick_center_green" : "plan_tick_center_red" %>>✔</div>
-                            <div class=<%= plan_selection_data.data.selectedPlan.whatIf.questionaire.haveOwnWhatIf.status === "Yes" ? "plan_tick_center_green" : "plan_tick_center_red" %>>✔</div>
-                        </div>      
-                    </div>
                 </div>
+
             </div>
 
         </div>
