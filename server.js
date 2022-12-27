@@ -781,96 +781,507 @@ const plan_selection_data = {
     _id: "63a3f3fa158681eb75951ecb",
     name: "ritesh_roopa_opp",
     applicationType: "Joint",
-    sourceType: "Squiggle",
-    sourceSubType: "SquiggleTestSubType",
     parties: [
       {
         _id: "63a3f3fa158681eb75951ec8",
         firstName: "Ritesh",
-        lastName: "Mallah",
-        phoneNumber: "773-338-7786",
-        email: "Ritesh@homestyleshop.co",
-        __v: 0,
-        createdAt: "2022-12-22T06:06:50.844Z",
-        updatedAt: "2022-12-22T06:06:50.873Z",
-        capsulePartyId: 235642486
+        lastName: "Mallah"
       },
       {
         _id: "63a3f3fa158681eb75951ec9",
         firstName: "Roopa",
-        lastName: "Gupta",
-        phoneNumber: "773-338-7786",
-        email: "Roopa@homestyleshop.co",
-        __v: 0,
-        createdAt: "2022-12-22T06:06:50.845Z",
-        updatedAt: "2022-12-22T06:06:50.875Z",
-        capsulePartyId: 235642487
+        lastName: "Gupta"
       }
     ],
-    capsuleOpportunityId: 13266504,
-    createdAt: "2022-12-22T06:06:50.861Z",
-    updatedAt: "2022-12-22T13:02:24.625Z",
-    __v: 0,
+    factFind: [
+      {
+        _id: "63a3f4a6837105419244e30e",
+        clientDetails: {
+          gender: "Female",
+          dob: "2022-11-16T06:00:56.268Z",
+          relationship: "Spouse",
+          nationality: "British",
+          residency: "UK",
+          telephone: "p1_2382348234",
+          mobileno: "p1_98827983",
+          email: "updateparty111@gmail.com",
+          address: {
+            street1: "dsfsd1",
+            city: "xyz town",
+            state: "xyz country",
+            country: "United Kingdom",
+            zip: "EC222postcode",
+            _id: "63a3f4a6837105419244e310"
+          },
+          isMainResidence: true,
+          employementStatus: {
+            status: "Employed",
+            _id: "63a3f4a6837105419244e311"
+          },
+          healthStatus: {
+            status: "Good",
+            notes: "test notes",
+            _id: "63a3f4a6837105419244e312"
+          },
+          isReadAndSignUnaided: {
+            isReadAndSignUnaided: true,
+            notes: "some note abt isRead",
+            _id: "63a3f4a6837105419244e313"
+          },
+          partnershipStatus: {
+            marryOrCivilPartnership: true,
+            date: "2022-11-16T06:00:56.268Z",
+            _id: "63a3f4a6837105419244e314"
+          },
+          _id: "63a3f4a6837105419244e30f"
+        },
+        isDependants: false,
+        hasGifts: false,
+        properties: [
+          {
+            selectedPropertyFromPlans: {
+              selected: false
+            },
+            isJoint: false,
+            electedResidence: "Foreign Property",
+            address: {
+              city: "xyz town",
+              state: "xyz country",
+              country: "UK",
+              zip: "EC222postcode",
+              _id: "63a3f4a6837105419244e316"
+            },
+            tenant: "Joint Tenants",
+            isRegistered: true,
+            value: 72873,
+            mortage: 987,
+            term: "test term",
+            netValue: 43598475948,
+            notes: "some note abt properties",
+            _id: "63a3f4a6837105419244e315"
+          }
+        ],
+        savings: [
+          {
+            isJoint: false,
+            savingsArea: "Bank & Building Societies",
+            account: "account test_2",
+            balance: 6343,
+            _id: "63a3f4a6837105419244e317"
+          },
+          {
+            isJoint: false,
+            savingsArea: "ISAs",
+            account: "account test_2",
+            balance: 7643874,
+            _id: "63a3f4a6837105419244e318"
+          }
+        ],
+        sharesAndInvestments: [
+          {
+            isJoint: false,
+            type: "Private Company Shares",
+            description: "sdfjsdfjsdj",
+            inheritanceTaxTreatment: "Inside Estate",
+            value: 3475783463,
+            _id: "63a3f4a6837105419244e319"
+          },
+          {
+            isJoint: false,
+            type: "Other",
+            description: "sdfjsdfjsdj",
+            inheritanceTaxTreatment: "Outside Estate",
+            value: 3475783463,
+            _id: "63a3f4a6837105419244e31a"
+          }
+        ],
+        lifeInsurance: [
+          {
+            isJoint: false,
+            type: "Term",
+            provider: "asjhdsjhfsh",
+            isUptoDateDeathBenefitForms: true,
+            value: 753487,
+            _id: "63a3f4a6837105419244e31b"
+          },
+          {
+            isJoint: false,
+            type: "Other",
+            provider: "gfhfhgh",
+            isUptoDateDeathBenefitForms: true,
+            value: 43546,
+            _id: "63a3f4a6837105419244e31c"
+          }
+        ],
+        pension: [
+          {
+            type: "Other",
+            status: "Active",
+            provider: "ajsfnjsfjsfg dnf",
+            isUptoDateDeathBenefitForms: true,
+            value: 7434,
+            _id: "63a3f4a6837105419244e31d"
+          }
+        ],
+        assets: [
+          {
+            isJoint: false,
+            type: "Vehicles",
+            description: "nsdmsd",
+            value: 28322,
+            _id: "63a3f4a6837105419244e31e"
+          }
+        ],
+        businessAssets: [
+          {
+            isJoint: false,
+            companyName: "xyz",
+            type: "Limited",
+            isTrading: true,
+            shareValue: 49743,
+            percentageShare: "60 %",
+            notIncludedInEstate: 454654,
+            includedInEstate: 989,
+            properties: [
+              {
+                businessProperty: "businessProperty",
+                netValue: 89787,
+                mortage: 9809,
+                notIncludedInEstate: 7689,
+                includedInEstate: 6780,
+                _id: "63a3f4a6837105419244e320"
+              }
+            ],
+            _id: "63a3f4a6837105419244e31f"
+          }
+        ],
+        liabilities: [
+          {
+            type: "Secured Loans",
+            lender: "lender test",
+            value: 874578,
+            _id: "63a3f4a6837105419244e321"
+          }
+        ],
+        beneficiaries: [
+          {
+            question1: true,
+            question2: false,
+            isJoint: false,
+            name: "abc",
+            gender: "Male",
+            dob: "2022-11-16T06:00:56.268Z",
+            relationship: "Spouse",
+            isVulerable: true,
+            notes: "test notes",
+            _id: "63a3f4a6837105419244e322"
+          }
+        ],
+        exclusions: [
+          {
+            isMirror: false,
+            name: "tyuds",
+            gender: "Male",
+            dob: "2022-11-16T06:00:56.268Z",
+            reasonForExclusion: "test",
+            _id: "63a3f4a6837105419244e323"
+          }
+        ],
+        dependants: [],
+        gifts: [],
+        __v: 0,
+        createdAt: "2022-12-22T06:09:42.405Z",
+        updatedAt: "2022-12-22T06:09:42.405Z"
+      },
+      {
+        _id: "63a3f4a6837105419244e324",
+        clientDetails: {
+          gender: "Female",
+          dob: "2022-11-16T06:00:56.268Z",
+          relationship: "Spouse",
+          nationality: "British",
+          residency: "UK",
+          telephone: "p1_2382348234",
+          mobileno: "p1_98827983",
+          email: "updateparty111@gmail.com",
+          address: {
+            street1: "dsfsd1",
+            city: "xyz town",
+            state: "xyz country",
+            country: "United Kingdom",
+            zip: "EC222postcode",
+            _id: "63a3f4a6837105419244e326"
+          },
+          isMainResidence: true,
+          employementStatus: {
+            status: "Employed",
+            _id: "63a3f4a6837105419244e327"
+          },
+          healthStatus: {
+            status: "Good",
+            notes: "test notes",
+            _id: "63a3f4a6837105419244e328"
+          },
+          isReadAndSignUnaided: {
+            isReadAndSignUnaided: true,
+            notes: "some note abt isRead",
+            _id: "63a3f4a6837105419244e329"
+          },
+          partnershipStatus: {
+            marryOrCivilPartnership: true,
+            date: "2022-11-16T06:00:56.268Z",
+            _id: "63a3f4a6837105419244e32a"
+          },
+          _id: "63a3f4a6837105419244e325"
+        },
+        isDependants: true,
+        dependants: [
+          {
+            isJoint: false,
+            fullname: "P1_1",
+            gender: "Male",
+            dob: "2022-11-16T06:00:56.268Z",
+            dependantStatus: {
+              capacityIssues: true,
+              appointGuardians: false,
+              appointAsBeneficiary: true,
+              _id: "63a3f4a6837105419244e32c"
+            },
+            _id: "63a3f4a6837105419244e32b"
+          },
+          {
+            isJoint: false,
+            fullname: "P1_2",
+            gender: "Male",
+            dob: "2022-11-16T06:00:56.268Z",
+            dependantStatus: {
+              capacityIssues: true,
+              appointGuardians: false,
+              appointAsBeneficiary: true,
+              _id: "63a3f4a6837105419244e32e"
+            },
+            _id: "63a3f4a6837105419244e32d"
+          }
+        ],
+        hasGifts: true,
+        gifts: [
+          {
+            date: "2022-11-16T06:00:56.268Z",
+            value: 245,
+            _id: "63a3f4a6837105419244e32f"
+          }
+        ],
+        properties: [
+          {
+            selectedPropertyFromPlans: {
+              selected: false
+            },
+            isJoint: false,
+            electedResidence: "Foreign Property",
+            address: {
+              city: "xyz town",
+              state: "xyz country",
+              country: "UK",
+              zip: "EC222postcode",
+              _id: "63a3f4a6837105419244e331"
+            },
+            tenant: "Joint Tenants",
+            isRegistered: true,
+            value: 72873,
+            mortage: 987,
+            term: "test term",
+            netValue: 43598475948,
+            notes: "some note abt properties",
+            _id: "63a3f4a6837105419244e330"
+          }
+        ],
+        savings: [
+          {
+            isJoint: false,
+            savingsArea: "Bank & Building Societies",
+            account: "account test_2",
+            balance: 6343,
+            _id: "63a3f4a6837105419244e332"
+          },
+          {
+            isJoint: false,
+            savingsArea: "ISAs",
+            account: "account test_2",
+            balance: 7643874,
+            _id: "63a3f4a6837105419244e333"
+          }
+        ],
+        sharesAndInvestments: [
+          {
+            isJoint: false,
+            type: "Private Company Shares",
+            description: "sdfjsdfjsdj",
+            inheritanceTaxTreatment: "Inside Estate",
+            value: 3475783463,
+            _id: "63a3f4a6837105419244e334"
+          },
+          {
+            isJoint: false,
+            type: "Other",
+            description: "sdfjsdfjsdj",
+            inheritanceTaxTreatment: "Outside Estate",
+            value: 3475783463,
+            _id: "63a3f4a6837105419244e335"
+          }
+        ],
+        lifeInsurance: [
+          {
+            isJoint: false,
+            type: "Term",
+            provider: "asjhdsjhfsh",
+            isUptoDateDeathBenefitForms: true,
+            value: 753487,
+            _id: "63a3f4a6837105419244e336"
+          },
+          {
+            isJoint: false,
+            type: "Other",
+            provider: "gfhfhgh",
+            isUptoDateDeathBenefitForms: true,
+            value: 43546,
+            _id: "63a3f4a6837105419244e337"
+          }
+        ],
+        pension: [
+          {
+            type: "Other",
+            status: "Active",
+            provider: "ajsfnjsfjsfg dnf",
+            isUptoDateDeathBenefitForms: true,
+            value: 7434,
+            _id: "63a3f4a6837105419244e338"
+          }
+        ],
+        assets: [
+          {
+            isJoint: false,
+            type: "Vehicles",
+            description: "nsdmsd",
+            value: 28322,
+            _id: "63a3f4a6837105419244e339"
+          }
+        ],
+        businessAssets: [
+          {
+            isJoint: false,
+            companyName: "xyz",
+            type: "Limited",
+            isTrading: true,
+            shareValue: 49743,
+            percentageShare: "60 %",
+            notIncludedInEstate: 454654,
+            includedInEstate: 989,
+            properties: [
+              {
+                businessProperty: "businessProperty",
+                netValue: 89787,
+                mortage: 9809,
+                notIncludedInEstate: 7689,
+                includedInEstate: 6780,
+                _id: "63a3f4a6837105419244e33b"
+              }
+            ],
+            _id: "63a3f4a6837105419244e33a"
+          }
+        ],
+        liabilities: [
+          {
+            type: "Secured Loans",
+            lender: "lender test",
+            value: 874578,
+            _id: "63a3f4a6837105419244e33c"
+          }
+        ],
+        beneficiaries: [
+          {
+            question1: true,
+            question2: false,
+            isJoint: false,
+            name: "abc",
+            gender: "Male",
+            dob: "2022-11-16T06:00:56.268Z",
+            relationship: "Spouse",
+            isVulerable: true,
+            notes: "test notes",
+            _id: "63a3f4a6837105419244e33d"
+          }
+        ],
+        exclusions: [
+          {
+            isMirror: false,
+            name: "tyuds",
+            gender: "Male",
+            dob: "2022-11-16T06:00:56.268Z",
+            reasonForExclusion: "test",
+            _id: "63a3f4a6837105419244e33e"
+          }
+        ],
+        __v: 0,
+        createdAt: "2022-12-22T06:09:42.406Z",
+        updatedAt: "2022-12-22T06:09:42.406Z"
+      }
+    ],
     selectedPlan: {
-      _id: "63a455606747e7ad45ef8ca0",
+      _id: "63a458013c7d438810fea718",
       inheritanceTax: {
-        investigateMitigationIHT: true, //
+        investigateMitigationIHT: true,
         provision: {
-          averageDeputyship: { //
+          averageDeputyship: {
             cost: 175000,
             provision: true
           },
-          professionalFees: { //
+          professionalFees: {
             cost: 0,
             provision: false
           },
-          costOfProbate: { //
+          costOfProbate: {
             cost: 155000,
             provision: true
           },
-          averageFuneral: { //
+          averageFuneral: {
             cost: 175000,
             provision: true
           },
-          additionalFunds: { //
+          additionalFunds: {
             cost: 175000,
             provision: true
           },
-          totalCostOfEstate: 175000, //
-          _id: "63a455606747e7ad45ef8ca2"
+          totalCostOfEstate: 175000,
+          _id: "63a458013c7d438810fea71a"
         },
-        _id: "63a455606747e7ad45ef8ca1"
+        _id: "63a458013c7d438810fea719"
       },
       whatIf: {
         replyUpon: {
           lossOfCapacity: [
             {
-              name: "some name",
-              _id: "63a455606747e7ad45ef8ca5"
+              name: "xyz1name",
+              _id: "63a458013c7d438810fea71d"
             },
             {
-              name: "some name",
-              _id: "63a455606747e7ad45ef8ca6"
+              name: "xyz2name",
+              _id: "63a458013c7d438810fea71e"
             }
           ],
           ToOverseeInheritanceWishes: [
             {
               name: "zbcname",
-              _id: "63a455606747e7ad45ef8ca7"
-            },
-            {
-              name: "zbcname",
-              _id: "63a455606747e7ad45ef8ca7"
+              _id: "63a458013c7d438810fea71f"
             }
           ],
           ToLookAfterDependants: [
             {
               name: "test1name",
-              _id: "63a455606747e7ad45ef8ca8"
+              _id: "63a458013c7d438810fea720"
             },
             {
               name: "test2name",
-              _id: "63a455606747e7ad45ef8ca9"
+              _id: "63a458013c7d438810fea721"
             }
           ]
         },
@@ -898,19 +1309,120 @@ const plan_selection_data = {
           excludeClaimOrEstatePrevention: true,
           financialAffairsTakeOver: false,
           healthAndWelfareTakeOver: true,
-          _id: "63a455606747e7ad45ef8ca4"
+          _id: "63a458013c7d438810fea71c"
         },
-        _id: "63a455606747e7ad45ef8ca3"
+        _id: "63a458013c7d438810fea71b"
       },
       plansAndPricing: {
-        selectedPlan: "638de7d4d7d9f0097add10de",
+        selectedPlan: {
+          adroit_discount: {
+            forSingle: 245,
+            forJoint: 390
+          },
+          _id: "638de7d4d7d9f0097add10de",
+          name: "JLP4",
+          questionaire: [
+            {
+              _id: "63aa92edf5ad66109c1ff9f6",
+              questionNumber: "Q1",
+              questionText: "Does the client have their own 'What if?'",
+              answer: true
+            },
+            {
+              _id: "63aa92edf5ad66109c1ff9f7",
+              questionNumber: "Q2",
+              questionText: "Protection against the marriage or re-marriage of you",
+              answer: true
+            },
+            {
+              _id: "63aa92edf5ad66109c1ff9f8",
+              questionNumber: "Q3",
+              questionText: "Protection if a beneficiary were to die prematurely",
+              answer: true
+            },
+            {
+              _id: "63aa92edf5ad66109c1ff9f9",
+              questionNumber: "Q4",
+              questionText: "Protection against the marriage or divorce of a beneficiary",
+              answer: true
+            },
+            {
+              _id: "63aa92edf5ad66109c1ff9fa",
+              questionNumber: "Q5",
+              questionText: "Protect a beneficiary if they were to suffer financial hardship",
+              answer: true
+            },
+            {
+              _id: "63aa92edf5ad66109c1ff9fb",
+              questionNumber: "Q6",
+              questionText: "Protect a beneficiary who is on/becomes reliant on state benefits from financial loss",
+              answer: true
+            },
+            {
+              _id: "63aa92edf5ad66109c1ff9fc",
+              questionNumber: "Q7",
+              questionText: "Control how and when a beneficiary receives their inheritance",
+              answer: true
+            },
+            {
+              _id: "63aa92edf5ad66109c1ff9fd",
+              questionNumber: "Q8",
+              questionText: "Help to prevent generational IHT",
+              answer: true
+            },
+            {
+              _id: "63aa92edf5ad66109c1ff9fe",
+              questionNumber: "Q9",
+              questionText: "Provide heirs with instant access to inheritance",
+              answer: false
+            },
+            {
+              _id: "63aa92edf5ad66109c1ff9ff",
+              questionNumber: "Q10",
+              questionText: "Avoid/reduce the costs of Probate",
+              answer: false
+            },
+            {
+              _id: "63aa92edf5ad66109c1ffa00",
+              questionNumber: "Q11",
+              questionText: "Opportunity to reduce IHT",
+              answer: false
+            },
+            {
+              _id: "63aa92edf5ad66109c1ffa01",
+              questionNumber: "Q12",
+              questionText: "Reduce the burden of meeting IHT liability",
+              answer: false
+            },
+            {
+              _id: "63aa92edf5ad66109c1ffa02",
+              questionNumber: "Q13",
+              questionText: "Prevent anyone excluded from making a successful claim on part/all of your Estate",
+              answer: false
+            },
+            {
+              _id: "63aa92edf5ad66109c1ffa03",
+              questionNumber: "Q14",
+              questionText: "Enable a trusted person to take over your financial affairs",
+              answer: true
+            },
+            {
+              _id: "63aa92edf5ad66109c1ffa04",
+              questionNumber: "Q15",
+              questionText: "Enable a trusted person to take over your health & welfare",
+              answer: true
+            }
+          ],
+          products: [
+            "Will(s)",
+            "LPA’s (both Health & Welfare & Property & Affairs)"
+          ]
+        },
         individualProducts: [
           {
             product: "Single LPA",
             price: 375,
-            quantity:2,
-            cost:2000,
-            _id: "63a455606747e7ad45ef8cab"
+            _id: "63a458013c7d438810fea723"
           }
         ],
         powersOfAttorney: [
@@ -919,14 +1431,14 @@ const plan_selection_data = {
             discount: "0",
             quantity: 2,
             disbursement: 1500,
-            _id: "63a455606747e7ad45ef8cac"
+            _id: "63a458013c7d438810fea724"
           },
           {
             name: "kkkname",
             discount: "2",
             quantity: 1,
             disbursement: 975,
-            _id: "63a455606747e7ad45ef8cad"
+            _id: "63a458013c7d438810fea725"
           }
         ],
         feeStructure: {
@@ -938,14 +1450,13 @@ const plan_selection_data = {
           standardFees: 258900,
           vat: 25,
           totalCost: 348200,
-          _id: "63a455606747e7ad45ef8cae"
+          _id: "63a458013c7d438810fea726"
         },
-        _id: "63a455606747e7ad45ef8caa"
+        _id: "63a458013c7d438810fea722"
       },
       __v: 0
     }
   }
-
 }
 
 const tickIcon = tick;
@@ -967,6 +1478,7 @@ app.get("/factfind", (req, res) => {
 
 //  PLAN SELECTION
 app.get("/planselection", (req, res) => {
+    // console.log(plan_selection_data.data.selectedPlan.plansAndPricing.selectedPlan.products)
     res.render("planselection1.ejs",{plan_selection_data, tickIcon, crossIcon});
 });
 
