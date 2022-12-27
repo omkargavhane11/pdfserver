@@ -1,0 +1,829 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Squiggle</title>
+
+    
+    <link rel="stylesheet" href="./squiggle.css">
+</head>
+<body>
+   
+<!-- HEADER -->
+<header class="header">
+    <div class="header_top">
+        <!-- <div class="exit_btn_div">
+            <button class="exit_btn">Exit</button>
+        </div> -->
+        <div class="form_name_div">
+            <span class="form_name">Fact Find</span>
+        </div>
+    </div>
+    <div class="header_middle">
+        <div class="flex_column">
+            <p class="key">Application Type</p>
+            <p class="value"><%= applicationType %></p>
+        </div>
+        <div class="flex_column relationship">
+            <p class="key">Relationship</p>
+            <p class="value"><%=relationship%></p>
+        </div>
+    </div>
+    <div class="header_bottom">
+        <div class="header_bottom_left">
+            <p class="key">Client 1</p>
+            <p class="value">Client_name_1</p>
+        </div>
+        <% if(applicationType.toLowerCase() === "joint"){%>
+        <div class="header_bottom_right">
+            <p class="key">Client 2</p>
+            <p class="value">fname</p>
+        </div>
+        <% } else {%>
+        <%}%>
+    </div>
+</header>
+
+<!-- section 1 - client details -->
+<div class="section">
+<p class="section_heading">Client Details</p>
+<div class="hr"></div>
+<div class="table_container">
+    <% factfindData.forEach(function(client){%>
+    <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <table>
+            
+    <tr>
+        <td class="key">Gender</td>
+        <td class="key">DOB</td>
+    </tr>
+    <tr>
+        <td><%=client.clientDetails.gender%></td>
+        <td><%=moment(client.clientDetails.dob).format('DD/MM/YYYY')%></td>
+    </tr>
+    <tr>
+        <td class="key">Nationality</td>
+        <td class="key">Residence</td>
+    </tr>
+    <tr>
+        <td><%=client.clientDetails.nationality%></td>
+        <td><%=client.clientDetails.residency%></td>
+    </tr>
+    <tr>
+        <td class="key">Home Telephone</td>
+        <td class="key">Mobile Number</td>
+    </tr>
+    <tr>
+        <% if(client.clientDetails.telephone !== ""){%>
+            <td><%=client.clientDetails.telephone%></td>
+            <% } else {%>
+                <td>-</td> 
+                <%}%>
+                
+                <% if(client.clientDetails.mobileno !== ""){%>
+                    <td><%=client.clientDetails.mobileno%></td>
+                    <% } else {%>
+                        <td>-</td> 
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td class="key">Email</td>
+        <td class="key">Owned</td>
+    </tr>
+    <tr>
+        <td><%=client.clientDetails.email%></td>
+        <% if(client.clientDetails.isMainResidence){%>
+            <td>Yes</td>
+            <% } else {%>
+                <td>No</td> 
+                <%}%>
+            </tr>
+            <tr>
+                <td class="key">Address</td>
+                <td class="key">Residence Type</td>
+            </tr>
+            <tr>
+                <td>Some random address</td>
+                
+                <% if(client.clientDetails.isMainResidence){%>
+                    <td>Main</td>
+                    <% } else {%>
+                        <td>Not Main</td> 
+        <%}%>
+    </tr>
+    <tr>
+        <td class="key">Employement Status</td>
+        <td class="key">Health Status</td>
+    </tr>
+    <tr>
+        <td><%= client.clientDetails.employementStatus.status%></td>
+        <td><%=client.clientDetails.healthStatus.status%></td>
+    </tr>
+    <tr>
+            <td class="key">Employment Notes</td>
+            <td class="key">Health Notes</td>
+        </tr>
+        <tr>
+            <% if(client.clientDetails.employementStatus.notes !== ""){%>
+                <td><%= client.clientDetails.employementStatus.notes%></td>
+                <% } else {%>
+                    <td>-</td>
+                <%}%>
+                <% if(client.clientDetails.healthStatus.notes !== ""){%>
+                    <td><%= client.clientDetails.healthStatus.notes%></td>
+                    <% } else {%>
+                        <td>-</td>
+                    <%}%>
+            
+        </tr>
+    <tr>
+    <tr>
+        <td colspan="2" class="key">Are you able to read & sign unaided ?</td>
+    </tr>
+    <tr>
+        <% if(client.clientDetails.isReadAndSignUnaided.isReadAndSignUnaided){%>
+            <td>Yes</td>
+            <% } else {%>
+                <td>No</td>
+                <%}%>
+            </tr>
+            <tr>
+                <td colspan="1" class="key">Are you abput to marry or enter any civil partnership ?</td>
+                <td colspan="1" class="key">Date</td>
+            </tr>
+            <tr>  
+        <% if(client.clientDetails.partnershipStatus.marryOrCivilPartnership){%>
+            <td>Yes</td>
+            <% } else {%>
+                <td>No</td>
+                <%}%>
+
+                <% if(client.clientDetails.partnershipStatus.marryOrCivilPartnership){%>
+                    <td><%= moment(client.clientDetails.partnershipStatus.date).format('DD/MM/YYYY')%></td>
+                    <% } else {%>
+                        <td>-</td>
+                        <%}%>
+                    </tr>
+                    
+                </table>
+            </div>
+            <%});%>
+</div>
+<div class="hr"></div>
+</div>
+
+<!-- section 2 - Dependants -->
+<div class="section">
+    <div class="section_2_heading_container">
+        <p class="section_heading">Dependants</p><p>Dependants are children below age 18 or vulnerable adults : <strong>Yes</strong></p>
+    </div>
+    <div class="hr"></div>
+
+    <div class="table_container">
+        <% factfindData.forEach(function(client,index){ %>
+        <div class=<%= applicationType === "Joint" ? "custom_table_half" : "custom_table" %>>
+        <%client.dependants.forEach(function(dClient){ %>
+        <div class="exclusion_table_container">
+            <% if(dClient.isJoint && client.dependants.length === 2){%>
+                <div class="joint text-small">Joint</div>
+            <%}else{%>
+                <div class="joint text-small visibility-none">Joint</div>
+            <% }%>
+        <table class="">
+        <tr>
+            <td class="key">Full Name</td>
+        </tr>
+        <tr>
+            <td >Client Name</td>
+        </tr>
+
+        <tr>
+            <td class="key">Gender</td>
+            <td class="key">DOB</td>
+        </tr>
+        <tr>
+            <td><%=dClient.gender%></td>
+            <td><%=moment(dClient.dob).format('DD/MM/YYYY')%></td>
+        </tr>
+       
+        <tr>
+            <td class="key">Capacity Issues</td>
+            <td class="key">Appoint Guardians</td>
+            <td class="key">Appoint as beneficiary</td>
+        </tr>
+        <tr>
+           <td><%=dClient.dependantStatus.capacityIssues%></td>
+           <td><%=dClient.dependantStatus.appointGuardians%></td>
+           <td><%=dClient.dependantStatus.appointAsBeneficiary%></td>
+        </tr>      
+        </table>
+        </div>
+        <%});%>
+            </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- section 3 - GIFTS -->
+<div class="section">
+        <div class="section_2_heading_container">
+            <p class="section_heading">Gifts</p>
+            <p>Have you gifted any asset or monetary gifts in the last 7 years ? : 
+            <strong>
+                <% if([0].hasGifts){%>
+                    Yes
+                <% }else{%>
+                    No
+                <% }%>
+            </strong>
+            </p>
+        </div>
+        <div class="hr"></div>
+        <div class="table_container">
+            <% factfindData.forEach(function(client){ %>
+                <div class=<%= applicationType === 'Joint' ? "custom_table_half giftBox" : "custom_table giftBox" %>>
+                    <%client.gifts.forEach(function(gift){%>
+                        <div class="exclusion_table_container">
+                            <% if(gift.isJoint && factfindData.length === 2){%>
+                                <div class="joint text-small">Joint</div>
+                            <%}else{%>
+                                <div class="joint text-small visibility-none">Joint</div>
+                            <% }%>
+                        <table class="">        
+                            <tr>
+                                <td class="key" colspan="2">Gift To</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><%=gift.giftTo%></td>
+                            </tr>
+                            <tr>
+                                <td class="key">DOB</td>
+                                <td class="key">Value</td>
+                            </tr>
+                            <tr>
+                                <td><%=moment(gift.date).format('DD/MM/YYYY')%></td>
+                                <td>&#163 <%=gift.value.toLocaleString()%></td>
+                            </tr>           
+                        </table>
+                        </div>
+                    <%});%>
+                </div>
+            <%});%>
+        </div>
+        <div class="hr"></div>
+</div>
+
+<!-- section 4 - properties -->
+<div class="section">
+        <div class="section_2_heading_container">
+            <p class="section_heading">Properties</p>
+        </div>
+        <div class="hr"></div>
+        <div class="table_container">
+            <% factfindData.forEach(function(client, index){ %>    
+                <div class=<%=applicationType === 'Joint' ? "custom_table_half" : "custom_table"%>>
+                    <%client.properties.forEach(function(property){ %>
+                        <div class="">   
+                            <div class="exclusion_table_container">
+                                <% if(property.isJoint && factfindData.length === 2){%>
+                                    <div class="joint text-small">Joint</div>
+                                <%}else{%>
+                                    <div class="joint text-small visibility-none">Joint</div>
+                                <% }%>      
+                            <div class="item_heading">
+                                Main Residence
+                            </div>
+                            <table class="">        
+                            <tr>
+                                <td class="key" colspan="2">Address</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><%=property.address%></td>
+                                <td></td>
+                            </tr>   
+                            <tr>
+                                <td class="key">Town</td>
+                                <td class="key">County</td>
+                            </tr>
+                            <tr>
+                                <td>Downtown</td>
+                                <td>Some County</td>
+                            </tr>  
+                            <tr>
+                                <td class="key">Pincode</td>
+                                <td class="key">Country</td>
+                            </tr>
+                            <tr>
+                                <td>456543</td>
+                                <td>UK</td>
+                            </tr> 
+                            <tr>
+                                <td class="key">Tenent type</td>
+                                <td class="key">Registered</td>
+                            </tr>
+                            <tr>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr> 
+                            <tr>
+                                <td class="key">Value</td>
+                                <td class="key">Mortgage</td>
+                            </tr>
+                            <tr>
+                                <td>&#163 <%=property.value%></td>
+                                <td>&#163 <%=property.mortage%></td>
+                            </tr> 
+                            <tr>
+                                <td class="key">Term</td>
+                                <td class="key">Net value</td>
+                            </tr>
+                            <tr>
+                                <td><%=property.term%></td>
+                                <td>&#163 <%=property.netValue.toLocaleString()%></td>
+                            </tr>  
+                            <tr>
+                                <td class="key">Note</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                        <%=property.notes%>
+                                </td>
+                            </tr>  
+                            </table>
+                            </div>
+                        </div>
+                    <%});%>
+                </div>
+            <%});%>
+        </div>
+        <div class="hr"></div>
+</div>
+
+<!-- section 5 -- SAVINGS -->   
+<div class="section saving_section">
+    <div class="section_2_heading_container">
+        <p class="section_heading">Savings</p>
+    </div>
+    <div class="hr"></div>
+        <div class="table_container">
+            <% factfindData.forEach(function(client,index){ %>
+                <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+                        <% client.savings.forEach(function(saving){ %>
+                            <div class="">
+                                <div class="exclusion_table_container">
+                                    <% if(saving.isJoint && factfindData.length === 2){%>
+                                        <div class="joint text-small">Joint</div>
+                                    <%}else{%>
+                                        <div class="joint text-small visibility-none">Joint</div>
+                                    <% }%>
+                                    <div class="item_heading"><%=saving.savingsArea%></div>
+                                    <table class="">
+                                        <tr>
+                                            <td class="key">Account/Name</td>
+                                            <td class="key">Balance</td>
+                                        </tr>
+                                        <tr>
+                                            <td><%=saving.account%></td>
+                                            <td>&#163 <%=saving.balance.toLocaleString()%></td>
+                                        </tr>           
+                                    </table>
+                                </div>
+                                </div>
+
+                        <%});%>
+                </div>
+            <%});%>
+        </div>
+    <div class="hr"></div>
+</div>
+
+<!-- section 6  SHARES AND INVESTMENTS -->
+<div class="section">
+    <div class="section_2_heading_container">
+        <p class="section_heading">Shares & Investments</p>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client,index){ %>        
+            <div class=<%= applicationType === 'Joint' ? "custom_table_half giftBox" : "custom_table giftBox" %>>
+                <% client.sharesAndInvestments.forEach(function(investment){ %>  
+                    <div class="">  
+                        <div class="exclusion_table_container">
+                            <% if(investment.isJoint === true && factfindData.length === 2){%>
+                                <div class="joint text-small">Joint</div>
+                            <%}else{%>
+                                <div class="joint text-small visibility-none">Joint</div>
+                            <% }%>
+                        <div class="item_heading">
+                            <%=investment.type%>
+                        </div>
+                        <table class="">
+                            <tr>
+                                <td class="key" colspan="2">Inheritance Tax Treatment</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><%=investment.inheritanceTaxTreatment%></td>
+                            </tr>   
+                            <tr>
+                                <td class="key">Description</td>
+                                <td class="key">Value</td>
+                            </tr>
+                            <tr>
+                                <td><%=investment.description%></td>
+                                <td>&#163 <%=investment.value.toLocaleString()%></td>
+                            </tr> 
+                        </table>
+                        </div>
+                    </div>
+                <%});%>
+            </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- section 7 - LIFE INSURANCES -->
+<div class="section">
+        <div class="section_2_heading_container">
+            <p class="section_heading">Life Insurance</p>
+            <p>Policies with a name beneficiary or written into trust will NOT form part of a client's estate for IHT purposes</p>
+        </div>
+        <div class="hr"></div>
+        <div class="table_container">
+            <% factfindData.forEach(function(client){ %>        
+            <div class=<%= applicationType === 'Joint' ? "custom_table_half giftBox" : "custom_table giftBox" %>>
+        <%client.lifeInsurance.forEach(function(item){ %>                
+            <div class="lifeInsurance_table_container">
+            <div class="exclusion_table_container">
+                <% if(item.isJoint && factfindData.length === 2){%>
+                    <div class="joint text-small">Joint</div>
+                <%}else{%>
+                    <div class="joint text-small visibility-none">Joint</div>
+                <% }%>
+            <table class="">
+                
+                <tr>
+                    <td class="key">Insurance Type</td>
+                    <td class="key">Value</td>
+                </tr>
+                <tr>
+                    <td><%=item.type%></td>
+                    <td>&#163 <%=item.value.toLocaleString()%></td>
+                </tr>
+                
+            <tr>
+                <td class="key">Provider</td>
+            </tr>
+            <tr>
+                <td><%=item.provider%></td>
+            </tr>  
+            <tr>
+                <td class="key" colspan="2">Up to date Death Benefit Nomination Form</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <% if(item.isUptoDateDeathBenefitForms){%>
+                        Yes
+                    <%}else{%>
+                        No
+                    <%}%>
+                </td>
+            </tr>         
+            </table>
+            </div>
+            </div>
+        <%});%>
+    </div>
+    <%});%>
+        </div>
+        <div class="hr"></div>
+</div>
+
+<!-- section 8 - PENSION -->
+<div class="section">
+        <div class="section_2_heading_container">
+            <p class="section_heading">Pension</p><p>These can generally can be considered to NOT included in a Client's estate</p>
+        </div>
+        <div class="hr"></div>
+        <div class="table_container">
+            <% factfindData.forEach(function(client){ %>    
+            <div class=<%= applicationType === 'Joint' ? "custom_table_half giftBox" : "custom_table giftBox" %>>
+            <%client.pension.forEach(function(pen){ %>
+               
+                <table class="life_insurance_table">
+                    
+            <tr>
+                <td class="key">Pension Type</td>
+                <td class="key">Status</td>
+            </tr>
+            <tr>
+                <td><%=pen.type%></td>
+                <td><%=pen.status%></td>
+            </tr>
+           
+            <tr>
+                <td class="key">Provider</td>
+                <td class="key">Value</td>
+            </tr>
+            <tr>
+                <td><%=pen.provider%></td>
+                <td>&#163 <%=pen.value.toLocaleString()%></td>
+            </tr>   
+            <tr>
+                    <td class="key" colspan="2" colspan="2">Up to date Death Benefit Nomination Form</td>
+                </tr>
+                <tr>
+                    <td colspan="2" colspan="2">
+                        <% if(pen.type){%>
+                            Yes
+                        <%}else{%>
+                            No
+                        <% }%>
+                    </td>
+                </tr>        
+                </table>
+                <%});%>
+                </div>
+                <%});%>
+        </div>
+        <div class="hr"></div>
+</div>
+
+<!-- section 9 - ASESTS -->
+<div class="section">
+        <div class="section_2_heading_container">
+            <p class="section_heading">Assets</p>
+        </div>
+        <div class="hr"></div>
+        <div class="table_container">
+
+        <% factfindData.forEach(function(client){ %>
+            <div class=<%= applicationType === "Joint" ? "custom_table_half" : "custom_table" %>>
+            <%client.assets.forEach(function(asset){ %>                    
+            <div class="exclusion_table_container">
+                <% if(asset.isJoint && factfindData.length === 2){%>
+                    <div class="joint text-small">Joint</div>
+                <%}else{%>
+                    <div class="joint text-small visibility-none">Joint</div>
+                <% }%>
+            <div class="section_section_heading"><%=asset.type%></div>
+            <table class="">
+            <tr>
+                <td class="key">Description</td>
+                <td class="key">Value</td>
+            </tr>
+            <tr>
+                <td><%=asset.description%></td>
+                <td>&#163 <%=asset.value.toLocaleString()%></td>
+            </tr>  
+            </table>
+            </div>  
+            <%});%>
+            </div>
+            <%});%>
+        </div>
+        <div class="hr"></div>
+</div>
+
+<!-- section 10 -- BUSINESS ASSETS -->
+<div class="section">
+        <div class="section_2_heading_container">
+            <p class="section_heading">Business Assets</p><p>Shares can attract upto 100% of relief / Property at up to 50% relief</p>
+        </div>
+        <div class="hr"></div>
+        <div class="table_container">
+    
+        <% factfindData.forEach(function(client){ %>
+            <div class=<%= applicationType === "Joint" ? "custom_table_half" : "custom_table" %>>
+            <%client.businessAssets.forEach(function(b_asset){ %>
+              
+
+        <div class="exclusion_table_container">
+            <% if(b_asset.isJoint && factfindData.length === 2){%>
+                <div class="joint text-small">Joint</div>
+            <%}else{%>
+                <div class="joint text-small visibility-none">Joint</div>
+            <% }%>
+        <table>        
+                
+            <tr>
+                <td colspan="2" class="key">Company Name</td>
+            </tr>
+            <tr>
+                <td colspan="2"><%=b_asset.companyName%></td>
+            </tr> 
+            
+            <tr>
+                    <td class="key">Type</td>
+                    <td class="key">Percentage Share</td>
+                </tr>
+                <tr>
+                    <td ><%=b_asset.type%>></td>
+                    <td ><%=b_asset.shareValue%></td>
+                </tr> 
+                <tr>
+                        <td class="key">Trading Business</td>
+                        <td class="key">Share Value</td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <% if(b_asset.isTrading){%>
+                                Yes
+                            <%}else{%>
+                                No
+                            <% }%>
+                        </td>
+                        <td >&#163 </td>
+                    </tr> 
+        </table> 
+
+        <% b_asset.properties.forEach(function(asset, index){%>
+        <div class="">
+            <p class="business_property_heading">Property <%= index+1 %></p>
+            <table>
+                <tr><td class="key">Business Property</td></tr>
+                <tr><td><%=asset.businessProperty%></td></tr>
+                <tr>
+                    <td class="key">Net Value</td>
+                    <td class="key">Mortgage</td>
+                </tr>
+                <tr>
+                    <td>&#163 <%=asset.netValue%></td>
+                    <td>&#163 <%=asset.mortage%></td>
+                </tr>
+            </table>
+        </div>
+        <%});%>
+
+        </div>
+    <%});%>
+</div>
+<%});%>
+        </div>
+        <div class="hr"></div>
+</div>
+
+<!-- section 11 - LIABILITIES -->
+<div class="section">
+        <div class="section_2_heading_container">
+            <p class="section_heading">Liabilities</p>
+        </div>
+        <div class="hr"></div>
+        <div class="table_container">
+        <% factfindData.forEach(function(client){ %>
+        <div class=<%= applicationType === "Joint" ? "custom_table_half" : "custom_table" %>>
+        <%client.liabilities.forEach(function(liab){ %>
+            
+        <div class="business_asset_property_container">
+            <div class="business_asset_property">
+            <p class="business_property_heading"><%=liab.type%></p>
+            <table>
+                <tr>
+                    <td class="key">Lender</td>
+                    <td class="key">Outstanding Balance</td></tr>
+                <tr>
+                    <td><%=liab.lender%></td>
+                    <td>&#163 <%=liab?.value%></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+
+        <%});%>
+        </div>
+        <%});%>
+
+        </div>
+</div>
+    <div class="hr"></div>
+</div>
+
+<!-- section 12 - BENEFICIARIES -->
+<div class="section">
+    <div class="section_2_heading_container">
+        <p class="section_heading">Beneficiaries</p>
+    </div>
+    <div class="hr"></div>
+
+    <div class="table_container">
+    <% factfindData.forEach(function(client,i){%>
+
+    <div class=<%= applicationType === 'Joint' ? "custom_table_half giftBox" : "custom_table giftBox" %>>
+    
+    <div class="column-gap-10">
+            <div class="">
+                    <p class="key">If you were to die first, are all assests soley in your name to be left to the other client in the first instance?</p>
+                    <p>Yes</p>
+            </div>
+            <div class=<%= i === 1 ? "hide" : "" %>>
+                    <p class="key">If you were to die first, are all assests soley in your name to be left to the other client in the first instance?</p>
+                    <p>Yes - <%=i%></p>
+            </div>
+    </div>
+            
+    <div class="beneficiary_table_container">
+        <% client.beneficiaries.forEach(function(client){%>
+        <div class="exclusion_table_container">
+            <% if(client.isJoint && factfindData.length === 2){%>
+                <div class="joint text-small">Joint</div>
+            <%}else{%>
+                <div class="joint text-small visibility-none">Joint</div>
+            <% }%>
+        <table>
+            <tr>
+                <td class="key">Name</td>
+                <td class="key">Relationship</td>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td><%=client.relationship%></td>
+            </tr>
+            <tr>
+                <td class="key">Gender</td>
+                <td class="key">DOB</td>
+            </tr>
+            <tr>
+                <td><%=client.gender%></td>
+                <td><%=moment(client.dob).format('DD/MM/YYYY')%></td>
+            </tr>
+            <tr>
+                <td class="key">Vulnerable</td>
+                <td class="key">Note</td>
+            </tr>
+            <tr>
+                <td>Yes</td>
+                <td>Some random note</td>
+            </tr>
+        </table>
+        </div>
+        <%});%>
+    </div>
+    </div>  
+    <% }); %>
+    </div>
+    <!-- </div> -->
+    <div class="hr"></div>
+</div>
+
+<!-- section 12 - exclusions -->
+<div class="section">
+        <div class="section_2_heading_container">
+            <p class="section_heading">Exclusions</p>
+        </div>
+        <div class="hr"></div>
+        <div class="table_container">
+        <% factfindData.forEach(function(client){ %>
+
+            <div class=<%= applicationType === "Joint" ? "custom_table_half" : "custom_table" %>>
+
+            <%client.exclusions.forEach(function(dClient){ %>
+            <div class="exclusion_table_container">
+                <% if(dClient.isJoint === true && factfindData.length === 2){%>
+                    <div class="joint text-small">Joint</div>
+                <%}else{%>
+                    <div class="joint text-small visibility-none">Joint</div>
+                <% }%>
+            <table class="">
+                <tr>
+                    <td class="key">Name</td>
+                    <td class="key">Gender</td>
+                </tr>
+                <tr>
+                    <td><%=dClient.name%></td>
+                    <td><%=dClient.gender%></td>
+                </tr>
+                <tr>
+                    <td class="key">DOB</td>
+                    <td class="key">Relationship</td>
+                </tr>
+                <tr>
+                    <td><%=moment(dClient.dob).format('DD/MM/YYYY')%></td>
+                    <td><%=dClient.relationship%></td>
+                </tr>
+                <tr>
+                    <td class="key" colspan="2">Reason of exclusion</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><%=dClient.reasonForExclusion%></td>
+                </tr>
+            </table>
+            </div>
+            <%});%>  
+
+            </div>
+
+        <%});%>
+
+    </div>
+        <div class="hr"></div>
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./willQ.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">    
+    <title>Living Will Questionare</title>
+</head>
+<body>
+
+
+<!-- header  -->
+<header class="header">
+    <div class="header_top">
+        <div class="form_name_div">
+            <span class="form_name">Living Will Questionnaire</span>
+        </div>
+    </div>
+    <div class="header_bottom">
+        <div class="header_bottom_left">
+            <p class="key">Client 1</p>
+            <p class="text-22 text-style text-bold">Sherlock Holmes</p>
+        </div>
+        <div class="header_bottom_right">
+            <p class="key">Client 2</p>
+            <p class="text-22 text-style text-bold">Irene Adler</p>
+        </div>
+    </div>
+</header>
+
+<!-- TOP -->
+<div class="section">
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <table class="my-10">
+        <tr>
+            <td class="key">Have you considered a Health and Welfare LPA instead which provides greater flexibility?</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+        </tr>
+        </table>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- General Practitioner -->
+<div class="section">
+    <p class="section_heading_dark_16">General Practitioner</p>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <!-- 1 -->
+        <table class="mb-10">
+        <tr>
+            <td class="key">Are the GP details known?</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+        </tr>
+        </table>
+
+        <!-- 2 -->
+        <table class="mb-10">
+        <tr>
+            <td class="key">Name of Practice</td>
+        </tr>
+        <tr>
+            <td>Some input value</td>
+        </tr>
+        </table>
+
+         <!-- 3 -->
+        <table class="mb-10">
+        <tr>
+            <td class="key">Address</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus tempora earum ducimus eaque, debitis voluptas esse minima sit facere. Provident, quidem saepe? Officia cupiditate eligendi recusandae doloremque ratione tempora voluptatibus?</td>
+        </tr>
+        </table>
+
+        <!-- 4 -->
+        <table class="mb-10">
+        <tr>
+            <td class="key">Name of Practitioner</td>
+        </tr>
+        <tr>
+            <td>Some name of Practitioner</td>
+        </tr>
+        </table>
+
+        <!-- 5 -->
+        <table class="mb-10">
+        <tr>
+            <td class="key">Will you provide a copy of this document to the practice?</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+        </tr>
+        </table>
+
+        </div>
+      
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- Existing Docs -->
+<div class="section">
+    <p class="section_heading_dark_16">Existing Docs</p>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <!-- 1 -->
+        <table class="mb-10">
+        <tr>
+            <td class="key">Does the Testator have any existing health issues?</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+        </tr>
+        </table>
+
+        <!-- 2 -->
+        <table class="mb-10">
+        <tr>
+            <td class="key">If yes, do you want to include them in your Living Will?</td>
+        </tr>
+        <tr>
+            <td>Some input value</td>
+        </tr>
+        </table>
+
+         <!-- 3 -->
+        <table class="mb-10">
+        <tr>
+            <td class="key">Mention your health issues</td>
+        </tr>
+        <tr>
+            <td>Some health issues input</td>
+        </tr>
+        </table>
+
+        </div>
+      
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- Consciousness -->
+<div class="section">
+        <div class="section_heading_dark_16">Consciousness</div>
+        <div class="mx-20 mt--5 text-small">
+            <span class="text-green text-small">Persistently unresponsive</span> - when it’s been longer than four weeks.
+        </div>
+        <div class="mx-20 mb-20 text-small">
+            <span class="text-green text-small">Permanently unresponsive</span> - when it’s been more than six months if caused by a non-traumatic brain injury, or more than 12 months if caused by a traumatic brain injury.
+        </div>
+
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Would the Testator like to REFUSE life sustaining treatment if they were to become permanently or persistently unresponsive?</td>
+        </tr>
+        <tr>
+            <td>Refuse if Persistently unresponsive</td>
+        </tr>
+        </table>
+
+       
+
+        </div>
+      
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- Unremitting Pain -->
+<div class="section">
+    <div class="section_heading_dark_16">Unremitting Pain</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Would the Testator like to REFUSE life sustaining treatment if they were to become permanently or persistently unresponsive?</td>
+        </tr>
+        <tr>
+            <td>Refuse if Persistently unresponsive</td>
+        </tr>
+        </table>
+
+        </div>
+    
+        </div>
+        <%});%>
+    </div>
+<div class="hr"></div>
+</div>
+
+<!-- Other Scenarios -->
+<div class="section">
+    <div class="section_heading_dark_16">Other Scenarios</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Would the Testator like to add other scenarios to their Living Will?</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Mention the scenario</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus assumenda obcaecati est incidunt vero? Laudantium praesentium sint delectus, totam pariatur est, omnis nostrum ducimus id perspiciatis porro unde ex ea.</td>
+        </tr>
+        </table>
+
+        </div>
+
+        </div>
+        <%});%>
+    </div>
+<div class="hr"></div>
+</div>
+
+<!-- Resuscitation -->
+<div class="section">
+    <div class="section_heading_dark_16">Resuscitation</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Would the Testator like to REFUSE life sustaining treatment by means of CPR if they become unresponsive, terminally ill or injured?</td>
+        </tr>
+        <tr>
+            <td>Yes, but only if</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Mention the scenario</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus assumenda obcaecati est incidunt vero? Laudantium praesentium sint delectus, totam pariatur est, omnis nostrum ducimus id perspiciatis porro unde ex ea.</td>
+        </tr>
+        </table>
+
+        </div>
+        
+        </div>
+        <%});%>
+    </div>
+<div class="hr"></div>
+</div>
+
+<!-- Artificial Nutrition -->
+<div class="section">
+    <div class="section_heading_dark_16">Artificial Nutrition</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Would the Testator like to REFUSE artificial nutrition and hydration intravenously or through a tube if they become permanently unresponsive, terminally ill or injured?</td>
+        </tr>
+        <tr>
+            <td>Yes, unless</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Mention the scenario</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus assumenda obcaecati est incidunt vero? Laudantium praesentium sint delectus, totam pariatur est, omnis nostrum ducimus id perspiciatis porro unde ex ea.</td>
+        </tr>
+        </table>
+
+        </div>
+        
+        </div>
+        <%});%>
+    </div>
+<div class="hr"></div>
+</div>
+
+<!-- Artificial Ventilation -->
+<div class="section">
+    <div class="section_heading_dark_16">Artificial Ventilation</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Would the Testator like to REFUSE artificial or mechanical ventilation if they become unresponsive, terminally ill or injured?</td>
+        </tr>
+        <tr>
+            <td>Yes, unless</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Mention the scenario</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus assumenda obcaecati est incidunt vero? Laudantium praesentium sint delectus, totam pariatur est, omnis nostrum ducimus id perspiciatis porro unde ex ea.</td>
+        </tr>
+        </table>
+
+        </div>
+        
+        </div>
+        <%});%>
+    </div>
+<div class="hr"></div>
+</div>
+
+<!-- Blood Transfusions -->
+<div class="section">
+    <div class="section_heading_dark_16">Blood Transfusions</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Would the Testator like to REFUSE transfusion of blood or blood products?</td>
+        </tr>
+        <tr>
+            <td>Yes, unless</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Mention the scenario</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus assumenda obcaecati est incidunt vero? Laudantium praesentium sint delectus, totam pariatur est, omnis nostrum ducimus id perspiciatis porro unde ex ea.</td>
+        </tr>
+        </table>
+
+        </div>
+        
+        </div>
+        <%});%>
+    </div>
+<div class="hr"></div>
+</div>
+
+<!-- Pain or Distress -->
+<div class="section">
+    <div class="section_heading_dark_16">Pain or Distress</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">If the Testator has refused life sustaining treatment, would the Testator like to receive all available treatment to alleviate pain, stress and discomfort?</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+        </tr>
+        </table>
+
+        </div>
+        
+        </div>
+        <%});%>
+    </div>
+<div class="hr"></div>
+</div>
+
+<!-- Pregnancy -->
+<div class="section">
+    <div class="section_heading_dark_16">Pregnancy</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <table class=<%= index === 1 ? "mb-10" : "visibility-none" %>>
+        <tr>
+            <td class="key">If the Testator were pregnant at the time in which they lose capacity, what would the Testator like to happen?</td>
+        </tr>
+        <tr>
+            <td>Refuse if Persistently unresponsive</td>
+        </tr>
+        </table>
+
+        </div>
+        
+        </div>
+        <%});%>
+    </div>
+<div class="hr"></div>
+</div>
+
+<!-- People present at my death -->
+<div class="section">
+    <div class="section_heading_dark_16">People present at my death</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">If the Testator were pregnant at the time in which they lose capacity, what would the Testator like to happen?</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Mention them</td>
+        </tr>
+        <tr>
+            <td>Some random input</td>
+        </tr>
+        </table>
+
+        </div>
+        
+        </div>
+        <%});%>
+    </div>
+<div class="hr"></div>
+</div>
+
+
+
+
+
+</body>
+</html>

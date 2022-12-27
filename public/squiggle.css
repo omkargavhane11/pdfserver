@@ -1,0 +1,333 @@
+* {
+  padding:0px;
+  margin:0px;
+  font-family: 'Crimson Text', serif;
+  font-family: 'Poppins', sans-serif;
+  color: #3D4740;
+  font-size: 16px;
+}
+
+body {
+  padding-bottom: 60px;
+}
+
+tr {
+  width: 100%;
+}
+td {
+  width: 50%;
+  box-sizing: border-box;
+  padding-right: 8px !important;
+}
+
+td,
+th {
+  text-align: left;
+}
+
+th {
+  font-weight: 500;
+}
+
+tr > td:nth-child(odd) {
+  padding-right: 5px;
+  box-sizing: border-box;
+}
+
+tr > td:nth-child(even) {
+  padding-right: 5px;
+  box-sizing: border-box;
+}
+
+tr:nth-child(even) > td {
+  vertical-align: top;
+  padding-bottom: 10px;
+}
+
+tr:nth-child(odd) > td {
+  vertical-align: bottom;
+}
+
+.key {
+  color: rgb(0, 204, 68);
+  font-weight: 500;
+  font-size: 12px !important;
+}
+
+.text-small{
+  font-size: 12px;
+}
+
+.section_heading {
+  color: rgb(0, 204, 68);
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0px 20px;
+  padding: 20px 0px;
+  box-sizing: border-box;
+}
+
+.item_heading {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.section_item_of_property {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.table_container {
+  display: flex;
+  break-inside: avoid;
+}
+
+table {
+  width: 100%;
+}
+
+.property_mapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0px;
+}
+
+.custom_table {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 1px solid lightgray;
+  break-inside: avoid;
+}
+
+.custom_table:nth-child(even) {
+  border-right: none;
+}
+
+.custom_table_half {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  padding: 20px;
+  height: 200px;
+  background-color: rgba(191, 218, 215, 0.623);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.header_top {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.exit_btn_div {
+  flex: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.form_name_div {
+  flex: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+  
+.header_middle,
+.header_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  
+hr {
+  margin: 0px 20px;
+  border: 1px solid lightgray;
+}
+
+.hr{
+  border-top: 1px solid #DCDCE1;
+  margin: 0px 20px;
+}
+
+
+  .exit_btn {
+    padding: 5px;
+    border-radius: 20px;
+    background-color: white;
+    color: rgb(0, 204, 68);
+    border: none;
+    outline: none;
+    width: 50px;
+  }
+  
+  .flex_column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .value {
+    font-size: 20px;
+  }
+  
+  .header_bottom_left,
+  .header_bottom_right,
+  .flex_column {
+    flex: 1;
+  }
+  
+  .relationship {
+    padding-left: 350px;
+  }
+  
+  .header_bottom_right {
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+  
+  .section,
+  header {
+    break-inside: avoid;
+  }
+  
+  /* section 2 - dependants*/
+  
+  .section_2_heading_container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* section 3 - giftbox */
+  
+  .giftBox {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+  }
+  
+  .lifeInsurance_table_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px !important;
+  }
+  
+  .life_insurance_table {
+    border: 1px solid lightgray;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .life_insurance_table > tr > td {
+    width: 50%;
+  }
+  
+  /* section 4 */
+  
+  .section_section_heading {
+    padding: 10px 0px;
+    font-size: 20px;
+  }
+  
+  /* section 10 - business property */
+  
+  .business_asset_property_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .business_asset_property {
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+  }
+  
+  /*  */
+  
+  .business_property_heading {
+    font-size: 18px;
+    margin: 10px 0px;
+  }
+  
+  /*  */
+  .d-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .column-gap-10 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+  }
+  
+  .exclusion_table_container {
+    /* padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    position: relative; */
+
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .beneficiary_table_container {
+    margin-top: 40px;
+
+  }
+  
+  .hide {
+    visibility: hidden;
+  }
+
+  .visibility-none{
+    visibility: hidden;
+}
+  
+  .joint{
+    border: 1px solid #00CE3F;
+    width: max-content;
+    color: #00CE3F;
+    padding: 1px 4px;
+    border-radius: 14px;
+    position: absolute;
+    right: 7px;
+    top: 7px;
+}

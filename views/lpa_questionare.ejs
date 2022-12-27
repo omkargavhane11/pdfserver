@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPA Questionare</title>
+    <link rel="stylesheet" href="./willQ.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">    <title>Plan Selection</title>
+</head>
+<body>
+
+<!-- header  -->
+<header class="header">
+    <div class="header_top">
+        <div class="form_name_div">
+            <span class="form_name">LPA Questionnaire</span>
+        </div>
+    </div>
+    <div class="header_bottom">
+        <div class="header_bottom_left">
+            <p class="key">Client 1</p>
+            <p class="text-22 text-style text-bold">Sherlock Holmes</p>
+        </div>
+        <div class="header_bottom_right">
+            <p class="key">Client 2</p>
+            <p class="text-22 text-style text-bold">Irene Adler</p>
+        </div>
+    </div>
+</header>
+
+<!-- TOP -->
+<div class="section">
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <table>
+        <tr>
+            <td class="key">Is Spouse/Partner to be named first Attorney?</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+        </tr>
+        </table>
+
+        <table>
+        <tr>
+            <td class="key">Select LPA Type <span class="text-small text-italic">(only in case of one LPA)</span></td>
+        </tr>
+        <tr>
+            <td>Property & Financial Affairs</td>
+        </tr>
+        </table>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- ATTORNEYS -->
+<div class="section">
+    <p class="section_heading">Attorneys</p>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="exclusion_table_container">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Full Name</td>
+        </tr>
+        <tr>
+            <td>Name Surname</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Appoint for</td>
+        </tr>
+        <tr>
+            <td>Property & Financial Affairs</td>
+        </tr>
+        </table>
+        </div>
+      
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- REPLACEMENT ATTORNEYS -->
+<div class="section">
+    <p class="section_heading">Replacement Attorneys</p>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="exclusion_table_container">
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Full Name</td>
+        </tr>
+        <tr>
+            <td>Name Surname</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+        <tr>
+            <td class="key">Replacement for</td>
+        </tr>
+        <tr>
+            <td>Property & Financial Affairs</td>
+        </tr>
+        </table>
+        </div>
+      
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- If appointing more than one attorney, how are they to act? -->
+<div class="section">
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="text-big text-bold">If appointing more than one attorney, how are they to act?</div>
+
+        <table class="">
+        <tr>
+            <td class="key">Property & Financial Affairs</td>
+            <td class="key">Health & Welfare</td>
+        </tr>
+        <tr>
+            <td>Jointly & Severally</td>
+            <td>Jointly & Severally</td>
+        </tr>
+        </table>
+
+        <!-- Q1 -->
+        <table class="">
+            <tr>
+                <td class="key">Are there any conditions on appointment of Attorneys?</td>
+            </tr>
+            <tr>
+                <td>Something</td>
+            </tr>
+        </table>
+
+        <!-- Q2 -->
+        <table class="">
+            <tr>
+                <td class="key">Are there any restrictions on appointment of Attorneys?</td>
+            </tr>
+            <tr>
+                <td>Something</td>
+            </tr>
+        </table>
+
+        <!-- Q3 -->
+        <table class="">
+            <tr>
+                <td class="key">Is there any guidance to the Attorneys?</td>
+            </tr>
+            <tr>
+                <td>Something</td>
+            </tr>
+        </table>
+
+        <!-- Q4 -->
+        <table class="">
+            <tr>
+                <td class="key">Are the Attorneys to be paid?</td>
+            </tr>
+            <tr>
+                <td>Something</td>
+            </tr>
+        </table>
+
+        
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- PEOPLE TO BE TOLD -->
+<div class="section">
+    <div class="section_heading">
+        <div class="text-big text-green text-bold">People to be told 
+        <span class="text-normal">
+            (optional) 
+        </span>
+        </div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="exclusion_table_container">
+
+        <table class="">
+        <tr>
+            <td class="key">Full Name</td>
+        </tr>
+        <tr>
+            <td>Name Surname</td>
+        </tr>
+        </table>
+        </div>
+
+        <table class="">
+            <tr>
+                <td class="key">Notes</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, deleniti in accusantium illum at, debitis porro aliquam atque soluta odit esse! Saepe sequi obcaecati architecto ipsa ea nesciunt non deserunt.</td>
+            </tr>
+        </table>
+      
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- CERTIFICATE PROVIDER DETAILS -->
+<div class="section">
+    <div class="section_heading">
+        <div class="text-big text-green text-bold">Certificate Provider Details
+        </div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <!-- Q1 -->
+        <table class="">
+            <tr>
+                <td class="key">For Property & Financial Affairs</td>
+            </tr>
+            <tr>
+                <td>Jane Doe</td>
+            </tr>
+        </table>
+
+        <!-- Q2 -->
+        <table class="">
+            <tr>
+                <td class="key">For Health & Welfare</td>
+            </tr>
+            <tr>
+                <td>Full Name</td>
+            </tr>
+        </table>
+
+        <!-- Q3 -->
+        <table class="">
+            <tr>
+                <td class="key">Reason to appoint someone else</td>
+            </tr>
+            <tr>
+                <td>Full Name</td>
+            </tr>
+        </table>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- DECLARATION -->
+<div class="section">
+    <div class="mx-20 py-20">
+    <div class="declaration_container">
+        <div class="checkbox">✔</div>
+        <div class="text-bold text-big">I hereby declare that, in my opinion, the donor has the capacity to create a Lasting Power of Attorney in accordance with s.2 of the Mental capacity Act 2005 and under Banks V Goodfellow 1871
+        </div>
+    </div>
+
+    <div class="flex-row gap-50">
+        <div class="signature_container flex-column gap-10">
+            <div class="key">Signature to declare Donor 1</div>
+            <div class="signature_box"></div>
+        </div>
+        <div class="signature_container flex-column gap-10">
+            <div class="key">Signature to declare Donor 2</div>
+            <div class="signature_box"></div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">    <title>Plan Selection</title>
+    <link rel="stylesheet" href="./planselection.css">
+
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header text-small text-bold">Plan Selection</div>
+
+    <!-- INHERITANCE TAX section -->
+    <div class="type">
+        <div class="type_header">Inheritance Tax</div>
+
+        <div class="section">
+            <div class="section_child">
+            <div class="text">You will need to pay ineritance tax at rate of 40% on the portion of the estate that exceeds:</div>
+            <table class="section_table">
+                <thead>
+                    <tr>
+                        <td class="key">For Individuals</td>
+                        <td class="key">For Couple</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="">&#163 325k</td>
+                        <td class="">&#163 650k</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+
+            <div class="section_child">
+                <div class="text">Property owners, on elected property can claim the additional residential nil rate band up to a value of:</div>
+                <table class="section_table">
+                    <tr>
+                        <td class="key">For Individuals</td>
+                        <td class="key">For Couple</td>
+                    </tr>
+                    <tr>
+                        <td class="">&#163 175k</td>
+                        <td class="">&#163 350k</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- potential liability -->
+        <div class="section">
+            <div class="section_heading">Potential Liability</div>
+            <div class="section_child my-10">
+                <div class="text w-95">The calculation below identify potential IHT liability on your estate</div>
+                <div class="text w-95">This calculation cannot take into account any potential tax relief that may be available in certain types of assets e.g. EIS/VCT.</div>
+                <div class="text w-95">Therefore, there may be some assets included in these calculations that will not be subject to IHT due to planning that cannot be, or has not been, verified but that you have already undertaken.</div>
+            </div>
+            <table class="section_table_full">
+                <thead>
+                    <tr>
+                        <td class="width-30p"></td>
+                        <% plan_selection_data.data.parties.forEach(function(item){ %>
+                            <td class="text-right text-bold text-green" colspan="2"><%= item.firstName %> <%= item.lastName %></td>
+                            <td></td>
+                        <%});%>
+                    </tr>
+                    <tr>
+                        <td class="width-30p"></td>
+                        <% plan_selection_data.data.parties.forEach(function(item){ %>
+                        <td class="text-right text-small text-green">Now</td>
+                        <td class="text-right text-small text-green">Future</td>
+                        <%});%>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Net Worth</td>
+                        <td class="text-right">£1,75,000.00</td>
+                        <td class="text-right text-bold">£1,75,000.00</td>
+                        <td class="text-right">£1,75,000.00</td>
+                        <td class="text-right text-bold">£1,75,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Potentially Exempt From IHT</td>
+                        <td class="text-right">£1,75,000.00</td>
+                        <td class="text-right text-bold">£1,75,000.00</td>
+                        <td class="text-right">£1,75,000.00</td>
+                        <td class="text-right text-bold">£1,75,000.00</td>
+                    </tr><tr>
+                        <td>Liable for IHT</td>
+                        <td class="text-right">£1,75,000.00</td>
+                        <td class="text-right text-bold">£1,75,000.00</td>
+                        <td class="text-right">£1,75,000.00</td>
+                        <td class="text-right text-bold">£1,75,000.00</td>
+                    </tr><tr>
+                        <td>Potential IHT Liability</td>
+                        <td class="text-right">£1,75,000.00</td>
+                        <td class="text-right text-bold">£1,75,000.00</td>
+                        <td class="text-right">£1,75,000.00</td>
+                        <td class="text-right text-bold">£1,75,000.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="column">
+                <div class="text text-green">Does the client want to investigate the mitigation of IHT?</div>
+                <div class="text-bold">
+                    <% if(plan_selection_data.data.selectedPlan.inheritanceTax.investigateMitigationIHT === true){%>
+                        Yes
+                    <%}else{%>
+                        No
+                    <% }%>
+                </div>
+            </div>
+        </div>
+
+        <!-- reducing financial burden -->
+        <div class="section">
+            <div class="section_heading">Reducing financial burden and making a provision</div>
+            <table class="section_table_full">
+                    <tr>
+                        <td></td>
+                        <td class="text-small text-green text-center">Cost</td>
+                        <td class="text-small text-green text-center">Make Provision</td>
+                    </tr>
+                    <tr>
+                        <td class="w-90">Cost of deputyship should clients suffer a loss of capacity</td>
+                        <td class="text-center">&#163 <%= plan_selection_data.data.selectedPlan.inheritanceTax.provision.averageDeputyship.cost.toLocaleString() %></td>
+                        <td class="text-center">Yes</td>
+                    </tr>
+                    <tr>
+                        <td class="w-90">Cost of professional fees for final probate based on 2% of Estate Value</td>
+                        <td class="text-center">&#163 <%= plan_selection_data.data.selectedPlan.inheritanceTax.provision.professionalFees.cost.toLocaleString() %></td>
+                        <td class="text-center">Yes</td>
+                    </tr>
+                    <tr>
+                        <td class="w-90">Cost of probate based on an estimated fixed fee</td>
+                        <td class="text-center text-underline">&#163 <%= plan_selection_data.data.selectedPlan.inheritanceTax.provision.costOfProbate.cost.toLocaleString() %></td>
+                        <td class="text-center">Yes</td>
+                    </tr>
+                    <tr>
+                        <td class="w-90">Funeral Costs</td>
+                        <td class="text-center">&#163 <%= plan_selection_data.data.selectedPlan.inheritanceTax.provision.averageFuneral.cost.toLocaleString() %></td>
+                        <td class="text-center">Yes</td>
+                    </tr>
+                    <tr>
+                        <td class="w-90">Should there be any additional funds made immediately available to beneficiaries?</td>
+                        <td class="text-center text-underline">&#163 <%= plan_selection_data.data.selectedPlan.inheritanceTax.provision.additionalFunds.cost.toLocaleString() %></td>
+                        <td class="text-center">Yes</td>
+                    </tr>
+                    <tr class="">
+                        <td class="text-green w-90">How much cost could the estate be subjected to & what would need to be removed from the estate to provide instant access for beneficiaries</td>
+                        <td class="text-bottom text-green text-center text-bold">&#163 <%= plan_selection_data.data.selectedPlan.inheritanceTax.provision.totalCostOfEstate.toLocaleString() %></td>
+                        <td class="text-center"></td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+
+    
+    <!-- WHAT IF ? -->
+    <div class="type">
+
+        <div class="type_header">What If...?</div>
+
+        <div class="section">
+            <!-- Does the client have their own "What if?" -->
+            <table class="w-100 pr-30">
+                <thead></thead>
+                <tbody>
+                <tr>
+                    <td>Does the client have their own "What if?"</td>
+                    <td class="text-right">
+                    <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.haveOwnWhatIf.status){ %>
+                        Yes 
+                    <%}else{%>
+                        No  
+                    <% }%>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            <!-- Protection against the marriage or re-marriage of you -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Protection against the marriage or re-marriage of you</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.marriageOrRemarriageProtection.status){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Protection if a beneficiary were to die prematurely -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Protection if a beneficiary were to die prematurely</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.prematureDeathProtection.status){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Protection against the marriage or divorce of a beneficiary -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Protection against the marriage or divorce of a beneficiary</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.prematureDeathProtection){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Protect a beneficiary if they were to suffer financial hardship -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Protect a beneficiary if they were to suffer financial hardship</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.financialBeneficiaryProtection){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Protect a beneficiary who is on or becomes reliant on state benefits from financial loss -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Protect a beneficiary who is on or becomes reliant on state benefits from financial loss</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.financialLossBeneficiaryProtection.status){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Control how and when a beneficiary receives their inheritance -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Control how and when a beneficiary receives their inheritance</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Help to prevent generational IHT -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Help to prevent generational IHT</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.preventGenerationalIHT){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Provide heirs with instant access to inheritance -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Provide heirs with instant access to inheritance</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.heirsProvideWithInheritance){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Avoid/reduce the costs of Probate -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Avoid/reduce the costs of Probate</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.avoidOrReduceProbateCost){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Opportunity to reduce IHT -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Opportunity to reduce IHT</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.reduceIHT){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Reduce the burden of meeting IHT liability -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Reduce the burden of meeting IHT liability</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.reduceIHTLiabilityBurden){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+             <!-- Prevent anyone excluded from making a successful claim on part or, all of your Estate -->
+             <table class="w-100 pr-30">
+                <tr>
+                    <td>Prevent anyone excluded from making a successful claim on part or, all of your Estate</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.excludeClaimOrEstatePrevention){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Enable a trusted person to take over your financial affairs -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Enable a trusted person to take over your financial affairs</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.financialAffairsTakeOver){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+            <!-- Enable a trusted person to take over your health & welfare -->
+            <table class="w-100 pr-30">
+                <tr>
+                    <td>Enable a trusted person to take over your health & welfare</td>
+                    <td>
+                        <td class="text-right">
+                            <% if(plan_selection_data.data.selectedPlan.whatIf.questionaire.healthAndWelfareTakeOver){ %>
+                                Yes 
+                            <%}else{%>
+                                No  
+                            <% }%>
+                            </td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section_heading text-green text-bold">Who would you trust and wish to rely upon?</div>
+            <table class="section_table_full">
+                <thead>
+                    <tr class="w-40">
+                        <td></td>
+                        <% plan_selection_data.data.parties.forEach(function(item, index){ %>
+                            <!-- something -->
+                            <td class="text-green">Client <%= index+1 %></td>
+                        <%});%>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="w-40">
+                        <td class="pb-10">Should you suffer a loss of capacity</td>
+                        <% plan_selection_data.data.selectedPlan.whatIf.replyUpon.lossOfCapacity.forEach(function(item, index){ %>
+                            <!-- something -->
+                            <td class="pb-10"><%= item.name %></td>
+                        <%});%>
+                    </tr>
+                    <tr class="w-40">
+                        <td class="pb-10">To oversee your inheritance wishes</td>
+                        <% plan_selection_data.data.selectedPlan.whatIf.replyUpon.ToOverseeInheritanceWishes.forEach(function(item, index){ %>
+                            <!-- something -->
+                            <td class="pb-10"><%= item.name %></td>
+                        <%});%>
+                        </tr>   
+                    <tr class="w-40">
+                        <td class="pb-10">To look after your dependants</td>
+                        <% plan_selection_data.data.selectedPlan.whatIf.replyUpon.ToLookAfterDependants.forEach(function(item, index){ %>
+                            <!-- something -->
+                            <td class="pb-10"><%= item.name %></td>
+                        <%});%>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- CREATING PLAN -->
+
+
+     <!-- PLANS & PRICING -->
+     <div class="type">
+        <div class="type_header">Plans & Pricing</div>
+
+        <div class="section">
+            <div class="section_header">
+                <div class="section_style_heading_pp">Selected Plan</div>
+                <div class="text-big text-green">Legacy Plan 4</div>
+                <div class="text-green">Last Will & Testament Trust(s), Property & Affairs LPA(s), Health & Welfare LPA(s)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section_top">
+                <div class="section_style_heading">Summary & Financial Considerations</div>
+            </div>
+
+            <!-- legacy -->
+            <!-- <div class="sub_section">
+                <div class="sub_section_heading text-green my-10">Legacy Plan</div>
+                <div class="sub_section_content my-10">
+                    <div class="sub_section_item text-green text-small my-10">Particulars</div>
+                    <div class="sub_section_item text-green text-small my-10">Cost</div>
+                </div>
+                <div class="sub_section_content_wrapper">
+                    <% plan_selection_data.data.selectedPlan.plansAndPricing.individualProducts.forEach(function(item){%>
+                    <div class="sub_section_content">
+                    <div class="sub_section_item"><%= item.particulars%></div>
+                    <div class="sub_section_item text-bold"><%= item.cost%></div>
+                    </div>
+                    <%});%>
+                </div>
+            </div> -->
+
+            <!-- individual products -->
+            <div class="sub_section">
+                <div class="sub_section_heading text-green">Individual Products</div>
+                <div class="sfc_individualProducts mt-10">
+                    <div class="sub_section_item text-green flex-4 text-small my-10">Product</div>
+                    <div class="sub_section_item text-green flex-1 text-small my-10">Price</div>
+                    <div class="sub_section_item text-green flex-1 text-small my-10">Quantity</div>
+                    <div class="sub_section_item text-green flex-15 text-small my-10">Cost</div>
+                </div>
+                <div class="sub_section_content_wrapper">
+                    <% plan_selection_data.data.selectedPlan.plansAndPricing.individualProducts.forEach(function(item){%>
+                    <div class="sfc_individualProducts">
+                    <div class="sub_section_item flex-4"><%= item.product%></div>
+                    <div class="sub_section_item flex-1"><%= item.price%></div>
+                    <div class="sub_section_item flex-1"><%= item.quantity%></div>
+                    <div class="sub_section_item flex-15"><%= item.cost%></div>
+                    </div>
+                    <%});%>
+                </div>
+            </div>
+
+             <!-- lasting power of attorney -->
+             <div class="sub_section">
+                <div class="sub_section_heading text-green">Lasting Power of Attorney</div>
+                <div class="sfc_individualProducts mt-10">
+                    <div class="sub_section_item text-green flex-4 text-small my-10">LPAs to be registered to</div>
+                    <div class="sub_section_item text-green flex-1 text-small my-10">Discount</div>
+                    <div class="sub_section_item text-green flex-1 text-small my-10">Quantity</div>
+                    <div class="sub_section_item text-green flex-15 text-small my-10">Disbursement</div>
+                </div>
+                <div class="sub_section_content_wrapper">
+                    <% plan_selection_data.data.selectedPlan.plansAndPricing.powersOfAttorney.forEach(function(item){%>
+                    <div class="sfc_individualProducts">
+                    <div class="sub_section_item flex-4"><%= item.name%></div>
+                    <div class="sub_section_item flex-1"><%= item.discount%></div>
+                    <div class="sub_section_item flex-1"><%= item.quantity%></div>
+                    <div class="sub_section_item flex-15"><%= item.disbursement%></div>
+                    </div>
+                    <%});%>
+                </div>
+                <div class="my-15">If remission or exemption has been selected, please check clients eligibility.</div>
+            </div>   
+            
+            
+            <!-- fee structure -->
+            <div class="sub_section">
+                <div class="sub_section_heading text-green">Fee Structure</div>
+                <div class="sfc_individualProducts mt-10 text-small">
+                    <div class="sub_section_item text-green flex-2 text-small my-10">Particulars</div>
+                    <div class="sub_section_item text-green flex-1 text-right text-small my-10">Cost</div>
+                </div>
+                <div class="sub_section_content_wrapper">
+                    
+                    <div class="sfc_individualProducts">
+                        <div class="sub_section_item flex-2">Standard fees</div>
+                        <div class="sub_section_item flex-1 text-right">£ <%= plan_selection_data.data.selectedPlan.plansAndPricing.feeStructure.standardFees.toLocaleString() %></div>
+                    </div>
+                    <div class="sfc_individualProducts">
+                        <div class="sub_section_item flex-2">Discount</div>
+                        <div class="sub_section_item flex-2 border-bottom">Other</div>
+                        <div class="sub_section_item flex-2 border-bottom">Note</div>
+                        <div class="sub_section_item flex-1 text-right">£ <%= plan_selection_data.data.selectedPlan.plansAndPricing.feeStructure.discount.cost.toLocaleString() %></div>
+                    </div>
+                    <div class="sfc_individualProducts">
+                        <div class="sub_section_item flex-2">VAT</div>
+                        <div class="sub_section_item flex-1 text-right">£ <%= plan_selection_data.data.selectedPlan.plansAndPricing.feeStructure.vat.toLocaleString() %></div>
+                    </div>
+                    <div class="sfc_individualProducts">
+                        <div class="sub_section_item flex-2">Total Costs</div>
+                        <div class="sub_section_item flex-1 text-right">£ <%= plan_selection_data.data.selectedPlan.plansAndPricing.feeStructure.totalCost.toLocaleString() %></div>
+                    </div>
+
+                </div>
+            </div>
+
+             <!-- final payment -->
+             <div class="my-10">
+                <div class="plan_selection_payment">
+                    <div class="sub_section_item text-bigger text-green">Payment to Squiggle</div>
+                    <div class="sub_section_item text-bigger text-green">£3,107.00</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+   
+
+</body>
+</html>

@@ -1,0 +1,444 @@
+*{
+    font-family: 'Crimson Text', serif;
+    font-family: 'Poppins', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    color: #3D4740;
+    font-size: 16px;
+}
+
+body{
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header{
+   text-align: center;
+}
+    
+.type{
+    padding-top : 30px;
+}
+
+.type_header{
+    margin: 20px 0px;
+    font-size: 22px;
+    font-weight: 550;
+    text-align: center;
+    color: #fff;
+    background-color: #00CE3F;
+}
+
+.section{
+    margin: 20px 0px;
+}
+
+.sub_section{
+    margin: 40px 0px;
+    padding: 0px 8%;
+}
+
+.section_child{
+    margin: 0px 0px;
+    padding: 0px 0%;
+    font-size: 16px;
+}
+
+.section_heading {
+    color: #00CE3F;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 15px 0px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+tbody > tr > td {
+    padding-bottom: 20px;
+}
+
+.section_table_full{
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.section_table{
+    margin: 10px 0px;
+}
+
+.key{
+    color: #00CE3F;
+    padding-right: 30px;
+}
+
+.text{
+    margin-bottom: 10px;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.w-95{
+    width: 95%;
+}
+.w-90{
+    width: 70%;
+    padding-right: 10px;
+}
+
+.w-40{
+    padding: 10px 0px;
+}
+
+.w-40 > td{
+    width: 30%;
+    padding: 0px 10px;
+}
+
+.width-20p{
+    width: 20%;
+}
+
+
+.width-30p{
+    width: 30%;
+}
+
+.width-40p{
+    width: 40%;
+}
+
+.width-50p{
+    width: 50%;
+}
+
+
+.text-right{
+    text-align: right;
+}
+
+.text-bottom{
+    text-align: end;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-underline{
+    text-decoration: underline;
+    margin: 0px 10px;
+}
+
+.border-bottom{
+    border-bottom: 0.5px solid grey;
+    margin: 0px 10px;
+}
+
+.align-top{
+    vertical-align: top;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-16p{
+    font-size: 16px;
+}
+
+.text-small{
+   font-size: 12px;
+}
+
+.text-bigger{
+    font-size: 22px;
+}
+
+.text-green{
+    color: #00CE3F;
+}
+
+.text-black{
+    color: #3D4740;
+}
+
+.text-big{
+    font-size: 22px;
+}
+
+.text-bold{
+    font-weight:600;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.mb-5{
+    margin-bottom: 5px;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.my-15{
+    margin: 15px 0px;
+}
+
+.my-10{
+    margin: 10px 0px;
+}
+
+.mx-10{
+    margin: 0px 10px;
+}
+
+.px-8p{
+    padding: 0px 8% !important;
+}
+
+.pb-10{
+    padding-bottom: 10px;
+}
+
+.pr-30{
+    padding-right: 30px;
+}
+
+.section_top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.section_style_heading{
+    font-size: 24px;
+    font-family: 'Crimson Text', serif;
+    font-weight: bolder;
+    width: 55%;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.section_bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section_verybottom{
+    text-align: center;
+    margin: 0px 10%;
+    padding: 20px 0px;
+}
+
+
+.square{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+    gap: 0px;
+    height: 210px;
+    width: 170px;
+    border-radius: 16px;
+    background-color: #E5FAEB;
+    color: #00CE3F;
+    text-align: center;
+    padding:20px 20px;
+}
+
+.square_heading{
+    color: #00CE3F;
+    font-size: 22px;
+}
+
+.square_bottom{
+    height: 150px;
+    vertical-align: top;
+}
+
+.rectangle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 150px;
+    width: 40%;
+    border-radius: 16px;
+    background-color: #E5FAEB;
+    color: #00CE3F;
+    padding: 15px;
+    gap: 10px;
+}
+
+.plan{
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.plan_item{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    padding: 5px 0px;
+    justify-content: space-between;
+    border-bottom: 0.5px solid lightgray;
+}
+
+
+.plan_text{
+    width: 80%;
+}
+
+.plan_checks{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+
+.plan_boolean,.plan_tick{
+    width: 60px;
+    height: 100%;
+    text-align: center;
+}
+
+.plan_boolean_text-small_center_green{
+    width: 60px;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00CE3F !important;
+    flex:1;
+}
+
+.plan_boolean_text-small_center_red{
+    width: 60px;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF0000 !important;
+    flex:1;
+}
+
+.plan_tick_center_green{
+    width: 60px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00CE3F !important;
+    flex:1;
+}
+
+.plan_tick_center_red{
+    width: 60px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red !important;
+    flex:1;
+}
+
+.color-red{
+    color: red !important;
+}
+
+.color-green{
+    color: rgb(1, 253, 1) !important;
+}
+
+.section_header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E5FAEB;
+    gap: 10px;
+    padding: 20px;
+}
+
+.section_style_heading_pp{
+    font-size: 24px;
+    font-family: 'Crimson Text', serif;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.sub_section_content_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.sub_section_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sfc_individualProducts{
+    display: flex;
+    align-items: center;
+}
+
+
+.flex-1{
+    flex:1;
+    text-align: right;
+}
+
+.flex-15{
+    flex:1.5;
+    text-align: right;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+.flex-13{
+    flex: 1.3;
+}
+
+.flex-2{
+    flex: 2;
+}
+
+.flex-3{
+    flex: 3;
+}
+
+.flex-4{
+    flex: 4;
+}
+
+.plan_selection_payment{
+    background-color: #E5FAEB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 8%;
+}
+

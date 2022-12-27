@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Questionare</title>
+    <link rel="stylesheet" href="./willQ.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">    <title>Plan Selection</title>
+</head>
+<body>
+
+<!-- header  -->
+<header class="header">
+    <div class="header_top">
+        <div class="form_name_div">
+            <span class="form_name">Will Questionnaire</span>
+        </div>
+    </div>
+    <div class="header_bottom">
+        <div class="header_bottom_left">
+            <p class="key">Client 1</p>
+            <p class="value text-style text-bold">Sherlock Holmes</p>
+        </div>
+        <div class="header_bottom_right">
+            <p class="key">Client 2</p>
+            <p class="value text-style text-bold">Irene Adler</p>
+        </div>
+    </div>
+</header>
+
+<!-- TESTATORS section -->
+<div class="section">
+    <p class="section_heading">Testators</p>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <table>
+        <tr>
+            <td class="key">Testator <%= index + 1 %></td>
+        </tr>
+        <tr>
+            <td>Sherlock Holmes</td>
+        </tr>
+        </table>
+
+        <table>
+        <tr>
+            <td class="key">Do you wish your Spouse/partner to be an Executor/Trustee?</td>
+        </tr>
+        <tr>
+            <td>Jointly</td>
+        </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td class="key">Marriage Clause</td>
+            </tr>
+            <tr>
+                <td>No</td>
+            </tr>
+        </table>
+
+        </div>
+        <%});%>
+
+
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- EXECUTORS & TRUSTEES -->
+<div class="section">
+    <p class="section_heading">Executors & Trustees</p>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="exclusion_table_container">
+        <% if(index === 0 && factfindData.length === 2){%>
+            <div class="joint text-small">Joint</div>
+        <%}else{%>
+            <div class="joint text-small visibility-none">Joint</div>
+        <% }%>
+        <table class="">
+        <tr>
+            <td class="key">Full Name</td>
+        </tr>
+        <tr>
+            <td>Sherlock Holmes</td>
+        </tr>
+        </table>
+        <table>
+        <tr>
+            <td class="key">Role</td>
+        </tr>
+        <tr>
+            <td>Reserve Executor</td>
+        </tr>
+        </table>
+        </div>
+      
+        </div>
+        <%});%>
+
+
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- PERSONAL EXECUTOR -->
+<div class="section">
+    <p class="section_heading">Professional Executor</p>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <table class="">
+        <tr>
+            <td class="key">Select Executor</td>
+            <td class="key">Mention Full Name</td>
+        </tr>
+        <tr>
+            <td>Other</td>
+            <td>Sherlock Holmes</td>
+        </tr>
+        </table>
+
+        <table>
+        <tr>
+            <td class="key" colspan="2">Address</td>
+        </tr>
+        <tr>
+            <td colspan="2">Some random address</td>
+        </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td class="key" colspan="2">Are you aware of fees?</td>
+            </tr>
+            <tr>
+                <td colspan="2">Yes</td>
+            </tr>
+        </table>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- GUARDIANS (on second death) -->
+<div class="section">
+    <div class="section_heading">
+        <div class="text-big text-green text-bold">Guardians 
+        <span class="text-small text-normal">
+            (on second death)
+        </span>
+        </div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="exclusion_table_container">
+        <% if(index === 0 && factfindData.length === 2){%>
+            <div class="joint text-small">Joint</div>
+        <%}else{%>
+            <div class="joint text-small visibility-none">Joint</div>
+        <% }%>
+        <table class="">
+        <tr>
+            <td class="key">Guardian 1</td>
+        </tr>
+        <tr>
+            <td>Sherlock Holmes</td>
+        </tr>
+        </table>
+        <table class="">
+            <tr>
+                <td class="key">Going to act:</td>
+            </tr>
+            <tr>
+                <td>Jointly</td>
+            </tr>
+            </table>
+        <table>
+        <tr>
+            <td class="key">Guardian For</td>
+        </tr>
+        <tr>
+            <td>Amy, Tim, James</td>
+        </tr>
+        </table>
+        </div>
+      
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- Chattels and Gifts / Specific Legacies -->
+<div class="section">
+    <p class="section_heading">Chattels and Gifts / Specific Legacies</p>
+    <div class="section_sub">
+        <div class="section_sub_heading mb-5">Expression of Wishes</div>
+        <div class="section_sub_text">You may leave your chattels and personal items “to be distributed according to any expression of wishes”. Your Trustees will then carry out your wishes as directed.</div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="exclusion_table_container">
+        <% if(index === 0 && factfindData.length === 2){%>
+            <div class="joint text-small">Joint</div>
+        <%}else{%>
+            <div class="joint text-small visibility-none">Joint</div>
+        <% }%>
+        <table class="">
+        <tr>
+            <td class="key">Recipient Name</td>
+        </tr>
+        <tr>
+            <td>John Watson</td>
+        </tr>
+        </table>
+        <table class="">
+        <tr>
+            <td class="key">Relationship</td>
+        </tr>
+        <tr>
+            <td>Son</td>
+        </tr>
+        </table>
+        <table>
+        <tr>
+            <td class="key">Gift Details</td>
+        </tr>
+        <tr>
+            <td>Some random gift details</td>
+        </tr>
+        </table>
+        <table>
+        <tr>
+            <td class="key">Per Stirpes</td>
+            <td class="key">On death of</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+            <td>T1</td>
+        </tr>
+        </table>
+        </div>
+      
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- MONETARY LEGACIES -->
+<div class="section">
+    <p class="section_heading">Monetary Legacies</p>
+
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <div class="exclusion_table_container">
+            <% if(index === 0 && factfindData.length === 2){%>
+                <div class="joint text-small">Joint</div>
+            <%}else{%>
+                <div class="joint text-small visibility-none">Joint</div>
+            <% }%>
+        <table class="">
+        <tr>
+            <td class="key">Recipient Name</td>
+        </tr>
+        <tr>
+            <td>John Watson</td>
+        </tr>
+        </table>
+        <table class="">
+        <tr>
+            <td class="key">Relationship</td>
+        </tr>
+        <tr>
+            <td>Son</td>
+        </tr>
+        </table>
+        <table>
+        <tr>
+            <td class="key">Gift Details</td>
+        </tr>
+        <tr>
+            <td>Some random gift details</td>
+        </tr>
+        </table>
+        <table>
+        <tr>
+            <td class="key">Per Stirpes</td>
+            <td class="key">On death of</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+            <td>T1</td>
+        </tr>
+        </table>
+        </div>
+      
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- WILL TRUSTS -->
+<div class="section">
+    <p class="section_heading">Will Trusts</p>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        <table class="">
+        <tr>
+            <td class="key">Reason for establishing the Will Trust</td>
+        </tr>
+        <tr>
+            <td>Some random reason</td>
+        </tr>
+        </table>
+
+        <table class="">
+        <tr>
+            <td class="key">Does the client wish to include a clause in their Will to preserve their Residence Nil Rate Band ?</td>
+        </tr>
+        <tr>
+            <td>Yes</td>
+        </tr>
+        </table>
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- FLEXIBLE LIFE INTRESTS -->
+<div class="section">
+    <div class="flex-row-sb">
+        <div class="section_sub">
+            <div class="section_heading">
+            <div class="text-big text-bold">Flexible Life Interest Trust “FLIT” 
+            <span class="text-small text-normal">
+                (Recommended if the client have their own "What if...?")
+            </span>
+            </div>
+            <div class="key mt-10">Giving a person a right to reside for a set period of time after death of both parents.
+            </div>
+            </div>
+        </div>
+        <div class="text-green mr-30">Yes</div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <table class="">
+        <tr>
+            <td class="key" colspan="2">Name of Life Tenant</td>
+        </tr>
+        <tr>
+            <td colspan="2">John Watson</td>
+        </tr>
+        </table>
+
+        <table class="">
+        <tr>
+            <td class="key" colspan="2">Life Interest to cease upon</td>
+        </tr>
+        <tr class="">
+            <td class="pb-8">Death of Life Tenant</td>
+            <td class="text-center pb-8">Yes</td>
+        </tr>
+        <tr class="">
+            <td class="pb-8">Specific Age</td>
+            <td class="text-center pb-8">23</td>
+        </tr>
+        <tr class="">
+            <td class="pb-8">Marriage/Remarriage</td>
+            <td class="text-center pb-8">Yes</td>
+        </tr>
+        <tr class="">
+            <td class="pb-8">Cohabitation with new partner</td>
+            <td class="text-center pb-8">Yes</td>
+        </tr>
+        </table>
+
+        <div class="exclusion_table_container">
+        <table class="mb-10">
+        <tr>
+            <td class="key">Ultimate Beneficiary 1</td>
+        </tr>
+        <tr>
+            <td>Some random gift details</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+            <tr>
+                <td class="key">Ultimate Beneficiary 1</td>
+            </tr>
+            <tr>
+                <td>Some random gift details</td>
+            </tr>
+        </table>
+
+        <table class="">
+            <tr>
+                <td class="key">Per Stirpes</td>
+                <td class="key px-5">Age of Inheritance</td>
+                <td class="key">Percentage Share</td>
+            </tr>
+            <tr>
+                <td class="">Yes</td>
+                <td class="px-5 text-center">18</td>
+                <td class="text-center">39%</td>
+            </tr>
+        </table>
+        </div>
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- Residuary Discretionary Trust -->
+<div class="section">
+    <div class="flex-row-sb">
+    <div class="section_sub">
+        <div class="section_heading">
+        <div class="text-big text-bold">Residuary Discretionary Trust</div>
+        </div>
+    </div>
+    <div class="text-green mr-30">Yes</div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <!--  -->
+        <div class="exclusion_table_container">
+        <table class="mb-10">
+        <tr>
+            <td class="key">Ultimate Beneficiary 1</td>
+        </tr>
+        <tr>
+            <td>Some random gift details</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+            <tr>
+                <td class="key">Ultimate Beneficiary 1</td>
+            </tr>
+            <tr>
+                <td>Some random gift details</td>
+            </tr>
+        </table>
+
+        <table class="">
+            <tr>
+                <td class="key">Per Stirpes</td>
+                <td class="key px-5">Age of Inheritance</td>
+                <td class="key">Percentage Share</td>
+            </tr>
+            <tr>
+                <td class="">Yes</td>
+                <td class="px-5 text-center">18</td>
+                <td class="text-center">39%</td>
+            </tr>
+        </table>
+        </div>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- Severance of Tenancy / Deed of Severance -->
+<div class="section">
+    <div class="flex-row-sb">
+    <div class="section_sub">
+        <div class="section_heading">
+        <div class="text-big text-bold">Severance of Tenancy / Deed of Severance</div>
+        </div>
+    </div>
+    <div class="text-green mr-30">Yes</div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <!--  -->
+        <div class="exclusion_table_container">
+        <table class="mb-10">
+        <tr>
+            <td class="key" colspan="2">Property</td>
+        </tr>
+        <tr>
+            <td colspan="2">Address Line 1</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+            <tr>
+                <td class="key">Title number of property</td>
+                <td class="key">Percentage Share</td>
+            </tr>
+            <tr>
+                <td>Some title</td>
+                <td>60%</td>
+            </tr>
+        </table>
+
+        <div>Freehold</div>
+        </div>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- RIGHT TO OCCUPY -->
+<div class="section">
+    <div class="flex-row-sb">
+    <div class="section_sub">
+        <div class="section_heading">
+        <div class="text-big text-bold">Right to Occupy</div>
+        </div>
+    </div>
+    <div class="text-green mr-30">Yes</div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <!--  -->
+        <div class="exclusion_table_container">
+            <% if(index === 0 && factfindData.length === 2){%>
+                <div class="joint text-small">Joint</div>
+            <%}else{%>
+                <div class="joint text-small visibility-none">Joint</div>
+            <% }%>
+        <table class="mb-10">
+        <tr>
+            <td class="key" colspan="2">Property</td>
+        </tr>
+        <tr>
+            <td colspan="2">Address Line 1</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+            <tr>
+                <td class="key" colspan="2">Name of Occupier</td>
+            </tr>
+            <tr>
+                <td colspan="2">Some name of person</td>
+            </tr>
+        </table>
+
+        <table class="">
+            <tr>
+                <td class="key" colspan="2">Do you wish to impose any of the following restrictions?</td>
+            </tr>
+            <tr class="">
+                <td class="pb-15">Payment of all outgoings?</td>
+                <td class="pb-15 text-center">Yes</td>
+            </tr>
+            <tr class="">
+                <td class="pb-15">Death of Life Tenant</td>
+                <td class="pb-15 text-center">Yes</td>
+            </tr>
+            <tr class="">
+                <td class="pb-15">Specific Age</td>
+                <td class="pb-15 text-center">23</td>
+            </tr>
+            <tr class="">
+                <td class="pb-15">Marriage/Remarriage</td>
+                <td class="pb-15 text-center">Yes</td>
+            </tr>
+            <tr class="">
+                <td class="pb-15">Cohabitation with new partner</td>
+                <td class="pb-15 text-center">Yes</td>
+            </tr>
+        </table>
+
+        </div>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+    
+</div>
+
+<!-- Property Protection Trust (PPT) -->
+<div class="section">
+    <div class="flex-row-sb">
+    <div class="section_sub">
+        <div class="section_heading">
+        <div class="text-big text-bold">Property Protection Trust (PPT)
+        </div>
+        <div class="key mt-10">To prevent redistribution of assets on 1st death</div>
+        </div>
+    </div>
+    <div class="text-green mr-30">Yes</div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <!--  -->
+        <div class="exclusion_table_container">
+            <% if(index === 0 && factfindData.length === 2){%>
+                <div class="joint text-small">Joint</div>
+            <%}else{%>
+                <div class="joint text-small visibility-none">Joint</div>
+            <% }%>
+        <table class="mb-10">
+        <tr>
+            <td class="key" colspan="2">Property</td>
+        </tr>
+        <tr>
+            <td colspan="2">Address Line 1</td>
+        </tr>
+        </table>
+
+        <table class="mb-10">
+            <tr>
+                <td class="key" colspan="2">Name of Life Tenant</td>
+            </tr>
+            <tr>
+                <td colspan="2">Some name of tenant</td>
+            </tr>
+        </table>
+
+        <table class="mb-10">
+            <tr>
+                <td class="key" colspan="2">Do you wish to impose any of the following restrictions?</td>
+            </tr>
+            <tr class="">
+                <td class="pb-15 width-70">Subject to ongoing maintenance & insurance of property?</td>
+                <td class="pb-15 text-right">Yes</td>
+            </tr>
+            <tr class="">
+                <td class="pb-15 width-70">Right to sell and purchase another house in the same trusts?</td>
+                <td class="pb-15 text-right">Yes</td>
+            </tr>
+        </table>
+
+        <table class="mb-10">
+            <tr>
+                <td class="key">Ultimate Beneficiary 1</td>
+            </tr>
+            <tr>
+                <td>Some random gift details</td>
+            </tr>
+        </table>
+
+        <table class="">
+            <tr>
+                <td class="key">Per Stirpes</td>
+                <td class="key px-5">Age of Inheritance</td>
+                <td class="key">Percentage Share</td>
+            </tr>
+            <tr>
+                <td class="">Yes</td>
+                <td class="px-5 text-center">18</td>
+                <td class="text-center">39%</td>
+            </tr>
+        </table>
+
+        </div>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- Disabled Discretionary or Protective / Discretionary Trust -->
+<div class="section">
+    <div class="flex-row-sb">
+    <div class="section_sub">
+        <div class="section_heading">
+            <div class="text-big text-bold">Disabled Discretionary or Protective / Discretionary Trust
+            </div>
+            <div class="key mt-10">For children who are looked after by others / disabled person
+            </div>
+        </div>
+    </div>
+    <div class="text-green mr-30">Yes</div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <table class="mb-10">
+            <tr>
+                <td class="key" colspan="2">Name of Principle Beneficiary</td>
+            </tr>
+            <tr>
+                <td colspan="2">Some name</td>
+            </tr>
+        </table>
+
+        <!--  -->
+        <div class="exclusion_table_container">
+
+            <table class="mb-10">
+                <tr>
+                    <td class="key">Ultimate Beneficiary 1</td>
+                </tr>
+                <tr>
+                    <td>Some random gift details</td>
+                </tr>
+            </table>
+    
+            <table class="">
+                <tr>
+                    <td class="key">Per Stirpes</td>
+                    <td class="key px-5">Age of Inheritance</td>
+                    <td class="key">Percentage Share</td>
+                </tr>
+                <tr>
+                    <td class="">Yes</td>
+                    <td class="px-5 text-center">18</td>
+                    <td class="text-center">39%</td>
+                </tr>
+            </table>
+
+        </div>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- Inheritance Tax Planning: Business / Agricultural Property Relief -->
+<div class="section">
+    <div class="flex-row-sb">
+    <div class="section_sub">
+        <div class="section_heading">
+        <div class="text-big text-bold">Inheritance Tax Planning: Business / Agricultural Property Relief
+        </div>
+        </div>
+    </div>
+    <div class="text-green mr-30">Yes</div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        
+
+        <!--  -->
+        <div class="exclusion_table_container">
+
+            <table class="mb-10">
+                <tr>
+                    <td class="key" colspan="2">Company</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Some name</td>
+                </tr>
+            </table>
+
+            <table class="mb-10">
+                <tr>
+                    <td class="key">Are there any assets which qualify for BPR / APR</td>
+                </tr>
+                <tr>
+                    <td>Yes</td>
+                </tr>
+            </table>
+    
+            <table class="mb-10">
+                <tr>
+                    <td class="key">Trustee 1</td>
+                </tr>
+                <tr>
+                    <td>Some name</td>
+                </tr>
+            </table>
+
+            <table class="mb-10">
+                <tr>
+                    <td class="key">Ultimate Beneficiary 1</td>
+                </tr>
+                <tr>
+                    <td>Some random gift details</td>
+                </tr>
+            </table>
+    
+            <table class="">
+                <tr>
+                    <td class="key">Per Stirpes</td>
+                    <td class="key px-5">Age of Inheritance</td>
+                    <td class="key">Percentage Share</td>
+                </tr>
+                <tr>
+                    <td class="">Yes</td>
+                    <td class="px-5 text-center">18</td>
+                    <td class="text-center">39%</td>
+                </tr>
+            </table>
+        </div>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- RESIDUE OF ESTATE -->
+<div class="section">
+    <div class="section_heading">Residue of Estate</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <table class="mb-10">
+            <tr>
+                <td class="pb-15">Pass to Spouse/Partner?</td>
+                <td class="pb-15">Yes</td>
+            </tr>
+            <tr>
+                <td>And / or then to pass directly to Children / Grandchildren?</td>
+                <td>Yes</td>
+            </tr>
+        </table>
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- BENEFICIARY -->
+<div class="section">
+    <div class="section_sub">
+        <div class="section_heading">
+        <div class="text-big text-bold">Beneficiary
+        </div>
+        </div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        
+        <!--  -->
+        <div class="exclusion_table_container">
+            <% if(index === 0 && factfindData.length === 2){%>
+                <div class="joint text-small">Mirror</div>
+            <%}else{%>
+                <div class="joint text-small visibility-none">Mirror</div>
+            <% }%>
+            <table class="mb-10">
+                <tr>
+                    <td class="key">Beneficiary 1</td>
+                </tr>
+                <tr>
+                    <td>Some random name</td>
+                </tr>
+            </table>
+    
+            <table class="">
+                <tr>
+                    <td class="key">Per Stirpes</td>
+                    <td class="key px-5">Age of Inheritance</td>
+                    <td class="key">Percentage Share</td>
+                </tr>
+                <tr>
+                    <td class="">Yes</td>
+                    <td class="px-5 text-center">18</td>
+                    <td class="text-center">39%</td>
+                </tr>
+            </table>            
+        </div>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- Reserve / Backstop Beneficiries -->
+<div class="section">
+    <div class="section_sub">
+        <div class="section_heading">
+        <div class="text-big text-bold">Reserve / Backstop Beneficiries
+        </div>
+        </div>
+    </div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+        
+        <!--  -->
+        <div class="exclusion_table_container">
+            <% if(index === 0 && factfindData.length === 2){%>
+                <div class="joint text-small">Joint</div>
+            <%}else{%>
+                <div class="joint text-small visibility-none">Joint</div>
+            <% }%>
+            <table class="mb-10">
+                <tr>
+                    <td class="key">Beneficiary 1</td>
+                </tr>
+                <tr>
+                    <td>Some random name</td>
+                </tr>
+            </table>
+    
+            <table class="">
+                <tr>
+                    <td class="key">Per Stirpes</td>
+                    <td class="key px-5">Age of Inheritance</td>
+                    <td class="key">Percentage Share</td>
+                </tr>
+                <tr>
+                    <td class="">Yes</td>
+                    <td class="px-5 text-center">18</td>
+                    <td class="text-center">39%</td>
+                </tr>
+            </table>             
+        </div>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- EXCLUSIONS -->
+<div class="section">
+    <div class="section_top">
+        <p class="section_heading">Exclusions</p>
+    </div>
+    <hr>
+    <div class="table_container">
+    <% factfindData.forEach(function(client){ %>
+
+        <div class=<%= applicationType === "Joint" ? "custom_table_half" : "custom_table" %>>
+
+        <%client.exclusions.forEach(function(dClient,index){ %>
+        <div class="exclusion_table_container">
+            <% if(index === 0 && client.exclusions.length === 2){%>
+                <div class="joint text-small">Joint</div>
+            <%}else{%>
+                <div class="joint text-small visibility-none">Joint</div>
+            <% }%>
+        <table class="mb-10">
+            <tr>
+                <td class="key">Name</td>
+                <td class="key">Gender</td>
+            </tr>
+            <tr>
+                <td><%=dClient.name%></td>
+                <td><%=dClient.gender%></td>
+            </tr>
+        </table>
+        <table class="mb-10">
+            <tr>
+                <td class="key">DOB</td>
+                <td class="key">Relationship</td>
+            </tr>
+            <tr>
+                <td><%=moment(dClient.dob).format('DD/MM/YYYY')%></td>
+                <td><%=dClient.relationship%></td>
+            </tr>
+        </table>
+        <table class="mb-10">
+            <tr>
+                <td class="key" colspan="2">Reason of exclusion</td>
+            </tr>
+            <tr>
+                <td colspan="2"><%=dClient.reasonForExclusion%></td>
+            </tr>
+        </table>
+        </div>
+        <%});%>  
+
+        </div>
+
+    <%});%>
+
+</div>
+    <hr>
+</div>
+
+<!-- BUSINESS INTRESTS -->
+<div class="section">
+    <div class="section_heading">Business Interests</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <table class="mb-10">
+            <tr>
+                <td class="pb-15">Are you including power to carry on business?</td>
+                <td class="pb-15 text-green">Yes</td>
+            </tr>
+        </table>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- FUNERAL WISHES -->
+<div class="section">
+    <div class="section_heading">Funeral Wishes</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <table class="">
+            <tr>
+                <td class="key">Funeral Type</td>
+            </tr>
+            <tr>
+                <td class="">Burial</td>
+            </tr>
+        </table>
+
+        <table class="">
+            <tr>
+                <td class="key">Do you wish to specify any funeral requests?</td>
+            </tr>
+            <tr>
+                <td class="">Some random request</td>
+            </tr>
+        </table>
+
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+<!-- Additional or Useful Information & Explanatory Notes -->
+<div class="section">
+    <div class="section_heading">Additional or Useful Information & Explanatory Notes</div>
+    <div class="hr"></div>
+    <div class="table_container">
+        <% factfindData.forEach(function(client, index){%>
+        <div class=<%= applicationType === 'Joint' ? "custom_table_half" : "custom_table" %>>
+
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque adipisci incidunt quas nostrum nemo commodi numquam iure ipsam, dolorem reiciendis ipsa ab recusandae eveniet asperiores, possimus quidem voluptates quibusdam molestias.</div>
+        
+        </div>
+        <%});%>
+    </div>
+    <div class="hr"></div>
+</div>
+
+</body>
+
+</body>
+</html>
