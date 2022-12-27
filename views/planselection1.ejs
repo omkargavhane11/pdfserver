@@ -163,7 +163,7 @@
     </div>
 
     <!-- WHAT IF ? -->
-    <div class="type">
+    <div class="type mt--20">
 
         <div class="type_header">What If...?</div>
 
@@ -395,39 +395,36 @@
 
         <div class="section">
             <div class="section_heading text-green text-bold">Who would you trust and wish to rely upon?</div>
-            <table class="section_table_full">
-                <thead>
-                    <tr class="w-40">
-                        <td></td>
+            <table class="mt-20 w-100">
+                    <tr class="">
+                        <td class="w-50"></td>
                         <% plan_selection_data.data.parties.forEach(function(item, index){ %>
                             <!-- something -->
-                            <td class="text-green">Client <%= index+1 %></td>
+                            <td class="text-green w-25">Client <%= index+1 %></td>
                         <%});%>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr class="w-40">
+                    <tr class="">
                         <td class="pb-10">Should you suffer a loss of capacity</td>
                         <% plan_selection_data.data.selectedPlan.whatIf.replyUpon.lossOfCapacity.forEach(function(item, index){ %>
                             <!-- something -->
                             <td class="pb-10"><%= item.name %></td>
                         <%});%>
                     </tr>
-                    <tr class="w-40">
+            
+                    <tr class="">
                         <td class="pb-10">To oversee your inheritance wishes</td>
                         <% plan_selection_data.data.selectedPlan.whatIf.replyUpon.ToOverseeInheritanceWishes.forEach(function(item, index){ %>
                             <!-- something -->
                             <td class="pb-10"><%= item.name %></td>
                         <%});%>
                         </tr>   
-                    <tr class="w-40">
+                    <tr class="">
                         <td class="pb-10">To look after your dependants</td>
                         <% plan_selection_data.data.selectedPlan.whatIf.replyUpon.ToLookAfterDependants.forEach(function(item, index){ %>
                             <!-- something -->
                             <td class="pb-10"><%= item.name %></td>
                         <%});%>
                     </tr>
-                </tbody>
             </table>
         </div>
     </div>
