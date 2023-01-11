@@ -418,7 +418,8 @@ table {
 .joint{
     border: 1px solid #00CE3F;
     width: max-content;
-    color: #00CE3F;
+    background-color: #00CE3F;
+    color: white;
     padding: 1px 4px;
     border-radius: 14px;
     position: absolute;
