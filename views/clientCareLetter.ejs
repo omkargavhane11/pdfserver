@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Care Letter</title>
+    <link rel="stylesheet" href="./willQ.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Poppins:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header  -->
+    <header class="m-20">
+      <div class="header_top">
+        <div class="form_name_div">
+          <span class="text-style text-bold">Client Care Letter</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- body -->
+    <div class="flex-row-wrap-center">
+      <div class="width-70">
+        <!-- Client Information -->
+        <div class="flex-column gap-10 mb-50">
+          <div>
+            <div class="key">Consultant</div>
+            <div class="text-big">Jane Doe</div>
+          </div>
+
+          <div>
+            <div class="key">Client(s) Name</div>
+            <div class="text-big">
+              221b Baker Street, London NW1 6XE, United Kingdom
+            </div>
+          </div>
+
+          <div>
+            <div class="key">Address</div>
+            <div class="text-big">Jane Doe</div>
+          </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="flex-column gap-20 mb-50">
+          <% one.forEach(function(item, index){ %>
+          <div>
+            <div class="key"><%= item.key %></div>
+            <div class="text-big"><%= item.value %></div>
+          </div>
+          <%})%>
+        </div>
+
+        <!--SECTION --- Your Legacy and Estate Planning Instructions -->
+        <div class="mb-40">
+          <div class="text-style text-bold text-center mb-40">
+            Your Legacy and Estate Planning Instructions
+          </div>
+
+          <div class="mb-30">
+            <div class="key mb-20 text-big">
+              The documents and services you are instructing your Consultant to
+              arrange are:
+            </div>
+            <div class="flex-column gap-10">
+              <div class="flex-row">
+                <div class="width-70 key">Particulars</div>
+                <div class="width-15 key text-center">Instructed</div>
+                <div class="width-15 key text-center">Quantity</div>
+              </div>
+              <% documents_and_services.map(function(item,index){ %>
+              <div class="flex-row">
+                <div class="width-70"><%= item.particulars %></div>
+                <div class="width-15 text-center text-green">
+                  <% if(item.instructed ){%> ✔ <%}else{%> - <% }%>
+                </div>
+                <div class="width-15 text-center"><%= item.quantity %></div>
+              </div>
+              <%})%>
+            </div>
+          </div>
+
+          <!-- How much will my Estate Planning cost? -->
+          <div class="mb-30">
+            <div class="text-green text-big mb-20">
+              How much will my Estate Planning cost?
+            </div>
+            <div class="flex-column gap-10">
+              <div class="flex-row-sb">
+                <div class="key">Particulars</div>
+                <div class="key">Cost</div>
+              </div>
+              <% estate_planning_cost.map(function(item,index){ %>
+              <div class="flex-row-sb">
+                <div class=""><%= item.particulars %></div>
+                <div class=""><%= item.cost.toLocaleString() %></div>
+              </div>
+              <%})%>
+            </div>
+          </div>
+
+          <!-- Payment information & Breakdown -->
+          <div>
+            <div class="text-green text-big mb-20">
+              Payment information & Breakdown
+            </div>
+            <div class="text-big mb-20">
+              Your Consultant has agreed that your payment for the above
+              services should be made payable to Squiggle Consult LTD. Your fees
+              will not be distributed to your Consultant until your instructions
+              have been audited, passed through our Quality Control Process. Any
+              document drafting fees and service fees for Solicitors, Barristers
+              and other professionals have been included within the fixed price
+              cost and we will be responsible for paying those fees. You will
+              not receive any additional requests for payment.
+            </div>
+            <div class="flex-column gap-10">
+              <% estate_planning_cost.map(function(item,index){ %>
+              <div class="flex-row-sb">
+                <div class=""><%= item.particulars.toLocaleString() %></div>
+                <div class=""><%= item.cost.toLocaleString() %></div>
+              </div>
+              <%})%>
+            </div>
+          </div>
+        </div>
+
+        <!--SECTION --- Your Instruction & Declaration -->
+        <div>
+          <div class="text-style text-bold text-center mb-40">
+            Your Instruction & Declaration
+          </div>
+          <div class="text-big mb-20">
+            It is important that you read and understand this Client Care Letter
+            & Instruction in conjunction with the Terms of Engagement document,
+            before signing below. If there is anything that you do not
+            understand or do not agree with, please discuss it with your
+            Consultant before signing. Only if this document is a fair and
+            accurate representation of your interaction with your Consultant and
+            the instructions you wish to provide should you sign below.
+          </div>
+          <div class="text-big mb-30">
+            I/We confirm that I/We have received, read, accept and agree with
+            the contents of this Client Care Letter & Instruction and the Terms
+            of Engagement document and accept and agree to pay all fees.
+          </div>
+          <div class="flex-column gap-20">
+            <% check_as_appropriate.forEach(function(item, index){ %>
+            <div class="flex-row-only gap-20 vertical-top">
+              <div class="text-center">
+                <% if(item.checked){%>
+                <div class="checked">✔</div>
+                <%}else{%>
+                <div class="notchecked"></div>
+                <% }%>
+              </div>
+              <div class=""><%= item.item %></div>
+            </div>
+            <%})%>
+          </div>
+
+          <!-- Signature -->
+          <div class="flex-row-sb my-40">
+            <div class="flex-column gap-10 width-45">
+              <div class="text-22">Sherlock Holmes</div>
+              <div class="key">Signature</div>
+              <div class="signature_box_appointment_declaration"></div>
+              <div class="text-right">12-12-2023</div>
+            </div>
+            <!-- <div class="flex-column gap-10 width-45">
+              <div class="text-22">Sherlock Holmes</div>
+              <div class="key">Signature</div>
+              <div class="signature_box_appointment_declaration"></div>
+              <div class="text-right">12-12-2023</div>
+            </div> -->
+          </div>
+
+          <div class="flex-column gap-10">
+            <div class="text-small">
+              This agreement is between you and your Consultant of Squiggle.
+            </div>
+            <div class="text-small">
+              Squiggle Consult LTD. A company registered in England & Wales and
+              with the registration number10816512.
+            </div>
+            <div class="text-small">
+              Suite 2069, Letraset Building, Wotton Road, Ashford, Kent, TN23
+              6LN01233 659796 hello@squiggleconsult.co.uk
+              www.squiggleconsult.co.uk
+            </div>
+          </div>
+        </div>
+
+        <!--SECTION --- Terms & Conditions -->
+        <div>
+          <div class="text-style text-bold text-center my-40">
+            Terms & Conditions
+          </div>
+          <div class="flex-column gap-10">
+            <div class="text-small">
+              This document explains the terms on which a Consultant of Squiggle
+              Consult LTD (Squiggle) and Squiggle itself will provide services
+              to a customer (You) whilst offering a product or service from
+              Squiggle.
+            </div>
+            <div class="text-small">
+              You should read this document carefully and be satisfied that you
+              understand it.
+            </div>
+            <div class="text-small">
+              To ensure you always receive the best possible service and
+              assistance when accessing any reserved legal activity, legal
+              advice or legal representation via Squiggle the provision of any
+              reserved legal activity, legal advice or legal representation will
+              be through a Solicitor or a Barrister in independent practice.
+            </div>
+            <div class="text-small">
+              The terms of this agreement are governed by English laws and any
+              dispute shall be resolved within the jurisdiction of the courts of
+              England and Wales.
+            </div>
+          </div>
+
+          <!-- 1 - Fees -->
+          <div>
+            <!-- item -->
+            <div class="text-big text-green mt-20 mb-10">1. Fees</div>
+            <div class="flex-column gap-20">
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">1.1</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    The fees for preparing and administering your elected
+                    product, legal claim or assistance, and for any additional
+                    products or services delivered in the name or brand of
+                    Squiggle are:
+                  </div>
+                  <div class="text-small">
+                    • either set out in your Client Care Letter that you have
+                    received;
+                  </div>
+                  <div class="text-small">
+                    • or will be provided as a quote for the legal service or
+                    product that you require.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Squiggles' and its consultants' undertaking -->
+          <div>
+            <!-- item -->
+            <div class="text-big text-green mt-20 mb-10">
+              2. Squiggles' and its consultants' undertaking
+            </div>
+            <div class="flex-column gap-20">
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">2.1</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    Unless directed otherwise, Squiggle Consultants will always
+                    endeavour to discuss your situation and your requirements
+                    and obtain as much information as is needed to enable us
+                    deal with your enquiry accurately.
+                  </div>
+                </div>
+              </div>
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">2.2</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    All reserved activity documents will be reviewed and drafted
+                    by nominated Solicitors, or Barristers in Independent
+                    practice.
+                  </div>
+                </div>
+              </div>
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">2.3</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    You are under no obligation to take up any product or
+                    service, however, you may be asked to sign a disclaimer if
+                    you either decline to take up any planning or instruct the
+                    drafting of, or provision of any product or service in a way
+                    that is contrary to our guidance or that of the Consultant
+                    or the instructed Solicitor or Barrister.
+                  </div>
+                </div>
+              </div>
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">2.4</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    Squiggle’s obligation is to provide you with the documents
+                    or service requested. Squiggle will make every reasonable
+                    effort to assist you in arranging the correct signing
+                    (attestation) of your documents but are under no legal
+                    obligation to ensure they are attested fully.
+                  </div>
+                </div>
+              </div>
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">2.5</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    Any advice that is given by a Consultant of Squiggle is
+                    based on a current understanding of law, practices and
+                    procedures at the date of this agreement. Neither
+                    Consultants, nor Squiggle, are responsible for any
+                    consequences arising from any future changes in law,
+                    practices or procedures and the consequences of any such
+                    changes are specifically excluded from any liability
+                    Squiggle may otherwise hold.
+                  </div>
+                </div>
+              </div>
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">2.6</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    Squiggle activities are protected by a Professional
+                    Indemnity Policy which provides £2 million indemnity against
+                    proven negligent acts of a listed Consultant in their
+                    conduct of the sale of approved and scheduled products of
+                    Squiggle. You may request a copy of the policy from Squiggle
+                    by making a written application to the address on this
+                    document.
+                  </div>
+                </div>
+              </div>
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">2.7</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    Any Solicitor, Barrister or Product provider that are
+                    partners of Squiggle must also carry their own professional
+                    Indemnity Insurance and details of their cover can be
+                    obtained by contacting Squiggle.
+                  </div>
+                </div>
+              </div>
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">2.8</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    Any fees that have been agreed will be paid either directly
+                    to Squiggle, or, if advised otherwise, to the solicitor
+                    partner that has been instructed on your behalf.
+                  </div>
+                </div>
+              </div>
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">2.9</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    Squiggle reserves the right to withdraw from any transaction
+                    if they are unable to complete the transaction in whole, or
+                    in part, but if they do so, they will write to you
+                    immediately and you will not be liable to pay any fees to
+                    them. You may however remain liable to pay the cost of any
+                    third-party fees or expenses that have been incurred with
+                    your consent up to the date they withdraw.
+                  </div>
+                </div>
+              </div>
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">2.10</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    The costs of correcting any error or omission on the part of
+                    Squiggle or of a Consultant shall be borne entirely by
+                    Squiggle.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Your Obligations -->
+          <div>
+            <!-- item -->
+            <div class="text-big text-green mt-20 mb-10">
+              3. Your Obligations
+            </div>
+            <div class="flex-column gap-20">
+              <div class="flex-row-only text-top gap-20">
+                <div class="text-small">3.1</div>
+                <div class="flex-column gap-10">
+                  <div class="text-small">
+                    The validity, accuracy and suitability of any documents or
+                    legal services that Squiggle provide will partly depend upon
+                    the completeness and accuracy of your answers to the
+                    Consultant’s questions.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row-only text-top gap-20">
+              <div class="text-small">3.2</div>
+              <div class="flex-column gap-10">
+                <div class="text-small">
+                  Squiggle require you to be open and honest with the
+                  information that you provide. Neither the Consultant, nor
+                  Squiggle, are, or shall be held at any future time,
+                  responsible for any consequences arising from inaccurate or
+                  incomplete information provided by you.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!-- 4. Amendments to Documents -->
+        <div>
+          <!-- item -->
+          <div class="text-big text-green mt-20 mb-10">
+            4. Amendments to Documents
+          </div>
+          <div class="flex-column gap-20">
+            <div class="flex-row-only text-top gap-20">
+              <div class="text-small">4.1</div>
+              <div class="flex-column gap-10">
+                <div class="text-small">
+                  Squiggle will make any amendments you require or request right
+                  up until FINAL documents are provided. From this point, if you
+                  change your mind on any of the details, Squiggle reserves the
+                  right to charge £50 per document.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Timescales -->
+        <div>
+          <!-- item -->
+          <div class="text-big text-green mt-20 mb-10">5. Timescales</div>
+          <div class="flex-column gap-20">
+            <div class="flex-row-only text-top gap-20">
+              <div class="text-small">5.1</div>
+              <div class="flex-column gap-10">
+                <div class="text-small">
+                  The timescales for the delivery of documents is typically 18
+                  working days from receipt of all necessary information, but
+                  can vary slightly depending on the complexity of your
+                  instructions or, in very extreme circumstances, where Squiggle
+                  experiences extraordinary volumes of work, but you will be
+                  kept informed of any difference to the normal drafting
+                  timescales. If you are unable to provide all the information
+                  that Squiggle and/or the Barrister requires to draft your
+                  documents within the timescales set out, then this will
+                  adversely affect the agreed service standards and timescales.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Payments -->
+        <div>
+            <!-- item -->
+            <div class="text-big text-green mt-20 mb-10">6. Payments</div>
+            <div class="flex-column gap-20">
+            <div class="flex-row-only text-top gap-20">
+                <div class="text-small">6.1</div>
+                <div class="flex-column gap-10">
+                <div class="text-small">
+                    Unless agreed with Squiggle, our fee is due at instruction.
+                    Final documents will not be made available until full payment
+                    is received.
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="flex-row-only text-top gap-20">
+            <div class="text-small">6.2</div>
+            <div class="flex-column gap-10">
+                <div class="text-small">
+                You can request to make payment by cheque (made payable to
+                “Squiggle Consult LTD”), Bank Transfer, Debit Card or by Credit
+                Card although Squiggle reserves the right to pass on any credit
+                card provider fees.
+                </div>
+            </div>
+            </div>
+        </div>
+        
+
+        <!-- 7. Disclosure of Information & Confidentiality -->
+        <div>
+          <!-- item -->
+          <div class="text-big text-green mt-20 mb-10">
+            7. Disclosure of Information & Confidentiality
+          </div>
+          <div class="flex-column gap-20">
+            <div class="flex-row-only text-top gap-20">
+              <div class="text-small">7.1</div>
+              <div class="flex-column gap-10">
+                <div class="text-small">
+                  Squiggle and its Consultants undertake to maintain the
+                  strictest confidentiality and will not pass on your name or
+                  details to any other organisations without your express
+                  permission. Squiggle are registered under the Data Protection
+                  Act 1998, and therefore all information disclosed to us will
+                  remain confidential and secure in compliance with the terms of
+                  this Act.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Cancellation Policy -->
+        <div>
+          <!-- item -->
+          <div class="text-big text-green mt-20 mb-10">
+            8. Cancellation Policy
+          </div>
+          <div class="flex-column gap-20">
+            <div class="flex-row-only text-top gap-20">
+              <div class="text-small">8.1</div>
+              <div class="flex-column gap-10">
+                <div class="text-small">
+                  You have a right to cancel this agreement with us within 14
+                  days of the date of the Client Care Letter issued to you by
+                  writing to Squiggle at the postal address or the email listed
+                  below. However, work will have commenced on your instructions
+                  and drafting costs will have been incurred so, unless the
+                  cancellation is due to a delay on our part that is beyond the
+                  timescale referred to in section 5, Squiggle reserves the
+                  right to retain fees sufficient to cover any work undertaken.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-row-only text-top gap-20">
+            <div class="text-small">8.2</div>
+            <div class="flex-column gap-10">
+              <div class="text-small">
+                Where notice of cancellation is posted, it is recommended that
+                it is sent by Recorded Delivery.
+              </div>
+            </div>
+          </div>
+ 
+
+        <!-- 9. Document Storage -->
+        <div>
+          <!-- item -->
+          <div class="text-big text-green mt-20 mb-10">9. Document Storage</div>
+          <div class="flex-column gap-20">
+            <div class="flex-row-only text-top gap-20">
+              <div class="text-small">9.1</div>
+              <div class="flex-column gap-10">
+                <div class="text-small">
+                  Squiggle may keep an electronic copy of all documents provided
+                  to a client by an accredited Consultant or any instructed
+                  Barrister, Solicitor partner or third party free of charge.
+                  Squiggle will maintain client files for a period but only for
+                  as long as required to do so by GDPR Legislation, or until you
+                  have asked us to remove any data we may hold.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-row-only text-top gap-20">
+            <div class="text-small">9.2</div>
+            <div class="flex-column gap-10">
+              <div class="text-small">
+                Where you have original documents stored directly with Squiggle,
+                Squiggle reserves to right to charge you or your representative
+                a small administration fee - currently £35 - for the recovery of
+                these documents.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Right Not to Act -->
+      <div>
+        <!-- item -->
+        <div class="text-big text-green mt-20 mb-10">10. Right Not to Act</div>
+        <div class="flex-column gap-20">
+          <div class="flex-row-only text-top gap-20">
+            <div class="text-small">10.1</div>
+            <div class="flex-column gap-10">
+              <div class="text-small">
+                Squiggle and any other instructed third party reserve the right
+                to refuse to process some or all the legal documents for you at
+                its absolute discretion. If Squiggle decline to act or decline
+                to prepare a specific document then Squiggle will inform you in
+                writing and no fee will be payable.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Client Care / Complaints Procedure -->
+      <div>
+        <!-- item -->
+        <div class="text-big text-green mt-20 mb-10">
+          11. Client Care / Complaints Procedure
+        </div>
+        <div class="flex-column gap-20">
+          <div class="flex-row-only text-top gap-20">
+            <div class="text-small">11.1</div>
+            <div class="flex-column gap-10">
+              <div class="text-small">
+                Squiggle is committed to ensuring that all Consultants of
+                Squiggle provide services to the highest standards and in
+                compliance with Squiggle’s Code of Conduct. In the unlikely
+                event that you feel you need to make a compliant regarding an
+                allegation of non-compliance with the code of conduct, you
+                should address the complaint to the Director at Squiggle at the
+                address below or by email hello@squiggleconsult.co.uk
+              </div>
+            </div>
+          </div>
+          <div class="flex-row-only text-top gap-20">
+            <div class="text-small">11.2</div>
+            <div class="flex-column gap-10">
+              <div class="text-small">
+                Squiggle will acknowledge your letter within 5 working days of
+                receipt.
+              </div>
+            </div>
+          </div>
+          <div class="flex-row-only text-top gap-20">
+            <div class="text-small">11.3</div>
+            <div class="flex-column gap-10">
+              <div class="text-small">
+                Squiggle will instigate a Complaints and Conciliation Process to
+                seek to reach a mutually satisfactory agreement and write to you
+                with the results of the investigation within a further 28 days.
+                These complaints procedures do not prevent you from seeking
+                other means of redress.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Force Majeure -->
+      <div>
+        <!-- item -->
+        <div class="text-big text-green mt-20 mb-10">12. Force Majeure</div>
+        <div class="flex-column gap-20">
+          <div class="flex-row-only text-top gap-20">
+            <div class="text-small">12.1</div>
+            <div class="flex-column gap-10">
+              <div class="text-small">
+                Neither Squiggle, nor its Consultants, shall have any liability
+                whatsoever or be deemed to be in default for any delays or
+                failure in performance under these Terms of Engagement resulting
+                from acts beyond its control, including but not limited to acts
+                of God, acts or regulations of any government or supranational
+                authority, war or national emergency, terrorist activities,
+                drone attack, accident or fire.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. Legal Notice -->
+      <div>
+        <!-- item -->
+        <div class="text-big text-green mt-20 mb-10">13. Legal Notice</div>
+        <div class="flex-column gap-20">
+          <div class="flex-row-only text-top gap-20">
+            <div class="text-small">13.1</div>
+            <div class="flex-column gap-10">
+              <div class="text-small">
+                Any provision of this Terms of Engagement which is declared void or unenforceable by any competent authority or court shall to the extent of such invalidity or unenforceability be deemed severable and the other provisions of the Terms of Engagement shall continue unaffected.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. Third Party Liability -->
+      <div>
+        <!-- item -->
+        <div class="text-big text-green mt-20 mb-10">14. Third Party Liability</div>
+        <div class="flex-column gap-20">
+          <div class="flex-row-only text-top gap-20">
+            <div class="text-small">14.1</div>
+            <div class="flex-column gap-10">
+              <div class="text-small">
+                Squiggle regards you as their client and as such these terms and condition set out the relationship between Squiggle and you. Squiggle does not accept any liability for any claim made by a third party who is not their client
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ends -->
+    </div>
+
+  </body>
+</html>
