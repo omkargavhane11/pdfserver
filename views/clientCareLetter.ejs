@@ -13,19 +13,19 @@
   </head>
   <body>
     <!-- header  -->
-    <header class="m-20">
+    <div class="pt-60 mb-50">
       <div class="header_top">
         <div class="form_name_div">
           <span class="text-style text-bold">Client Care Letter</span>
         </div>
       </div>
-    </header>
+    </div>
 
     <!-- body -->
     <div class="flex-row-wrap-center">
       <div class="width-70">
         <!-- Client Information -->
-        <div class="flex-column gap-10 mb-50">
+        <div class="flex-column gap-30 mb-50">
           <div>
             <div class="key">Consultant</div>
             <div class="text-big">Jane Doe</div>
@@ -47,7 +47,7 @@
         <!-- Introduction -->
         <div class="flex-column gap-20 mb-50">
           <% one.forEach(function(item, index){ %>
-          <div>
+          <div class="flex-column gap-5 break-avoid">
             <div class="key"><%= item.key %></div>
             <div class="text-big"><%= item.value %></div>
           </div>
@@ -96,7 +96,7 @@
               <% estate_planning_cost.map(function(item,index){ %>
               <div class="flex-row-sb">
                 <div class=""><%= item.particulars %></div>
-                <div class=""><%= item.cost.toLocaleString() %></div>
+                <div class="">&#163; <%= item.cost.toLocaleString() %></div>
               </div>
               <%})%>
             </div>
@@ -118,10 +118,10 @@
               not receive any additional requests for payment.
             </div>
             <div class="flex-column gap-10">
-              <% estate_planning_cost.map(function(item,index){ %>
+              <% payment_information_and_breakdown.map(function(item,index){ %>
               <div class="flex-row-sb">
-                <div class=""><%= item.particulars.toLocaleString() %></div>
-                <div class=""><%= item.cost.toLocaleString() %></div>
+                <div class=""><%= item.particulars %></div>
+                <div class="">&#163; <%= item.cost.toLocaleString() %></div>
               </div>
               <%})%>
             </div>

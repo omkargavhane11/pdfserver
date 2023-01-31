@@ -2361,6 +2361,20 @@ const clientCareLetter = {
       cost: 3107,
     },
   ],
+  payment_information_and_breakdown:[
+    {
+      particulars:"Payment to Squiggle Consult LTD.",
+      cost: 2589,
+    },
+    {
+      particulars:"Payment to Land Registry",
+      cost: 50,
+    },
+    {
+      particulars:"Payment to the Office of Public Guardian",
+      cost: 507,
+    },
+  ],
   check_as_appropriate: [
     {
       checked: true,

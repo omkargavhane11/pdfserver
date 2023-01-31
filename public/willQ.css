@@ -101,12 +101,20 @@ body{
     border: 1px solid black;
 }
 
+.gap-5{
+    gap:5px
+}
+
 .gap-10{
     gap:10px;
 }
 
 .gap-20{
     gap:20px;
+}
+
+.gap-30{
+    gap:30px;
 }
 
 .gap-50{
@@ -232,6 +240,10 @@ body{
     margin-top: 20px;
 }
 
+.mt-40{
+    margin-top: 40px;
+}
+
 .mb-10{
     margin-bottom: 10px;
 }
@@ -304,6 +316,10 @@ body{
     padding-right: 20px;
 }
 
+.pt-60{
+    padding-top: 60px;
+}
+
 .flex-1{
     flex: 1;
 }
@@ -371,6 +387,10 @@ hr {
 .hr{
     border-top: 1px solid #DCDCE1;
     margin: 0px 20px;
+}
+
+.break-avoid{
+    break-inside: avoid;
 }
 
 .width-5{
