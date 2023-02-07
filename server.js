@@ -319,7 +319,7 @@ const squareData = [
 
 let party = {
   moment: moment,
-  applicationType: "joint",
+  applicationType: "single",
   relationship: "wife",
 };
 
@@ -2402,49 +2402,202 @@ const clientCareLetter = {
   ]
 };
 
+// const addressbook_data = [
+//   {
+//     name:"Sherloack Holmer",
+//     roles:["Testator", "Executor"],
+//     emailId:"sherlockhomles@gmail.com",
+//     mobileNo:9898989898,
+//     certificationType:"Consultant"
+//   },
+// ]
+
 const addressbook_data = [
   {
-    name:"Sherloack Holmer",
-    roles:["Testator", "Executor"],
-    emailId:"sherlockhomles@gmail.com",
-    mobileNo:9898989898,
-    certificationType:"Consultant"
+    opportunityId: "63dc15362bf0d64cf370b5c9",
+    consultantName:"Salman Khan",
+    fullname: "Sujit Mandal",
+    alias: "Sujit",
+    gender: "Male",
+    dob: "1996-12-17",
+    personRole: ["Guardian", "Testator"],
+    telephone: "8779957294",
+    relationshipToClient1:"Neice",
+    relationshipToClient2:"Some relationship",
+    phoneNumber: "8779957294",
+    email: "msujit017@gmail.com",
+    occupation: "Jr. Engg",
+    sourceFrom: "LPA",
+    address: {
+      street1: "efe",
+      street2: "erter",
+      city: "xyz town",
+      state: "xyz country",
+      country: "UK",
+      zip: "EC222postcode"
+    },
+    identification: {
+      professionalname: "Paul",
+      professionalOccupation: "manager",
+      certificationType: "Squiggle Consultant",
+      personalProof: {
+        idProof: "Driving License",
+        imgProof: "xyz----."
+      },
+      professionalAddress: {
+        type:"Aadhar card",
+        address:{
+          street1: "efe",
+          street2: "erter",
+          city: "xyz town",
+          state: "xyz country",
+          country: "UK",
+          zip: "EC222postcode"
+        }
+      },
+      clarification: "true",
+    },
+    currentDate:"11-12-2023"
   },
   {
-    name:"Sherloack Holmer",
-    roles:["Testator", "Executor"],
-    emailId:"sherlockhomles@gmail.com",
-    mobileNo:9898989898,
-    certificationType:"Consultant"
+    opportunityId: "63dc15362bf0d64cf370b5c9",
+    consultantName:"Salman Khan",
+    fullname: "Sujit Mandal",
+    alias: "Sujit",
+    gender: "Male",
+    dob: "1996-12-17",
+    personRole: ["Guardian", "Testator"],
+    telephone: "8779957294",
+    relationshipToClient1:"Neice",
+    relationshipToClient2:"Some relationship",
+    phoneNumber: "8779957294",
+    email: "msujit017@gmail.com",
+    occupation: "Jr. Engg",
+    sourceFrom: "LPA",
+    address: {
+      street1: "efe",
+      street2: "erter",
+      city: "xyz town",
+      state: "xyz country",
+      country: "UK",
+      zip: "EC222postcode"
+    },
+    identification: {
+      professionalname: "Paul",
+      professionalOccupation: "manager",
+      certificationType: "Squiggle Consultant",
+      personalProof: {
+        idProof: "Driving License",
+        imgProof: "xyz----."
+      },
+      professionalAddress: {
+        type:"Aadhar card",
+        address:{
+          street1: "efe",
+          street2: "erter",
+          city: "xyz town",
+          state: "xyz country",
+          country: "UK",
+          zip: "EC222postcode"
+        }
+      },
+      clarification: "true",
+    },
+    currentDate:"11-12-2023"
   },
   {
-    name:"Sherloack Holmer",
-    roles:["Testator", "Executor"],
-    emailId:"sherlockhomles@gmail.com",
-    mobileNo:9898989898,
-    certificationType:"Consultant"
+    opportunityId: "63dc15362bf0d64cf370b5c9",
+    consultantName:"Salman Khan",
+    fullname: "Sujit Mandal",
+    alias: "Sujit",
+    gender: "Male",
+    dob: "1996-12-17",
+    personRole: ["Guardian", "Testator"],
+    telephone: "8779957294",
+    relationshipToClient1:"Neice",
+    relationshipToClient2:"Some relationship",
+    phoneNumber: "8779957294",
+    email: "msujit017@gmail.com",
+    occupation: "Jr. Engg",
+    sourceFrom: "LPA",
+    address: {
+      street1: "efe",
+      street2: "erter",
+      city: "xyz town",
+      state: "xyz country",
+      country: "UK",
+      zip: "EC222postcode"
+    },
+    identification: {
+      professionalname: "Paul",
+      professionalOccupation: "manager",
+      certificationType: "Squiggle Consultant",
+      personalProof: {
+        idProof: "Driving License",
+        imgProof: "xyz----."
+      },
+      professionalAddress: {
+        type:"Aadhar card",
+        address:{
+          street1: "efe",
+          street2: "erter",
+          city: "xyz town",
+          state: "xyz country",
+          country: "UK",
+          zip: "EC222postcode"
+        }
+      },
+      clarification: "true",
+    },
+    currentDate:"11-12-2023"
   },
   {
-    name:"Sherloack Holmer",
-    roles:["Testator", "Executor"],
-    emailId:"sherlockhomles@gmail.com",
-    mobileNo:9898989898,
-    certificationType:"Consultant"
+    opportunityId: "63dc15362bf0d64cf370b5c9",
+    consultantName:"Salman Khan",
+    fullname: "Sujit Mandal",
+    alias: "Sujit",
+    gender: "Male",
+    dob: "1996-12-17",
+    personRole: ["Guardian", "Testator"],
+    telephone: "8779957294",
+    relationshipToClient1:"Neice",
+    relationshipToClient2:"Some relationship",
+    phoneNumber: "8779957294",
+    email: "msujit017@gmail.com",
+    occupation: "Jr. Engg",
+    sourceFrom: "LPA",
+    address: {
+      street1: "efe",
+      street2: "erter",
+      city: "xyz town",
+      state: "xyz country",
+      country: "UK",
+      zip: "EC222postcode"
+    },
+    identification: {
+      professionalname: "Paul",
+      professionalOccupation: "manager",
+      certificationType: "Squiggle Consultant",
+      personalProof: {
+        idProof: "Driving License",
+        imgProof: "xyz----."
+      },
+      professionalAddress: {
+        type:"Aadhar card",
+        address:{
+          street1: "efe",
+          street2: "erter",
+          city: "xyz town",
+          state: "xyz country",
+          country: "UK",
+          zip: "EC222postcode"
+        }
+      },
+      clarification: "true",
+    },
+    currentDate:"11-12-2023"
   },
-  {
-    name:"Sherloack Holmer",
-    roles:["Testator", "Executor"],
-    emailId:"sherlockhomles@gmail.com",
-    mobileNo:9898989898,
-    certificationType:"Consultant"
-  },
-  {
-    name:"Sherloack Holmer",
-    roles:["Testator", "Executor"],
-    emailId:"sherlockhomles@gmail.com",
-    mobileNo:9898989898,
-    certificationType:"Consultant"
-  },
+
 ]
 
 const tickIcon = tick;

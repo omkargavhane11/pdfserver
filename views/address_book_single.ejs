@@ -13,21 +13,42 @@
     <title>Declaration of Trust Declaration</title>
   </head>
   <body>
+    <% addressbook_data.forEach(function(person, index) { %>
+
+    <% if(index === 0){%>
     <!-- header  -->
-    <header class="header">
+    <div class="header">
       <div class="header_top">
         <div class="form_name_div">
           <span class="form_name">Address Book</span>
         </div>
       </div>
-    </header>
+    </div>
+    <%}else{%>
+      <div class="header visibility-none">
+        <div class="header_top">
+          <div class="form_name_div">
+            <span class="form_name">Address Book</span>
+          </div>
+        </div>
+      </div>
+    <%}%>
 
-    <div class="single_address_item">
+    <div class="single_address_item pt-60">
     <!-- Heading -->
     <div class="section">
+      <div class="hr"></div>
       <div class="p-20">
-        <div class="text_big text-green text-bold">Sherlock Holmes</div>
-        <div class="text-small">Client 1 / Testator / Executor</div>
+        <div class="text_big text-green text-bold"><%= person.fullname %></div>
+        <div class="flex-row-only gap-10 text-small">
+          <% person.personRole.forEach(function(role,index) { %>
+            <% if(index === person.personRole.length - 1){%>
+            <div><%= role %></div>
+            <%}else{%>
+            <div><%= role %> /</div>
+            <%}%>
+          <%})%>
+        </div>
       </div>
       <div class="hr"></div>
     </div>
@@ -35,64 +56,72 @@
     <!-- Profile details -->
     <div class="section p-20">
       <div class="flex-row-only text-top">
-        <div class="flex-1">
-          <table class="mb-10">
+        <!-- row 1 -->
+        <div class="width-50">
+          <table class="mb-10 width-95">
             <tr>
               <td class="key">Full Name</td>
               <td class="key">Alias</td>
             </tr>
             <tr>
-              <td class="">Input Text</td>
-              <td class="">Input Text</td>
+              <td class=""><%= person.fullname %></td>
+              <td class=""><%= person.alias %></td>
+            </tr>
+          </table>
+          <table class="mb-10">
+            <tr class="">
+              <% if(applicationType === "joint"){%>
+              <td class="key width-50">Relationship to Client 1</td>
+              <%}else{%>
+              <td class="key width-50">Relationship to Client</td>
+              <%}%>
+              <% if(applicationType === "joint"){%>
+              <td class="key width-50">Relationship to Client 2</td>
+              <%}else{%>
+                <td class="key">Email ID</td>
+              <%}%>
+            </tr>
+            <tr>
+              <td class=""><%= person.relationshipToClient1 %></td>
+              <% if(applicationType === "joint"){%>
+              <td class=""><%= person.relationshipToClient2 %></td>
+              <%}else{%>
+                <td class=""><%= person.email %></td>
+                <%}%>
             </tr>
           </table>
           <table class="mb-10">
             <tr>
-              <td class="key">Relationship to Client 1</td>
-              <td class="key">Relationship to Client 2</td>
+              <td class="key width-50">Home Telephone</td>
+              <td class="key width-50">Mobile Number</td>
             </tr>
             <tr>
-              <td class="">Select</td>
-              <td class="">Select</td>
+              <td class=""><%= person.telephone %></td>
+              <td class=""><%= person.phoneNumber %></td>
             </tr>
           </table>
-          <table class="mb-10">
-            <tr>
-              <td class="key">Home Telephone</td>
-              <td class="key">Mobile Number</td>
-            </tr>
-            <tr>
-              <td class="">Input Text</td>
-              <td class="">Input Text</td>
-            </tr>
-          </table>
+          <% if(applicationType === "joint"){%>
           <table class="mb-10">
             <tr>
               <td class="key">Email ID</td>
             </tr>
             <tr>
-              <td class="">someone@something.com</td>
+              <td class=""><%= person.email %></td>
             </tr>
           </table>
-          <table class="mb-10">
-            <tr>
-              <td class="key">Occupation</td>
-            </tr>
-            <tr>
-              <td class="">Something</td>
-            </tr>
-          </table>
+          <%}%>
         </div>
 
-        <div class="flex-1">
+        <!-- row 2 -->
+        <div class="width-50">
           <table class="mb-10">
             <tr>
               <td class="key">Gender</td>
               <td class="key">Date of Birth</td>
             </tr>
             <tr>
-              <td>Male</td>
-              <td>23/1/1990</td>
+              <td><%= person.gender %></td>
+              <td><%= person.dob %></td>
             </tr>
           </table>
           <table class="mb-10">
@@ -101,11 +130,18 @@
             </tr>
             <tr>
               <td colspan="2">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
-                culpa, necessitatibus voluptas adipisci dicta nostrum beatae
-                ipsa aperiam. Error molestias totam quaerat hic optio maiores
-                pariatur eius amet velit sed?
+                <div class="column">
+                  <%= person.address.street1 %>, <%= person.address.street2 %>, <%= person.address.city %>, <%= person.address.state %>, <%= person.address.country %>, <%= person.address.zip %>
+                </div>
               </td>
+            </tr>
+          </table>
+          <table class="mb-10">
+            <tr>
+              <td class="key">Occupation</td>
+            </tr>
+            <tr>
+              <td class=""><%= person.occupation %></td>
             </tr>
           </table>
         </div>
@@ -121,7 +157,7 @@
             <td class="key">Certification Type</td>
           </tr>
           <tr>
-            <td>Squiggle Consultant</td>
+            <td><%= person.identification.certificationType %></td>
           </tr>
         </table>
         <!-- <div class="address_document_image"></div> -->
@@ -135,7 +171,7 @@
               <td class="key">Personal ID Proof</td>
             </tr>
             <tr>
-              <td>Driving License</td>
+              <td><%= person.identification.personalProof.idProof %></td>
             </tr>
           </table>
           <div class="address_document_image width-95"></div>
@@ -148,7 +184,7 @@
               <td class="key">Proof of Residency</td>
             </tr>
             <tr>
-              <td>Utility Bill</td>
+              <td><%= person.identification.professionalAddress.type %></td>
             </tr>
           </table>
           <div class="address_document_image width-95"></div>
@@ -157,7 +193,7 @@
 
       <!-- declaration -->
       <div class="flex-row gap-20 my-20">
-        <div class="checkbox text-top">✔</div>
+        <div class="checkbox">✔</div>
         <div class="text-bold">
           I certify that the photo(s) above is a true copy of the original.
         </div>
@@ -171,13 +207,15 @@
           <td class="key pb-8">Signature</td>
         </tr>
         <tr>
-          <td class="text-top">Jane Doe</td>
-          <td class="text-top">11-11-2022</td>
+          <td class="text-top"><%= person.consultantName %></td>
+          <td class="text-top"><%= person.currentDate %></td>
           <td class="signature_box"></td>
         </tr>
       </table>
     </div>
-    <div class="single_address_item">
+  </div>
+  <% }) %>
+
 
   </body>
 </html>

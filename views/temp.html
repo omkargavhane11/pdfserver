@@ -10,3 +10,14 @@
 
 
 { key:"", value:""}
+
+
+<!-- ----------- -->
+<% person.personRole.forEach(function(role,index) { %>
+    <% if(index === person.personRole.length - 1){%>
+    <div><%= role %></div>
+    <%}else{%>
+    <div><%= role %> /</div>
+    <%}%>
+  <%})%>
+<!-- --------- -->

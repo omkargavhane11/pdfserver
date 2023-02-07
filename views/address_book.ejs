@@ -24,52 +24,22 @@
     <!-- main applicants -->
     <div class="flex-row-wrap-center p-20 gap-20">
         <% addressbook_data.forEach(function(item, index) { %>
-        <!-- <div class="address_card">
-            <table class="mb-10">
-                <tr>
-                    <td class="text-white text-style text-bold">Sherlock Holmes</td>
-                </tr>
-                <tr>
-                    <td class="text-white">Client 1 / Testator / Executor</td>
-                </tr>
-            </table>
-
-            <table class="mb-10">
-                <tr>
-                    <td class="text-small">Email ID</td>
-                </tr>
-                <tr>
-                    <td class="text-white">sherlock.holmes@gmail.com</td>
-                </tr>
-            </table>
-
-            <table class="mb-10">
-                <tr>
-                    <td class="text-small">Mobile Number</td>
-                    <td class="text-small">Certification Type</td>
-                </tr>
-                <tr>
-                    <td class="text-white">123 456 7890</td>
-                    <td class="text-white">Consultant</td>
-                </tr>
-            </table>
-        </div> -->
-    <!-- relatives -->
+        <!-- relatives -->
         <div class="address_card_relatives">
             <table class="mb-10">
                 <tr>
-                    <td class=" text-style text-green text-bold"><%= item.name %></td>
+                    <td class=" text-style text-green text-bold"><%= item.fullname %></td>
                 </tr>
                 <tr>
                     <td class="">
                         <div class="flex-row-only gap-10">
-                        <% item.roles.forEach(function(role,index) { %>
-                            <% if(index === item.roles.length - 1){%>
-                            <div><%= role %></div>
-                            <%}else{%>
-                            <div><%= role %> /</div>
-                            <%} %>
-                        <%})%>
+                            <% item.personRole.forEach(function(role,index) { %>
+                                <% if(index === item.personRole.length - 1){%>
+                                <div><%= role %></div>
+                                <%}else{%>
+                                <div><%= role %> /</div>
+                                <%}%>
+                              <%})%>
                     </div>
                     </td>
                 </tr>
@@ -80,7 +50,7 @@
                     <td class="key">Email ID</td>
                 </tr>
                 <tr>
-                    <td class=""><%= item.emailId %></td>
+                    <td class=""><%= item.email %></td>
                 </tr>
             </table>
 
@@ -90,14 +60,57 @@
                     <td class="key">Certification Type</td>
                 </tr>
                 <tr>
-                    <td class=""><%= item.mobileNo %></td>
-                    <td class=""><%= item.certificationType %></td>
+                    <td class=""><%= item.phoneNumber %></td>
+                    <td class=""><%= item.identification.certificationType %></td>
                 </tr>
             </table>
         </div>
+
+        <!-- <div class="address_card">
+            <table class="mb-10">
+                <tr>
+                    <td class="text-white text-style text-bold"><%= item.fullname %></td>
+                </tr>
+                <tr>
+                    <td class="text-white">
+                        <div class="flex-row-only gap-10">
+                            <% item.personRole.forEach(function(role,index) { %>
+                                <% if(index === item.personRole.length - 1){%>
+                                <div><%= role %></div>
+                                <%}else{%>
+                                <div><%= role %> /</div>
+                                <%}%>
+                              <%})%>
+                    </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="mb-10">
+                <tr>
+                    <td class="text-small">Email ID</td>
+                </tr>
+                <tr>
+                    <td class="text-white"><%= item.email %></td>
+                </tr>
+            </table>
+            <table class="mb-10">
+                <tr>
+                    <td class="text-small">Mobile Number</td>
+                    <td class="text-small">Certification Type</td>
+                </tr>
+                <tr>
+                    <td class="text-white"><%= item.phoneNumber %></td>
+                    <td class="text-white"><%= item.identification.certificationType %></td>
+                </tr>
+            </table>
+        </div> -->
+
         <%})%>
+
+        
     </div>
 </div>
 
 </body>
 </html>
+

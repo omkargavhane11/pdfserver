@@ -74,6 +74,7 @@ body{
 
 .flex-row-only-sb{
     display: flex;
+    justify-content: space-between;
 }
 
 .flex-row-sb{
@@ -522,9 +523,9 @@ table {
     border-radius: 4px;
     background-color: #00CE3F;
     color: white;
-    height: 25px;
-    width: 50px;
-    font-size: 18px;
+    height: 20px;
+    width: 20px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -639,4 +640,8 @@ table {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.single_address_item{
+    break-inside: avoid;
 }
