@@ -23,7 +23,8 @@
 <div class="section">
     <!-- main applicants -->
     <div class="flex-row-wrap-center p-20 gap-20">
-        <div class="address_card">
+        <% addressbook_data.forEach(function(item, index) { %>
+        <!-- <div class="address_card">
             <table class="mb-10">
                 <tr>
                     <td class="text-white text-style text-bold">Sherlock Holmes</td>
@@ -52,46 +53,25 @@
                     <td class="text-white">Consultant</td>
                 </tr>
             </table>
-        </div>
-        <div class="address_card">
-            <table class="mb-10">
-                <tr>
-                    <td class="text-white text-style text-bold">Sherlock Holmes</td>
-                </tr>
-                <tr>
-                    <td class="text-white">Client 1 / Testator / Executor</td>
-                </tr>
-            </table>
-
-            <table class="mb-10">
-                <tr>
-                    <td class="text-small">Email ID</td>
-                </tr>
-                <tr>
-                    <td class="text-white">sherlock.holmes@gmail.com</td>
-                </tr>
-            </table>
-
-            <table class="mb-10">
-                <tr>
-                    <td class="text-small">Mobile Number</td>
-                    <td class="text-small">Certification Type</td>
-                </tr>
-                <tr>
-                    <td class="text-white">123 456 7890</td>
-                    <td class="text-white">Consultant</td>
-                </tr>
-            </table>
-        </div>
-
+        </div> -->
     <!-- relatives -->
         <div class="address_card_relatives">
             <table class="mb-10">
                 <tr>
-                    <td class=" text-style text-green text-bold">Sherlock Holmes</td>
+                    <td class=" text-style text-green text-bold"><%= item.name %></td>
                 </tr>
                 <tr>
-                    <td class="">Client 1 / Testator / Executor</td>
+                    <td class="">
+                        <div class="flex-row-only gap-10">
+                        <% item.roles.forEach(function(role,index) { %>
+                            <% if(index === item.roles.length - 1){%>
+                            <div><%= role %></div>
+                            <%}else{%>
+                            <div><%= role %> /</div>
+                            <%} %>
+                        <%})%>
+                    </div>
+                    </td>
                 </tr>
             </table>
 
@@ -100,7 +80,7 @@
                     <td class="key">Email ID</td>
                 </tr>
                 <tr>
-                    <td class="">sherlock.holmes@gmail.com</td>
+                    <td class=""><%= item.emailId %></td>
                 </tr>
             </table>
 
@@ -110,101 +90,12 @@
                     <td class="key">Certification Type</td>
                 </tr>
                 <tr>
-                    <td class="">123 456 7890</td>
-                    <td class="">Consultant</td>
+                    <td class=""><%= item.mobileNo %></td>
+                    <td class=""><%= item.certificationType %></td>
                 </tr>
             </table>
         </div>
-        <div class="address_card_relatives">
-            <table class="mb-10">
-                <tr>
-                    <td class=" text-style text-green text-bold">Sherlock Holmes</td>
-                </tr>
-                <tr>
-                    <td class="">Client 1 / Testator / Executor</td>
-                </tr>
-            </table>
-
-            <table class="mb-10">
-                <tr>
-                    <td class="key">Email ID</td>
-                </tr>
-                <tr>
-                    <td class="">sherlock.holmes@gmail.com</td>
-                </tr>
-            </table>
-
-            <table class="mb-10">
-                <tr>
-                    <td class="key">Mobile Number</td>
-                    <td class="key">Certification Type</td>
-                </tr>
-                <tr>
-                    <td class="">123 456 7890</td>
-                    <td class="">Consultant</td>
-                </tr>
-            </table>
-        </div>
-        <div class="address_card_relatives">
-            <table class="mb-10">
-                <tr>
-                    <td class=" text-style text-green text-bold">Sherlock Holmes</td>
-                </tr>
-                <tr>
-                    <td class="">Client 1 / Testator / Executor</td>
-                </tr>
-            </table>
-
-            <table class="mb-10">
-                <tr>
-                    <td class="key">Email ID</td>
-                </tr>
-                <tr>
-                    <td class="">sherlock.holmes@gmail.com</td>
-                </tr>
-            </table>
-
-            <table class="mb-10">
-                <tr>
-                    <td class="key">Mobile Number</td>
-                    <td class="key">Certification Type</td>
-                </tr>
-                <tr>
-                    <td class="">123 456 7890</td>
-                    <td class="">Consultant</td>
-                </tr>
-            </table>
-        </div>
-        <div class="address_card_relatives">
-            <table class="mb-10">
-                <tr>
-                    <td class=" text-style text-green text-bold">Sherlock Holmes</td>
-                </tr>
-                <tr>
-                    <td class="">Client 1 / Testator / Executor</td>
-                </tr>
-            </table>
-
-            <table class="mb-10">
-                <tr>
-                    <td class="key">Email ID</td>
-                </tr>
-                <tr>
-                    <td class="">sherlock.holmes@gmail.com</td>
-                </tr>
-            </table>
-
-            <table class="mb-10">
-                <tr>
-                    <td class="key">Mobile Number</td>
-                    <td class="key">Certification Type</td>
-                </tr>
-                <tr>
-                    <td class="">123 456 7890</td>
-                    <td class="">Consultant</td>
-                </tr>
-            </table>
-        </div>
+        <%})%>
     </div>
 </div>
 
