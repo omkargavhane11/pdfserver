@@ -72,6 +72,10 @@ body{
     display: flex;
 }
 
+.flex-row-only-sb{
+    display: flex;
+}
+
 .flex-row-sb{
     display: flex;
     align-items: center;
@@ -88,7 +92,7 @@ body{
 .flex-row-wrap-center{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -448,6 +452,9 @@ hr {
 .width-95{
     width: 95%;
 }
+.width-100{
+    width: 100%;
+}
 
 .width-85{
     width: 85%;
@@ -546,7 +553,6 @@ table {
 
 .address_document_image{
     height: 120px;
-    width: 350px;
     border: 1px solid lightgray;
     border-radius: 15px;
     display: flex;
@@ -594,17 +600,19 @@ table {
 }
 
 .address_card{
-    width: 45%;
+    width: 48%;
     padding: 15px;
     border-radius: 15px;
     background-color: #00CE3F;
+    box-sizing: border-box;
 }
 
 .address_card_relatives{
-    width: 45%;
+    width: 48%;
     padding: 15px;
     border-radius: 15px;
     border: 1px solid lightgray;
+    box-sizing: border-box;
 }
 
 .checked{

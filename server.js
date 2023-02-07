@@ -2402,6 +2402,51 @@ const clientCareLetter = {
   ]
 };
 
+const addressbook_data = [
+  {
+    name:"Sherloack Holmer",
+    roles:["Testator", "Executor"],
+    emailId:"sherlockhomles@gmail.com",
+    mobileNo:9898989898,
+    certificationType:"Consultant"
+  },
+  {
+    name:"Sherloack Holmer",
+    roles:["Testator", "Executor"],
+    emailId:"sherlockhomles@gmail.com",
+    mobileNo:9898989898,
+    certificationType:"Consultant"
+  },
+  {
+    name:"Sherloack Holmer",
+    roles:["Testator", "Executor"],
+    emailId:"sherlockhomles@gmail.com",
+    mobileNo:9898989898,
+    certificationType:"Consultant"
+  },
+  {
+    name:"Sherloack Holmer",
+    roles:["Testator", "Executor"],
+    emailId:"sherlockhomles@gmail.com",
+    mobileNo:9898989898,
+    certificationType:"Consultant"
+  },
+  {
+    name:"Sherloack Holmer",
+    roles:["Testator", "Executor"],
+    emailId:"sherlockhomles@gmail.com",
+    mobileNo:9898989898,
+    certificationType:"Consultant"
+  },
+  {
+    name:"Sherloack Holmer",
+    roles:["Testator", "Executor"],
+    emailId:"sherlockhomles@gmail.com",
+    mobileNo:9898989898,
+    certificationType:"Consultant"
+  },
+]
+
 const tickIcon = tick;
 const crossIcon = cross;
 
@@ -2464,12 +2509,12 @@ app.get("/living_will_questionare", (req, res) => {
 
 //  ADDRESS BOOK
 app.get("/address_book", (req, res) => {
-  res.render("address_book.ejs", { ...party, factfindData });
+  res.render("address_book.ejs", { ...party ,addressbook_data });
 });
 
 //  ADDRESS BOOK SINGLE
 app.get("/address_book_single", (req, res) => {
-  res.render("address_book_single.ejs", { ...party, factfindData });
+  res.render("address_book_single.ejs", { ...party ,addressbook_data });
 });
 
 //  APPOINTMENT DECLARATION
