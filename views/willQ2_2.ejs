@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will Questionare</title>
+</head>
+<style>
+  * {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Crimson Text', serif;
+    font-family: 'Poppins', sans-serif;
+    color: #3D4740;
+    font-size: 16px;
+  }
+
+  body {
+    padding-bottom: 50px;
+  }
+
+  .key {
+    color: rgb(0, 204, 68);
+    font-weight: 500;
+    font-size: 12px !important;
+  }
+
+  .header {
+    padding: 20px;
+    background-color: #E5FAEB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 30px;
+  }
+
+  .header_top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form_name_div {
+    flex: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form_name {
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .header_bottom {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .text-style {
+    font-family: 'Crimson Text', serif;
+    font-size: 22px;
+  }
+
+  .text-italic {
+    font-style: italic;
+  }
+
+  .header_bottom_left,
+  .header_bottom_right {
+    flex: 1;
+  }
+
+  .flex-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-row-only {
+    display: flex;
+  }
+
+  .flex-row-sb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .flex-row-sa {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+
+  .flex-row-wrap-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gap-10 {
+    gap: 10px;
+  }
+
+  .gap-20 {
+    gap: 20px;
+  }
+
+  .gap-50 {
+    gap: 50px;
+  }
+
+  .section {
+    break-inside: avoid;
+  }
+
+  .bigger_heading {
+    font-size: 22px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .section_heading {
+    color: rgb(0, 204, 68);
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0px 20px;
+    padding: 20px 0px;
+    box-sizing: border-box;
+  }
+
+  .section_heading_trust {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0px 20px;
+    padding: 20px 0px;
+    box-sizing: border-box;
+  }
+
+  .section_heading_dark_16 {
+    font-weight: 600;
+    font-size: 16px !important;
+    margin: 20px;
+  }
+
+  .section_sub_heading {
+    font-size: 16px;
+    margin: -10px 20px 0px 20px;
+    padding: 0px 0px;
+    box-sizing: border-box;
+  }
+
+  .section_sub_text {
+    font-size: 12px;
+    margin: 0px 20px;
+    margin-bottom: 20px;
+    padding: 0px 0px;
+    box-sizing: border-box;
+  }
+
+  .text-22 {
+    font-size: 22px;
+  }
+
+  .text-bigger {
+    font-size: 18px;
+  }
+
+  .text-big {
+    font-size: 16px !important;
+  }
+
+  .text-medium {
+    font-size: 14px;
+  }
+
+  .text-small {
+    font-size: 12px;
+  }
+
+  .text-bold {
+    font-weight: 600;
+  }
+
+  .text-normal {
+    font-weight: normal;
+  }
+
+  .text-dark {
+    color: #3D4740 !important;
+  }
+
+
+
+  .my-10 {
+    margin: 10px 0px;
+  }
+
+  .my-20 {
+    margin: 20px 0px;
+  }
+
+  .mx-20 {
+    margin: 0px 20px;
+  }
+
+  .py-20 {
+    padding: 20px 0px;
+  }
+
+  .m-20 {
+    margin: 20px;
+  }
+
+  .mb-5 {
+    margin-bottom: 5px;
+  }
+
+  .mt--5 {
+    margin-top: -5px;
+  }
+
+  .mt-10 {
+    margin-top: 10px;
+  }
+
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+
+  .mb-30 {
+    margin-bottom: 30px;
+  }
+
+  .mr-30 {
+    margin-right: 30px;
+  }
+
+  .mx-15p {
+    margin: 0px 15%;
+  }
+
+  .px-5 {
+    padding: 0px 5px;
+  }
+
+  .px-20 {
+    padding: 0px 20px;
+  }
+
+  .pb-8 {
+    padding-bottom: 8px;
+  }
+
+  .pb-13 {
+    padding-bottom: 13px;
+  }
+
+  .pb-15 {
+    padding-bottom: 8px;
+  }
+
+  .px-15 {
+    padding: 0px 15px;
+  }
+
+  .p-10 {
+    padding: 10px;
+  }
+
+  .p-20 {
+    padding: 20px;
+  }
+
+  .pr-10 {
+    padding-right: 10px;
+  }
+
+  .pr-20 {
+    padding-right: 20px;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .flex-3 {
+    flex: 3;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-top {
+    vertical-align: top;
+  }
+
+  .vertical-center {
+    vertical-align: middle !important;
+  }
+
+  .text-underline {
+    padding-bottom: 5px;
+    margin: 5px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .text-green {
+    color: #00CE3F;
+  }
+
+  .text-white {
+    color: white;
+  }
+
+  .table_container {
+    display: flex;
+    break-inside: avoid;
+  }
+
+  .exclusion_table_container {
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+
+  hr {
+    margin: 0px 20px;
+    border-top: 0.5px solid lightgray;
+  }
+
+  .hr {
+    border-top: 1px solid #DCDCE1;
+    margin: 0px 20px;
+  }
+
+  .width-20 {
+    width: 20%;
+  }
+
+  .width-33 {
+    width: 33% !important;
+  }
+
+
+  .width-50 {
+    width: 50%;
+  }
+
+  .width-60 {
+    width: 60%;
+  }
+
+  .width-25 {
+    width: 25%;
+  }
+
+  .width-70 {
+    width: 70%;
+  }
+
+  .width-70 {
+    width: 70%;
+  }
+
+  .width-85 {
+    width: 85%;
+  }
+
+  .vert-align-top {
+    vertical-align: text-top;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .custom_table {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 1px solid lightgray;
+    break-inside: avoid;
+  }
+
+  .custom_table:nth-child(even) {
+    border-right: none;
+  }
+
+  .custom_table_half {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    break-inside: avoid;
+    border-right: 1px solid lightgray;
+  }
+
+  .custom_table_half:nth-child(even) {
+    border-right: none;
+  }
+
+  .visibility-none {
+    visibility: hidden;
+  }
+
+  .joint {
+    border: 1px solid #00CE3F;
+    width: max-content;
+    background-color: #00CE3F;
+    color: white;
+    padding: 1px 4px;
+    border-radius: 14px;
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    font-size: 12px;
+  }
+
+  .declaration_container {
+    display: flex;
+    gap: 20px;
+    width: 85%;
+    margin-bottom: 30px;
+    vertical-align: text-top;
+  }
+
+  .checkbox {
+    border-radius: 4px;
+    background-color: #00CE3F;
+    color: white;
+    height: 25px;
+    width: 50px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .signature_box {
+    height: 120px;
+    width: 350px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .signature_box_appointment_declaration {
+    height: 120px;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .address_document_image {
+    height: 120px;
+    width: 350px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    display: flex;
+  }
+
+  .center_container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .min-width-80 {
+    min-width: 100%;
+  }
+
+  .round_div_with_padding_20 {
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .info_container {
+    background-color: #E5FAEB;
+    display: flex;
+    padding: 15px;
+    border-radius: 10px;
+    gap: 10px;
+  }
+
+  .info {
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid rgb(65, 64, 64);
+    height: 10px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .address_card {
+    width: 45%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #00CE3F;
+  }
+
+  .address_card_relatives {
+    width: 45%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid lightgray;
+  }
+
+  .text-wrap{
+    overflow-wrap: break-word;
+  }
+</style>
+
+<body>
+  <!-- header  -->
+  <header class="header">
+    <div class="header_top">
+      <div class="form_name_div">
+        <span class="form_name">Will Questionnaire</span>
+      </div>
+    </div>
+    <div class="header_bottom">
+      <div class="header_bottom_left">
+        <p class="key">Client 1</p>
+        <p class="value text-style text-bold">
+          <%= data?.parties[0]?.firstName +' '+ data?.parties[0]?.lastName %>
+        </p>
+      </div>
+      <% if (data?.applicationType==="Joint" ) { %>
+      <div class="header_bottom_right">
+        <p class="key">Client 2</p>
+        <p class="value text-style text-bold">
+          <%= data?.parties[1]?.firstName +' '+ data.parties[1]?.lastName %></p>
+      </div>
+      <% } %>
+    </div>
+  </header>
+
+  <!-- TESTATORS section -->
+  <div class="section">
+    <p class="section_heading">Testators</p>
+    <div class="hr"></div>
+    <div class="table_container">
+      <% data?.willQuestionnaire?.forEach(function(willQuestionnaireIns, index){%>
+      <div class=<%= data?.applicationType === ' Joint' ? "custom_table_half" : "custom_table" %>>
+            <table>
+              <tr>
+                <td class="key">Testator <%= index + 1 %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= willQuestionnaireIns.testators.fullName ?? '' %>
+                </td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <td class="key">Do you wish your Spouse/partner to be an Executor/Trustee?
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= willQuestionnaireIns.testators.makeExecutorOrTrustee ?? '' %>
+                </td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <td class="key">Marriage Clause</td>
+              </tr>
+              <tr>
+                <td>
+                  <%= willQuestionnaireIns.testators.marriageClause===true ? 'Yes' : 'No' %>
+                </td>
+              </tr>
+            </table>
+      </div>
+      <%});%>
+    </div>
+    <div class="hr"></div>
+    </div>
+
+    <!-- EXECUTORS & TRUSTEES -->
+    <div class="section">
+      <p class="section_heading">Executors & Trustees</p>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire?.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+            <% willQuestionnaireIns?.executorsAndTrustees?.forEach(function(executors, ind=index){%>
+              <div class="exclusion_table_container">
+                <% if(index===0 && executors?.isJoint ){%>
+                  <div class="joint text-small">Joint</div>
+                  <%}else{%>
+                    <div class="joint text-small visibility-none">Joint</div>
+                    <% }%>
+                      <table class="">
+                        <tr>
+                          <td class="key">Full Name</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= executors.fullName ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+                      <table>
+                        <tr>
+                          <td class="key">Role</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= executors.role ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+              </div>
+              <%});%>
+
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- PROFESSIONAL EXECUTOR -->
+    <div class="section">
+      <p class="section_heading">Professional Executor</p>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire?.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+              <table class="">
+                <tr>
+                  <td class="key">Selected Executor</td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= data?.willQuestionnaire[0]?.professionalExecutor?.executors %>
+                  </td>
+                </tr>
+              </table>
+              <% if(data.willQuestionnaire[0].professionalExecutor?.executors==='Other' ){%>
+                <table>
+                  <tr>
+                    <td class="key">Full Name</td>
+                    <td class="key" colspan="2">Address</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <%= data.willQuestionnaire[0]?.professionalExecutor?.fullName %>
+                    </td>
+                    <td colspan="2">
+                      <%= data.willQuestionnaire[0]?.professionalExecutor?.address.street1 +
+                        data.willQuestionnaire[0]?.professionalExecutor?.address.street2 +','+
+                        data.willQuestionnaire[0]?.professionalExecutor?.address.city +','+
+                        data.willQuestionnaire[0]?.professionalExecutor?.address.state +','+
+                        data.willQuestionnaire[0]?.professionalExecutor?.address.zip +','+
+                        data.willQuestionnaire[0]?.professionalExecutor?.address.country %>
+                    </td>
+                  </tr>
+                </table>
+                <%}%>
+
+                    <table>
+                      <tr>
+                        <td class="key" colspan="2">Are you aware of fees?</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <%= data.willQuestionnaire[0]?.professionalExecutor?.feesAwareness===true ? 'Yes' :'No' %>
+                        </td>
+                      </tr>
+                    </table>
+                    
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- GUARDIANS (on second death) -->
+    <div class="section">
+      <div class="section_heading">
+        <div class="text-big text-green text-bold">Guardians
+          <span class="text-small text-normal">
+            (on second death)
+          </span>
+        </div>
+      </div>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire?.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+            <% willQuestionnaireIns?.guardians?.forEach((guar, ind=index)=> { %>
+              <div class="exclusion_table_container">
+                <% if(index===0 && guar?.isJoint){%>
+                  <div class="joint text-small">Joint</div>
+                  <%}else{%>
+                    <div class="joint text-small visibility-none">Joint</div>
+                    <% }%>
+
+                      <table class="">
+                        <tr>
+                          <td class="key">Guardian <%= ind+1 %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= guar.fullName ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+                      <% if(ind !==0) {%>
+                        <table class="">
+                          <tr>
+                            <td class="key">Going to act:</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <%= guar.goingToAct ?? '' %>
+                            </td>
+                          </tr>
+                        </table>
+                        <%}else{%>
+                          <% }%>
+                            <table>
+                              <tr>
+                                <td class="key">Guardian For</td>
+                              </tr>
+                              <tr>
+
+
+                                <td>
+                                  <% guar?.guardianFor?.forEach((child, indi)=> { %>
+                                    <% if(indi !==0) {%>
+                                      , <%=child%>
+                                        <%}else{%>
+                                          <%=child%>
+                                            <%}%>
+                                              <% }) %>
+                                </td>
+                              </tr>
+                            </table>
+              </div>
+              <% }) %>
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- Chattels and Gifts / Specific Legacies -->
+    <div class="section">
+      <p class="section_heading">Chattels and Gifts / Specific Legacies</p>
+      <div class="section_sub">
+        <div class="section_sub_heading mb-5">Expression of Wishes</div>
+        <div class="section_sub_text">You may leave your chattels and personal items “to be distributed
+          according to any expression of wishes”. Your Trustees will then carry out your wishes as directed.
+        </div>
+      </div>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire?.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+            <% willQuestionnaireIns?.chattlesAndGifts?.forEach((chattlesgifts, ind=index)=> { %>
+              <div class="exclusion_table_container">
+                <% if(index===0 && chattlesgifts?.isJoint){%>
+                  <div class="joint text-small">Joint</div>
+                  <%}else{%>
+                    <div class="joint text-small visibility-none">Joint</div>
+                    <% }%>
+
+                      <table class="">
+                        <tr>
+                          <td class="key">Recipient Name</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= chattlesgifts.recipientName ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+                      <table class="">
+                        <tr>
+                          <td class="key">Relationship</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= chattlesgifts.relationship ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+                      <table>
+                        <tr>
+                          <td class="key">Gift Details</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= chattlesgifts.giftDetails ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+                      <table>
+                        <tr>
+                          <td class="key">Per Stirpes</td>
+                          <td class="key">On death of</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= chattlesgifts.perStripes===true?'Yes':'No' %>
+                          </td>
+                          <td>
+                            <%= chattlesgifts.onDeathOf ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+              </div>
+              <% }) %>
+
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- MONETARY LEGACIES -->
+    <div class="section">
+      <p class="section_heading">Monetary Legacies</p>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire?.forEach((willQuestionnaireIns, index)=> { %>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+            <% willQuestionnaireIns?.monetaryLegacies?.forEach((monetarylegacy, ind=index)=> { %>
+              <div class="exclusion_table_container">
+                <% if (index===0 && monetarylegacy?.isJoint) { %>
+                  <div class="joint text-small">Joint</div>
+                  <% } else { %>
+                    <div class="joint text-small visibility-none">Joint</div>
+                    <% } %>
+                      <table class="">
+                        <tr>
+                          <td class="key">Recipient Name</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= monetarylegacy?.recipientName %>
+                          </td>
+                        </tr>
+                      </table>
+                      <table class="">
+                        <tr>
+                          <td class="key">Relationship</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= monetarylegacy.relationship ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+                      <table>
+                        <tr>
+                          <td class="key">Gift Details</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= monetarylegacy.giftDetails ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+                      <table>
+                        <tr>
+                          <td class="key">Per Stripes</td>
+                          <td class="key">On Death of</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= monetarylegacy.perStripes===true?'Yes':'No' %>
+                          </td>
+                          <td>
+                            <%= monetarylegacy.onDeathOf ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+              </div>
+              <% }) %>
+          </div>
+          <% }) %>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- WILL TRUSTS -->
+    <div class="section">
+      <p class="section_heading">Will Trusts</p>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+            <table class="">
+              <tr>
+                <td class="key">Reason for establishing the Will Trust</td>
+              </tr>
+              <tr>
+                <td>
+                  <%= willQuestionnaireIns?.willTrusts?.willTrustEstablishmentReason %>
+                </td>
+              </tr>
+            </table>
+            <table class="">
+              <tr>
+                <td class="key">Does the client wish to include a clause in their Will to preserve their
+                  Residence Nil Rate Band ?</td>
+              </tr>
+              <tr>
+                <td>
+                  <%= willQuestionnaireIns.willTrusts?.isClauseIncluded===true?'Yes':'No' %>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- FLEXIBLE LIFE INTRESTS -->
+    <div class="section">
+      <div class="flex-row-sb">
+        <div class="section_sub">
+          <div class="section_heading">
+            <div class="text-big text-bold">Flexible Life Interest Trust “FLIT”
+              <span class="text-small text-normal">
+                (Recommended if the client have their own "What if...?")
+              </span>
+            </div>
+            <div class="key mt-10">Giving a person a right to reside for a set period of time after death of
+              both parents.
+            </div>
+          </div>
+        </div>
+        <div class="text-green mr-30">
+          <%= data?.willQuestionnaire[0]?.willTrusts.isFLIT===true?'Yes':'No' %>
+        </div>
+      </div>
+      <% if(data?.willQuestionnaire[0]?.willTrusts.isFLIT){%>
+        <div class="hr"></div>
+        <div class="table_container">
+          <% data?.willQuestionnaire?.forEach(function(willQuestionnaireIns, index){%>
+            <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+              <table class="">
+                <tr>
+                  <td class="key" colspan="2">Name of Life Tenant</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <%= willQuestionnaireIns?.willTrusts?.flexibleLifeInterestTrust?.lifeTenantName %>
+                  </td>
+                </tr>
+              </table>
+
+              <table class="">
+                <tr>
+                  <td class="key" colspan="2">Life Interest to cease upon</td>
+                </tr>
+                <tr class="">
+                  <td class="pb-8">Death of Life Tenant</td>
+                  <td class="text-center pb-8">
+                    <%= willQuestionnaireIns.willTrusts.flexibleLifeInterestTrust.lifeTenantDeath===true?'Yes':'No' %>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="pb-8">Specific Age</td>
+                  <td class="text-center pb-8">
+                    <%= willQuestionnaireIns.willTrusts.flexibleLifeInterestTrust.specificAge.age ?? '' %>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="pb-8">Marriage/Remarriage</td>
+                  <td class="text-center pb-8">
+                    <%= willQuestionnaireIns.willTrusts.flexibleLifeInterestTrust.marriageOrRemarriage===true?'Yes':'No'
+                      %>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="pb-8">Cohabitation with new partner</td>
+                  <td class="text-center pb-8">
+                    <%=
+                      willQuestionnaireIns.willTrusts.flexibleLifeInterestTrust.cohabitationWithNewPartner===true?'Yes':'No'
+                      %>
+                  </td>
+                </tr>
+              </table>
+
+              <% willQuestionnaireIns?.willTrusts?.flexibleLifeInterestTrust?.beneficiary.forEach((beneficiary,
+                ind=index)=> {%>
+                <div class="exclusion_table_container">
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key">Ultimate Beneficiary <%= ind+1 %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <%= beneficiary.ultimateBeneficiary ?? '' %>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <table class="">
+                    <tr>
+                      <td class="key">Per Stripes</td>
+                      <td class="key px-5">Age of Inheritance</td>
+                      <td class="key">Percentage Share</td>
+                    </tr>
+                    <tr>
+                      <td class="">
+                        <%= beneficiary.perStripes===true?'Yes':'No' %>
+                      </td>
+                      <td class="px-5 text-center">
+                        <%= beneficiary.ageOfInheritance ?? '' %>
+                      </td>
+                      <td class="text-center">
+                        <%= beneficiary.percentageShare ?? '' %> %
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <% }) %>
+            </div>
+            <%});%>
+        </div>
+        <%}%>
+          <div class="hr"></div>
+    </div>
+
+    <!-- Residuary Discretionary Trust -->
+    <div class="section">
+      <div class="flex-row-sb">
+        <div class="section_sub">
+          <div class="section_heading">
+            <div class="text-big text-bold">Residuary Discretionary Trust</div>
+          </div>
+        </div>
+        <div class="text-green mr-30">
+          <%= data?.willQuestionnaire[0]?.willTrusts.isRDT===true?'Yes':'No' %>
+        </div>
+      </div>
+      <% if(data?.willQuestionnaire[0]?.willTrusts.isRDT){%>
+        <div class="hr"></div>
+        <div class="table_container">
+          <% data?.willQuestionnaire?.forEach(function(willQuestionnaireIns, index){%>
+            <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+              <% willQuestionnaireIns?.willTrusts?.residuaryDiscretionaryTrust?.RDT.forEach((rdt, ind=index)=> {%>
+                <div class="exclusion_table_container">
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key">Ultimate Beneficiary <%= ind+1 %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <%= rdt.ultimateBeneficiary ?? '' %>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <table class="">
+                    <tr>
+                      <td class="key">Per Stripes</td>
+                      <td class="key px-5">Age of Inheritance</td>
+                      <td class="key">Percentage Share</td>
+                    </tr>
+                    <tr>
+                      <td class="">
+                        <%= rdt.perStripes===true?'Yes':'No' %>
+                      </td>
+                      <td class="px-5 text-center">
+                        <%= rdt.ageOfInheritance ?? '' %>
+                      </td>
+                      <td class="text-center">
+                        <%= rdt.percentageShare ?? '' %> %
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <% }) %>
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key">Guidance Notes
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <%= willQuestionnaireIns.willTrusts.residuaryDiscretionaryTrust.guidanceNotes ?? '' %>
+                      </td>
+                    </tr>
+                  </table>
+            </div>
+            <%});%>
+        </div>
+        <%}%>
+
+          <div class="hr"></div>
+    </div>
+
+    <!-- Severance of Tenancy / Deed of Severance -->
+    <div class="section">
+      <div class="flex-row-sb">
+        <div class="section_sub">
+          <div class="section_heading">
+            <div class="text-big text-bold">Severance of Tenancy / Deed of Severance</div>
+          </div>
+        </div>
+        <div class="text-green mr-30">
+          <%= data?.willQuestionnaire[0]?.willTrusts.isSOT===true?'Yes':'No' %>
+        </div>
+      </div>
+      <% if(data?.willQuestionnaire[0]?.willTrusts.isSOT){%>
+        <div class="hr"></div>
+        <div class="table_container">
+          <% data?.willQuestionnaire?.forEach(function(willQuestionnaireIns, index){%>
+            <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+              <% willQuestionnaireIns?.willTrusts?.severanceOfTenancy.forEach((sot, ind=index)=> {%>
+                <div class="exclusion_table_container">
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key" colspan="2">Property</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <%= sot.property.name ?? '' %>
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key">Title number of property</td>
+                      <td class="key">Percentage Share</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <%= sot.titleNumber ?? '' %>
+                      </td>
+                      <td>
+                        <%= sot.percentageShare ?? '' %> %
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key" colspan="2">Type</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <%= sot.type ?? '' %>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <% }) %>
+            </div>
+            <%});%>
+        </div>
+        <%}%>
+          <div class="hr"></div>
+    </div>
+
+    <!-- RIGHT TO OCCUPY -->
+    <div class="section">
+      <div class="flex-row-sb">
+        <div class="section_sub">
+          <div class="section_heading">
+            <div class="text-big text-bold">Right to Occupy</div>
+          </div>
+        </div>
+        <div class="text-green mr-30">
+          <%= data?.willQuestionnaire[0]?.willTrusts.isRTO===true?'Yes':'No' %>
+        </div>
+      </div>
+      <% if(data?.willQuestionnaire[0]?.willTrusts.isRTO){%>
+        <div class="hr"></div>
+        <div class="table_container">
+          <% data?.willQuestionnaire?.forEach((willQuestionnaireIns, index)=> { %>
+            <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+
+              <% willQuestionnaireIns?.willTrusts?.rightToOccupy.forEach((rto, ind=index)=> { %>
+                <div class="exclusion_table_container">
+                  <% if (index===0 && rto?.isJoint) { %>
+                    <div class="joint text-small">Joint</div>
+                    <% } else { %>
+                      <div class="joint text-small visibility-none">Joint</div>
+                      <% } %>
+
+                        <table class="mb-10">
+                          <tr>
+                            <td class="key" colspan="2">Property</td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                              <%= rto.property.name ?? '' %>
+                            </td>
+                          </tr>
+                        </table>
+                        <table class="mb-10">
+                          <tr>
+                            <td class="key" colspan="2">Name of Occupier</td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                              <%= rto.occupierName ?? '' %>
+                            </td>
+                          </tr>
+                        </table>
+                        <table class="">
+                          <tr>
+                            <td class="key" colspan="2">Do you wish to impose any of the
+                              following restrictions?</td>
+                          </tr>
+                          <tr class="">
+                            <td class="pb-15">Payment of all outgoings?</td>
+                            <td class="pb-15 text-center">
+                              <%= rto.outgoingPaymentRestriction===true?'Yes':'No' %>
+                            </td>
+                          </tr>
+                          <tr class="">
+                            <td class="pb-15">Death of Life Tenant</td>
+                            <td class="pb-15 text-center">
+                              <%= rto.lifeTenantDeath===true?'Yes':'No' %>
+                            </td>
+                          </tr>
+                          <tr class="">
+                            <td class="pb-15">Specific Age</td>
+                            <td class="pb-15 text-center">
+                              <%= rto.specificAge.age ?? '' %>
+                            </td>
+                          </tr>
+                          <tr class="">
+                            <td class="pb-15">Marriage/Remarriage</td>
+                            <td class="pb-15 text-center">
+                              <%= rto.marriageOrRemarriage===true?'Yes':'No' %>
+                            </td>
+                          </tr>
+                          <tr class="">
+                            <td class="pb-15">Cohabitation with new partner</td>
+                            <td class="pb-15 text-center">
+                              <%= rto.cohabitationWithNewPartner===true?'Yes':'No' %>
+                            </td>
+                          </tr>
+                        </table>
+                </div>
+                <% }) %>
+
+            </div>
+            <% }) %>
+        </div>
+        <%}%>
+          <div class="hr"></div>
+    </div>
+
+    <!-- Property Protection Trust (PPT) -->
+    <div class="section">
+      <div class="flex-row-sb">
+        <div class="section_sub">
+          <div class="section_heading">
+            <div class="text-big text-bold">Property Protection Trust (PPT)
+            </div>
+            <div class="key mt-10">To prevent redistribution of assets on 1st death</div>
+          </div>
+        </div>
+        <div class="text-green mr-30">
+          <%= data?.willQuestionnaire[0]?.willTrusts.isPPT===true?'Yes':'No' %>
+        </div>
+      </div>
+      <% if(data?.willQuestionnaire[0]?.willTrusts.isPPT){%>
+        <div class="hr"></div>
+        <div class="table_container">
+          <% data?.willQuestionnaire.forEach(function(willQuestionnaireIns, index){%>
+            <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+              <% willQuestionnaireIns?.willTrusts?.propertyProtectionTrust.forEach((ppt, ind=index)=> { %>
+
+                <div class="exclusion_table_container">
+                  <% if(index===0 && ppt?.isJoint){%>
+                    <div class="joint text-small">Joint</div>
+                    <%}else{%>
+                      <div class="joint text-small visibility-none">Joint</div>
+                      <% }%>
+                        <table class="mb-10">
+                          <tr>
+                            <td class="key" colspan="2">Property</td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                              <%= ppt.property.name ?? '' %>
+                            </td>
+                          </tr>
+                        </table>
+                        <table class="mb-10">
+                          <tr>
+                            <td class="key" colspan="2">Name of Life Tenant</td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                              <%= ppt.lifeTenantName ?? '' %>
+                            </td>
+                          </tr>
+                        </table>
+                        <table class="mb-10">
+                          <tr>
+                            <td class="key" colspan="2">Do you wish to impose any of the
+                              following
+                              restrictions?</td>
+                          </tr>
+                          <tr class="">
+                            <td class="pb-15 width-70">Subject to ongoing maintenance &
+                              insurance of
+                              property?</td>
+                            <td class="pb-15 text-right">
+                              <%= ppt.ongoingMaintenancePropertyRestriction===true?'Yes':'No' %>
+                            </td>
+                          </tr>
+                          <tr class="">
+                            <td class="pb-15 width-70">Right to sell and purchase another house
+                              in
+                              the same trusts?</td>
+                            <td class="pb-15 text-right">
+                              <%= ppt.sellAndPurchaseHouseRestriction?'Yes':'No' %>
+                            </td>
+                          </tr>
+                        </table>
+                        <div class="flex-column gap-10">
+                          <% ppt?.beneficiary.forEach((benef, ind=index)=> {%>
+                            <div class="exclusion_table_container">
+                              <table class="mb-10">
+                                <tr>
+                                  <td class="key">Ultimate Beneficiary <%= ind+1 %>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <%= benef.ultimateBeneficiary ?? '' %>
+                                  </td>
+                                </tr>
+                              </table>
+                              <table class="">
+                                <tr>
+                                  <td class="key">Per Stripes</td>
+                                  <td class="key px-5">Age of Inheritance</td>
+                                  <td class="key">Percentage Share</td>
+                                </tr>
+                                <tr>
+                                  <td class="">
+                                    <%= benef.perStripes===true?'Yes':'No' %>
+                                  </td>
+                                  <td class="px-5 text-center">
+                                    <%= benef.ageOfInheritance ?? '' %>
+                                  </td>
+                                  <td class="text-center">
+                                    <%= benef.percentageShare ?? '' %> %
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                            <% }) %>
+                        </div>
+                </div>
+
+                <% }) %>
+            </div>
+            <%});%>
+        </div>
+        <%}%>
+          <div class="hr"></div>
+    </div>
+
+    <!-- Disabled Discretionary or Protective / Discretionary Trust -->
+    <div class="section">
+      <div class="flex-row-sb">
+        <div class="section_sub">
+          <div class="section_heading">
+            <div class="text-big text-bold">Disabled Discretionary or Protective / Discretionary Trust
+            </div>
+            <div class="key mt-10">For children who are looked after by others / disabled person
+            </div>
+          </div>
+        </div>
+        <div class="text-green mr-30">
+          <%= data?.willQuestionnaire[0]?.willTrusts.isDDT===true?'Yes':'No' %>
+        </div>
+      </div>
+      <% if(data?.willQuestionnaire[0]?.willTrusts.isDDT){%>
+        <div class="hr"></div>
+        <div class="table_container">
+          <% data?.willQuestionnaire.forEach(function(willQuestionnaireIns, index){%>
+            <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+              <table class="mb-10">
+                <tr>
+                  <td class="key" colspan="2">Name of Principle Beneficiary</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <%= willQuestionnaireIns.willTrusts?.disabledDiscretionaryTrust?.principleBeneficiaryName %>
+                  </td>
+                </tr>
+              </table>
+              <% willQuestionnaireIns.willTrusts?.disabledDiscretionaryTrust?.beneficiary.forEach((benef,
+                ind=index)=>{%>
+                <div class="exclusion_table_container">
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key">Secondary Beneficiary <%= ind+1 %>
+                    </tr>
+                    <tr>
+                      <td>
+                        <%= benef.fullName ?? '' %>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <table class="">
+                    <tr>
+                      <td class="key">Per Stripes</td>
+                      <td class="key px-5">Age of Inheritance</td>
+                      <td class="key">Percentage Share</td>
+                    </tr>
+                    <tr>
+                      <td class="">
+                        <%= benef.perStripes===true?'Yes':'No' %>
+                      </td>
+                      <td class="px-5 text-center">
+                        <%= benef.ageOfInheritance ?? '' %>
+                      </td>
+                      <td class="text-center">
+                        <%= benef.percentageShare ?? '' %> %
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <% }) %>
+            </div>
+            <%});%>
+        </div>
+        <%}%>
+          <div class="hr"></div>
+    </div>
+
+
+    <!-- Inheritance Tax Planning: Business / Agricultural Property Relief -->
+    <div class="section">
+      <div class="flex-row-sb">
+        <div class="section_sub">
+          <div class="section_heading">
+            <div class="text-big text-bold">Inheritance Tax Planning: Business / Agricultural Property
+              Relief
+            </div>
+          </div>
+        </div>
+        <div class="text-green mr-30">
+          <%= data?.willQuestionnaire[0]?.willTrusts.isIHT===true?'Yes':'No' %>
+        </div>
+      </div>
+      <% if(data?.willQuestionnaire[0]?.willTrusts.isIHT){%>
+        <div class="hr"></div>
+        <div class="table_container">
+          <% data?.willQuestionnaire?.forEach(function(willQuestionnaireIns, index){%>
+            <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+
+              <% willQuestionnaireIns?.willTrusts?.inheritanceTaxPlanning.forEach((iht, ind=index)=>{%>
+                <div class="exclusion_table_container">
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key" colspan="2">Company</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <%= iht.companyName ?? '' %>
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key">Are there any assets which qualify for BPR / APR</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <%= iht.bprAssets ?? '' %>
+                      </td>
+                    </tr>
+                  </table>
+                  <% iht.trustee.forEach((truste, ind=index)=>{%>
+
+                    <table class="mb-10">
+                      <tr>
+                        <td class="key">Trustee <%= ind+1 %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <%= truste.fullName ?? '' %>
+                        </td>
+                      </tr>
+                    </table>
+                    <% }) %>
+                      <% iht?.beneficiary.forEach((bf, ind=index)=>{%>
+
+                        <table class="mb-10">
+                          <tr>
+                            <td class="key">Ultimate Beneficiary <%= ind+1 %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <%= bf.ultimateBeneficiary ?? '' %>
+                            </td>
+                          </tr>
+                        </table>
+
+                        <table class="">
+                          <tr>
+                            <td class="key">Per Stripes</td>
+                            <td class="key px-5">Age of Inheritance</td>
+                            <td class="key">Percentage Share</td>
+                          </tr>
+                          <tr>
+                            <td class="">
+                              <%= bf.perStripes ?? '' %>
+                            </td>
+                            <td class="px-5 text-center">
+                              <%= bf.ageOfInheritance ?? '' %>
+                            </td>
+                            <td class="text-center">
+                              <%= bf.percentageShare ?? '' %> %
+                            </td>
+                          </tr>
+                        </table>
+                        <% }) %>
+                </div>
+                <% }) %>
+
+            </div>
+            <%});%>
+        </div>
+        <%}%>
+          <div class="hr"></div>
+    </div>
+
+    <!-- RESIDUE OF ESTATE -->
+    <div class="section">
+      <div class="section_heading">Residue of Estate</div>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+            <table class="mb-10">
+              <tr>
+                <td class="pb-15">Pass to Spouse/Partner?</td>
+                <td class="pb-15">
+                  <%= willQuestionnaireIns?.residueOfEstate?.passToSpouseOrPartner===true?'Yes':'No' %>
+                </td>
+              </tr>
+              <tr>
+                <td>And / or then to pass directly to Children / Grandchildren?</td>
+                <td>
+                  <%= willQuestionnaireIns?.residueOfEstate?.passToChildrenOrGrandChildren===true?'Yes':'No' %>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- BENEFICIARY -->
+    <div class="section">
+      <div class="section_sub">
+        <div class="section_heading">
+          <div class="text-big text-bold">Beneficiary
+          </div>
+        </div>
+      </div>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+
+            <%willQuestionnaireIns?.residueOfEstate?.beneficiaries.forEach(function(bf, ind=index){ %>
+              <div class="exclusion_table_container">
+                <% if(index===0 && bf?.isMirror){%>
+                  <div class="joint text-small">Mirror</div>
+                  <%}else{%>
+                    <div class="joint text-small visibility-none">Mirror</div>
+                    <% }%>
+                      <table class="mb-10">
+                        <tr>
+                          <td class="key">Beneficiary <%= ind+1 %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= bf.beneficiary ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table class="">
+                        <tr>
+                          <td class="key">Per Stripes</td>
+                          <td class="key px-5">Age of Inheritance</td>
+                          <td class="key">Percentage Share</td>
+                        </tr>
+                        <tr>
+                          <td class="">
+                            <%= bf.perStripes===true?'Yes':'No' %>
+                          </td>
+                          <td class="px-5 text-center">
+                            <%= bf.ageOfInheritance ?? '' %>
+                          </td>
+                          <td class="text-center">
+                            <%= bf.percentageShare ?? '' %> %
+                          </td>
+                        </tr>
+                      </table>
+              </div>
+              <%});%>
+
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- Reserve / Backstop Beneficiries -->
+    <div class="section">
+      <div class="section_sub">
+        <div class="section_heading">
+          <div class="text-big text-bold">Reserve / Backstop Beneficiries
+          </div>
+        </div>
+      </div>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+
+            <% willQuestionnaireIns?.residueOfEstate?.reserveBeneficiaries.forEach(function(reservebf, ind=index){ %>
+
+              <div class="exclusion_table_container">
+                <% if(index===0 && reservebf?.isMirror){%>
+                  <div class="joint text-small">Mirror</div>
+                  <%}else{%>
+                    <div class="joint text-small visibility-none">Mirror</div>
+                    <% }%>
+                      <table class="mb-10">
+                        <tr>
+                          <td class="key">Beneficiary <%= ind+1 %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= reservebf.beneficiary ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table class="">
+                        <tr>
+                          <td class="key">Per Stripes</td>
+                          <td class="key px-5">Age of Inheritance</td>
+                          <td class="key">Percentage Share</td>
+                        </tr>
+                        <tr>
+                          <td class="">
+                            <%= reservebf.perStripes===true?'Yes':'No' %>
+                          </td>
+                          <td class="px-5 text-center">
+                            <%= reservebf.ageOfInheritance ?? '' %>
+                          </td>
+                          <td class="text-center">
+                            <%= reservebf.percentageShare ?? '' %> %
+                          </td>
+                        </tr>
+                      </table>
+              </div>
+              <%});%>
+
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- EXCLUSIONS -->
+    <div class="section">
+      <div class="section_top">
+        <p class="section_heading">Exclusions</p>
+      </div>
+      <hr>
+      <div class="table_container">
+        <% data?.willQuestionnaire.forEach(function(willQuestionnaireIns,index){ %>
+          <div class=<%=data?.applicationType==="Joint" ? "custom_table_half" : "custom_table" %>>
+            <% willQuestionnaireIns?.exclusions.forEach(function(exclusion, ind=index){ %>
+              <div class="exclusion_table_container">
+                <% if(index===0 && exclusion?.isMirror){%>
+                  <div class="joint text-small">Mirror</div>
+                  <%}else{%>
+                    <div class="joint text-small visibility-none">Mirror</div>
+                    <% }%>
+                      <table class="mb-10">
+                        <tr>
+                          <td class="key">Name</td>
+                          <td class="key">Gender</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= exclusion.name ?? '' %>
+                          </td>
+                          <td>
+                            <%= exclusion.gender ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+                      <table class="mb-10">
+                        <tr>
+                          <td class="key">DOB</td>
+                          <td class="key">Relationship</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%=moment(exclusion.dob ?? '' ).format('DD /MM/YYYY')%>
+                          </td>
+                          <td>
+                            <%=exclusion.relationship ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+                      <table class="mb-10">
+                        <tr>
+                          <td class="key" colspan="2">Reason of exclusion</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">
+                            <%=exclusion.reasonOfExclusion ?? '' %>
+                          </td>
+                        </tr>
+                      </table>
+              </div>
+              <%});%>
+          </div>
+          <%});%>
+      </div>
+      <hr>
+    </div>
+
+    <!-- BUSINESS INTRESTS -->
+    <div class="section">
+      <div class="section_heading">Business Interests</div>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+            <table class="mb-10">
+              <tr>
+                <td class="pb-15">Are you including power to carry on business?</td>
+                <td class="pb-15 text-green">
+                  <%= willQuestionnaireIns?.businessInterests?.carryBusinessPower===true?'Yes':'No' %>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- FUNERAL WISHES -->
+    <div class="section">
+      <div class="section_heading">Funeral Wishes</div>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+            <table class="">
+              <tr>
+                <td class="key">Funeral Type</td>
+              </tr>
+              <tr>
+                <td class="">
+                  <%= willQuestionnaireIns.funeralWishes.type ?? '' %>
+                </td>
+              </tr>
+            </table>
+            <table class="">
+              <tr>
+                <td class="key">Do you wish to specify any funeral requests?</td>
+              </tr>
+              <tr>
+                <td class="">
+                  <%= willQuestionnaireIns.funeralWishes.requests ?? '' %>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+    <!-- Additional or Useful Information & Explanatory Notes -->
+    <div class="section">
+      <div class="section_heading">Additional or Useful Information & Explanatory Notes</div>
+      <div class="hr"></div>
+      <div class="table_container">
+        <% data?.willQuestionnaire.forEach(function(willQuestionnaireIns, index){%>
+          <div class=<%=data?.applicationType==='Joint' ? "custom_table_half" : "custom_table" %>>
+            <div class="text-wrap">
+              <%= willQuestionnaireIns.informationNotes.notes ?? '' %>
+            </div>
+
+          </div>
+          <%});%>
+      </div>
+      <div class="hr"></div>
+    </div>
+
+</body>
+
+</html>
