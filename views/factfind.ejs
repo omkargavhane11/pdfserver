@@ -246,7 +246,7 @@
         </div>
         <div class="hr"></div>
         <div class="table_container">
-            <% factfindData.forEach(function(client){ %>
+            <% factfindData.forEach(function(client, index){ %>
                 <div class=<%= applicationType === 'Joint' ? "custom_table_half giftBox" : "custom_table giftBox" %>>
                     <%client.gifts.forEach(function(gift){%>
                         <div class="exclusion_table_container">

@@ -372,6 +372,10 @@ body{
     break-inside: avoid;
 }
 
+.avoidPageBreak{
+    break-inside: avoid;
+}
+
 .exclusion_table_container {
     padding: 10px;
     box-sizing: border-box;
@@ -532,12 +536,17 @@ table {
     margin-top: 10px;   
 }
 
+.page-break-after{
+    page-break-after: always;
+}
+
 .signature_box{
     height: 120px;
     width: 350px;
     border: 1px solid lightgray;
     border-radius: 15px;
     display: flex;
+    break-inside: avoid;
     align-items: center;
     justify-content: center;
 }
@@ -553,7 +562,9 @@ table {
 }
 
 .address_document_image{
-    height: 120px;
+    /* height: 120px; */
+    aspect-ratio: 16/9;
+    width:80%;
     border: 1px solid lightgray;
     border-radius: 15px;
     display: flex;

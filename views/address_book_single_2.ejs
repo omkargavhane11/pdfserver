@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single Address</title>
+  <link rel="stylesheet" href="./willQ.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Poppins:wght@200;300;400&display=swap"
+    rel="stylesheet" />
+  <title>Address Book Single</title>
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+      font-family: 'Crimson Text', serif;
+      font-family: 'Poppins', sans-serif;
+      color: #3D4740;
+      font-size: 16px;
+    }
+
+    body {
+      padding-bottom: 50px;
+    }
+
+    .key {
+      color: rgb(0, 204, 68);
+      font-weight: 500;
+      font-size: 12px !important;
+    }
+
+    .header {
+      padding: 20px;
+      background-color: #E5FAEB;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 30px;
+    }
+
+    .header_top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form_name_div {
+      flex: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form_name {
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .header_bottom {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .text-style {
+      font-family: 'Crimson Text', serif;
+      font-size: 22px;
+    }
+
+    .text-italic {
+      font-style: italic;
+    }
+
+    .header_bottom_left,
+    .header_bottom_right {
+      flex: 1;
+    }
+
+    .flex-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .flex-row-only {
+      display: flex;
+    }
+
+    .flex-row-only-sb {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .flex-row-sb {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .flex-row-sa {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+
+    .flex-row-wrap-center {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .border-1 {
+      border: 1px solid black;
+    }
+
+    .gap-5 {
+      gap: 5px
+    }
+
+    .gap-10 {
+      gap: 10px;
+    }
+
+    .gap-20 {
+      gap: 20px;
+    }
+
+    .gap-30 {
+      gap: 30px;
+    }
+
+    .gap-50 {
+      gap: 50px;
+    }
+
+    .section {}
+
+    .bigger_heading {
+      font-size: 22px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .section_heading {
+      color: rgb(0, 204, 68);
+      font-weight: 600;
+      font-size: 16px;
+      margin: 0px 20px;
+      padding: 20px 0px;
+      box-sizing: border-box;
+    }
+
+    .section_heading_trust {
+      font-weight: 600;
+      font-size: 16px;
+      margin: 0px 20px;
+      padding: 20px 0px;
+      box-sizing: border-box;
+    }
+
+    .section_heading_dark_16 {
+      font-weight: 600;
+      font-size: 16px !important;
+      margin: 20px;
+    }
+
+    .section_sub_heading {
+      font-size: 16px;
+      margin: -10px 20px 0px 20px;
+      padding: 0px 0px;
+      box-sizing: border-box;
+    }
+
+    .section_sub_text {
+      font-size: 12px;
+      margin: 0px 20px;
+      margin-bottom: 20px;
+      padding: 0px 0px;
+      box-sizing: border-box;
+    }
+
+    .text-22 {
+      font-size: 22px;
+    }
+
+    .text-bigger {
+      font-size: 18px;
+    }
+
+    .text-big {
+      font-size: 16px !important;
+    }
+
+    .text-medium {
+      font-size: 14px;
+    }
+
+    .text-small {
+      font-size: 12px;
+    }
+
+    .text-bold {
+      font-weight: 600;
+    }
+
+    .text-normal {
+      font-weight: normal;
+    }
+
+    .text-dark {
+      color: #3D4740 !important;
+    }
+
+
+
+    .my-10 {
+      margin: 10px 0px;
+    }
+
+    .my-20 {
+      margin: 20px 0px;
+    }
+
+    .my-30 {
+      margin: 30px 0px;
+    }
+
+    .my-40 {
+      margin: 40px 0px;
+    }
+
+    .mx-20 {
+      margin: 0px 20px;
+    }
+
+    .py-20 {
+      padding: 20px 0px;
+    }
+
+    .m-20 {
+      margin: 20px;
+    }
+
+    .mb-5 {
+      margin-bottom: 5px;
+    }
+
+    .mt--5 {
+      margin-top: -5px;
+    }
+
+    .mt-10 {
+      margin-top: 10px;
+    }
+
+    .mt-20 {
+      margin-top: 20px;
+    }
+
+    .mt-40 {
+      margin-top: 40px;
+    }
+
+    .mb-10 {
+      margin-bottom: 10px;
+    }
+
+    .mb-20 {
+      margin-bottom: 20px;
+    }
+
+    .mb-30 {
+      margin-bottom: 30px;
+    }
+
+    .mb-40 {
+      margin-bottom: 40px;
+    }
+
+    .mb-50 {
+      margin-bottom: 50px;
+    }
+
+    .mb-30 {
+      margin-bottom: 30px;
+    }
+
+    .mr-30 {
+      margin-right: 30px;
+    }
+
+    .mx-15p {
+      margin: 0px 15%;
+    }
+
+    .px-5 {
+      padding: 0px 5px;
+    }
+
+    .px-20 {
+      padding: 0px 20px;
+    }
+
+    .pb-8 {
+      padding-bottom: 8px;
+    }
+
+    .pb-4 {
+      padding-bottom: 4px;
+    }
+
+    .pb-13 {
+      padding-bottom: 13px;
+    }
+
+    .pb-15 {
+      padding-bottom: 8px;
+    }
+
+    .px-15 {
+      padding: 0px 15px;
+    }
+
+    .p-10 {
+      padding: 10px;
+    }
+
+    .p-20 {
+      padding: 20px;
+    }
+
+    .pr-10 {
+      padding-right: 10px;
+    }
+
+    .pr-20 {
+      padding-right: 20px;
+    }
+
+    .pt-60 {
+      padding-top: 60px;
+    }
+
+    .flex-1 {
+      flex: 1;
+    }
+
+    .flex-3 {
+      flex: 3;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-top {
+      vertical-align: top;
+    }
+
+    .vertical-center {
+      vertical-align: middle !important;
+    }
+
+    .text-underline {
+      padding-bottom: 5px;
+      margin: 5px;
+      border-bottom: 1px solid lightgray;
+    }
+
+    .text-green {
+      color: #00CE3F;
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    .table_container {
+      display: flex;
+      break-inside: avoid;
+    }
+
+    .exclusion_table_container {
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid lightgray;
+      border-radius: 4px;
+      break-inside: avoid;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+    }
+
+    hr {
+      margin: 0px 20px;
+      border-top: 0.5px solid lightgray;
+    }
+
+    .hr {
+      border-top: 1px solid #DCDCE1;
+      margin: 0px 20px;
+    }
+
+    .break-avoid {
+      break-inside: avoid;
+    }
+
+    .width-5 {
+      width: 5%;
+    }
+
+    .width-10 {
+      width: 10%;
+    }
+
+    .width-15 {
+      width: 15%;
+    }
+
+    .width-20 {
+      width: 20%;
+    }
+
+    .width-33 {
+      width: 33% !important;
+    }
+
+    .width-45 {
+      width: 45%;
+    }
+
+    .width-50 {
+      width: 50%;
+    }
+
+    .width-60 {
+      width: 60%;
+    }
+
+    .width-25 {
+      width: 25%;
+    }
+
+    .width-70 {
+      width: 70%;
+    }
+
+    .width-70 {
+      width: 70%;
+    }
+
+    .width-80 {
+      width: 80%;
+    }
+
+    .width-90 {
+      width: 90%;
+    }
+
+    .width-95 {
+      width: 95%;
+    }
+
+    .width-100 {
+      width: 100%;
+    }
+
+    .width-85 {
+      width: 85%;
+    }
+
+    .vert-align-top {
+      vertical-align: text-top;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    .custom_table {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border-right: 1px solid lightgray;
+      break-inside: avoid;
+    }
+
+    .custom_table:nth-child(even) {
+      border-right: none;
+    }
+
+    .custom_table_half {
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      break-inside: avoid;
+    }
+
+    .visibility-none {
+      visibility: hidden;
+    }
+
+    .joint {
+      border: 1px solid #00CE3F;
+      width: max-content;
+      background-color: #00CE3F;
+      color: white;
+      padding: 1px 4px;
+      border-radius: 14px;
+      position: absolute;
+      right: 7px;
+      top: 7px;
+      font-size: 12px;
+    }
+
+    .declaration_container {
+      display: flex;
+      gap: 20px;
+      width: 85%;
+      margin-bottom: 30px;
+      vertical-align: text-top;
+    }
+
+    .checkbox {
+      border-radius: 4px;
+      background-color: #00CE3F;
+      color: white;
+      height: 20px;
+      width: 20px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .signature_box {
+      height: 120px;
+      width: 350px;
+      border: 1px solid lightgray;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .signature_box_appointment_declaration {
+      height: 120px;
+      width: 100%;
+      border: 1px solid lightgray;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .address_document_image{
+    /* height: 120px; */
+    aspect-ratio: 16/9;
+    width:80%;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    display: flex;
+}
+
+    .center_container {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .min-width-80 {
+      min-width: 100%;
+    }
+
+    .round_div_with_padding_20 {
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid lightgray;
+      border-radius: 4px;
+      break-inside: avoid;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .info_container {
+      background-color: #E5FAEB;
+      display: flex;
+      padding: 15px;
+      border-radius: 10px;
+      gap: 10px;
+    }
+
+    .info {
+      border-radius: 50%;
+      padding: 5px;
+      border: 1px solid rgb(65, 64, 64);
+      height: 10px;
+      width: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5px;
+    }
+
+    .address_card {
+      width: 48%;
+      padding: 15px;
+      border-radius: 15px;
+      background-color: #00CE3F;
+      box-sizing: border-box;
+    }
+
+    .address_card_relatives {
+      width: 48%;
+      padding: 15px;
+      border-radius: 15px;
+      border: 1px solid lightgray;
+      box-sizing: border-box;
+    }
+
+    .checked {
+      height: 18px;
+      width: 18px;
+      border-radius: 2px;
+      border: 1px solid #00CE3F;
+      background-color: #00CE3F;
+      margin-top: 5px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .notChecked {
+      height: 18px;
+      width: 18px;
+      border-radius: 2px;
+      border: 1px solid #00CE3F;
+      background-color: #fff;
+      margin-top: 5px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .single_address_item {
+      break-inside: avoid;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="header_top">
+      <div class="form_name_div">
+        <span class="form_name">Address Book</span>
+      </div>
+    </div>
+  </div>
+  <% data?.addressBook?.forEach(function(person, index) { %>
+
+    <div class="single_address_item">
+      <!-- Heading -->
+      <div class="">
+        <div class="hr"> </div>
+        <div class="p-20">
+          <div class="text_big text-green text-bold">
+            <%= person.fullName ?? '' %>
+          </div>
+
+          <div class="flex-row-only gap-10 text-small">
+
+            <% person?.personRole?.forEach(role=> { %>
+              <div>
+                <%= role %> /
+              </div>
+              <% }) %>
+                <div class="hr"></div>
+          </div>
+
+
+          <!-- Profile details -->
+          <div class="p-20">
+
+            <div class="flex-row-only text-top">
+              <!-- row 1 -->
+              <div class="width-50">
+                <table class="mb-10 width-95">
+                  <tr>
+                    <td class="key">Full Name</td>
+                    <td class="key">Alias</td>
+                  </tr>
+                  <tr>
+                    <td class="">
+                      <%= person.fullName ?? '' %>
+                    </td>
+                    <td class="">
+                      <%= person.alias ?? '' %>
+                    </td>
+                  </tr>
+                </table>
+                <table class="mb-10">
+                  <tr class="">
+                    <td class="key width-50">
+                      <%= data?.applicationType==="Joint" ? 'Relationship to Client 1' :'Relationship to Client' %>
+                    </td>
+                    <td class="key width-50">Relationship to Client 2</td>
+                  </tr>
+
+                  <tr>
+                    <td class="">
+                      <%= person.relationshipToClientOne ?? '--' %>
+                    </td>
+                    <td class="">
+                      <%= person.relationshipToClientTwo ?? '--' %>
+                    </td>
+                  </tr>
+
+                </table>
+
+
+                <table class="mb-10">
+                  <tr>
+                    <td class="key">Occupation</td>
+                  </tr>
+                  <tr>
+                    <td class="">
+                      <%= person.occupation ?? '' %>
+                    </td>
+                  </tr>
+                </table>
+
+                <table class="mb-10">
+                  <tr>
+                    <td class="key width-50">Home Telephone</td>
+                    <td class="key width-50">Mobile Number</td>
+                  </tr>
+                  <tr>
+                    <td class="">
+                      <%= person.telephone ?? '' %>
+                    </td>
+                    <td class="">
+                      <%= person.phoneNumber ?? '' %>
+                    </td>
+                  </tr>
+                </table>
+
+                <table class="mb-10">
+                  <tr>
+                    <td class="key">Email ID</td>
+                  </tr>
+                  <tr>
+                    <td class="">
+                      <%= person.email ?? '' %>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <!-- row 2 -->
+              <div class="width-50">
+                <table class="mb-10">
+                  <tr>
+                    <td class="key">Gender</td>
+                    <td class="key">Date of Birth</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <%= person.gender %>
+                    </td>
+                    <td>
+                      <%= person.dob ? moment.utc(person.dob).local().format('DD/MM/YYYY') : '' %>
+                    </td>
+                  </tr>
+                </table>
+                <table class="mb-10">
+                  <tr>
+                    <td class="key" colspan="2">Address</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <div class="column">
+                        <%= person?.address?.street1 ?? '' %>,
+                          <%= person?.address?.street2 ?? '' %>, <br />
+                            <%= person?.address?.city ?? '' %>,
+                              <%= person?.address?.state ?? '' %>, <br />
+                                <%= person?.address?.zip ?? '' %>,
+                                  <%= person?.address?.country ?? '' %>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+
+            <!-- Identification -->
+            <div class="text-bold py-20">Identification</div>
+            <div class="flex-row-only gap-20 text-top mb-10">
+              <table class="">
+                <tr>
+                  <td class="key">Certification Type</td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= person?.identification?.certificationType ?? '' %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="flex-row-only-sb">
+              <!-- Personal ID Proof -->
+              <div class="flex-column">
+                <table class="width-95">
+                  <tr>
+                    <td class="key">Personal ID Proof</td>
+                  </tr>
+                  <tr>
+                    <td>* <%= person?.identification?.personalProof?.proofType ?? '' %>
+                    </td>
+                  </tr>
+                </table>
+                <div class="">
+                  <img class="address_document_image" src=<%=person?.identification?.personalProof?.img ?? '' %> alt=""
+                  />
+                </div>
+              </div>
+
+
+              <!-- Proof of Residency -->
+              <div class="flex-column mt-10">
+                <table class="width-95">
+                  <tr>
+                    <td class="key">Proof of Residency</td>
+                  </tr>
+                  <tr>
+                    <td>* <%= person?.identification?.residencyProof?.proofType ?? '' %>
+                    </td>
+                  </tr>
+                </table>
+                <div class="">
+                  <img class="address_document_image" src=<%=person?.identification?.residencyProof?.img ?? '' %> alt=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- declaration -->
+            <div class="flex-row gap-20">
+              <% if (person?.identification?.clarification===true) { %>
+                <div class="checkbox"> ✔</div>
+                <%}else{%>
+                  <div class="notChecked"></div>
+                  <% } %>
+
+                    <div class="text-bold">
+                      I certify that the photo(s) above is a true copy of the original.
+                    </div>
+            </div>
+
+            <!-- signature -->
+            <table class="">
+              <tr>
+                <td class="key pb-8">
+                  <%= person?.identification?.certificationType==='Squiggle Consultant' ? 'Consultant'
+                    : 'Professional Person Name' %>
+                </td>
+                <td class="key pb-8">Date</td>
+                <td class="key pb-8">Occupation</td>
+
+              </tr>
+              <tr>
+                <td class="text-top">
+                  <%= person?.identification?.otherProofs?.professionalName ?? '' %>
+                </td>
+                <td class="text-top">
+                  <%= moment(person?.identification?.otherProofs?.date).format('DD/MM/YYYY') ?? '' %>
+                </td>
+                <td class="text-top">
+                  <%= person?.identification?.otherProofs?.occupation ?? '' %>
+                </td>
+              </tr>
+            </table>
+            <table class="">
+              <tr>
+                <td class="key pb-4">Address</td>
+                <td class="key pb-4">Signature</td>
+
+              </tr>
+              <tr>
+                <td class="text-top">
+                  <div class="column">
+                    <%= person?.identification?.otherProofs?.address?.street1 ?? '' %>,
+                      <%= person?.identification?.otherProofs?.address?.street2 ?? '' %>, <br />
+                        <%= person?.identification?.otherProofs?.address?.city ?? '' %>,
+                          <%= person?.identification?.otherProofs?.address?.state ?? '' %>, <br />
+                            <%= person?.identification?.otherProofs?.address?.zip ?? '' %>,
+                              <%= person?.identification?.otherProofs?.address?.country ?? '' %>
+                  </div>
+                </td>
+                <td class="signature_box">
+                  <img class="address_document_image" src=<%=person?.identification?.signature?.img ?? '' %>
+                  width="200px" height="150px" alt="" />
+                </td>
+              </tr>
+            </table>
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+    </div>
+
+    <% }) %>
+
+
+</body>
+
+</html>

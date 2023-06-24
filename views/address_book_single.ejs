@@ -1,221 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Single Address</title>
-    <link rel="stylesheet" href="./willQ.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Poppins:wght@200;300;400&display=swap"
-      rel="stylesheet"
-    />
-    <title>Declaration of Trust Declaration</title>
-  </head>
-  <body>
-    <% addressbook_data.forEach(function(person, index) { %>
 
-    <% if(index === 0){%>
-    <!-- header  -->
-    <div class="header">
-      <div class="header_top">
-        <div class="form_name_div">
-          <span class="form_name">Address Book</span>
-        </div>
-      </div>
-    </div>
-    <%}else{%>
-      <div class="header visibility-none">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single Address</title>
+  <link rel="stylesheet" href="./willQ.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Poppins:wght@200;300;400&display=swap"
+    rel="stylesheet" />
+  <title>Declaration of Trust Declaration</title>
+</head>
+
+<body>
+  <% addressbook_data.forEach(function(person, index) { %>
+
+    <% if(index===0){%>
+      <!-- header  -->
+      <div class="header">
         <div class="header_top">
           <div class="form_name_div">
             <span class="form_name">Address Book</span>
           </div>
         </div>
       </div>
-    <%}%>
-
-    <div class="single_address_item pt-60">
-    <!-- Heading -->
-    <div class="section">
-      <div class="hr"></div>
-      <div class="p-20">
-        <div class="text_big text-green text-bold"><%= person.fullname %></div>
-        <div class="flex-row-only gap-10 text-small">
-          <% person.personRole.forEach(function(role,index) { %>
-            <% if(index === person.personRole.length - 1){%>
-            <div><%= role %></div>
-            <%}else{%>
-            <div><%= role %> /</div>
-            <%}%>
-          <%})%>
+      <%}else{%>
+        <div class="header visibility-none">
+          <div class="header_top">
+            <div class="form_name_div">
+              <span class="form_name">Address Book</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="hr"></div>
-    </div>
+        <%}%>
 
-    <!-- Profile details -->
-    <div class="section p-20">
-      <div class="flex-row-only text-top">
-        <!-- row 1 -->
-        <div class="width-50">
-          <table class="mb-10 width-95">
-            <tr>
-              <td class="key">Full Name</td>
-              <td class="key">Alias</td>
-            </tr>
-            <tr>
-              <td class=""><%= person.fullname %></td>
-              <td class=""><%= person.alias %></td>
-            </tr>
-          </table>
-          <table class="mb-10">
-            <tr class="">
-              <% if(applicationType === "joint"){%>
-              <td class="key width-50">Relationship to Client 1</td>
-              <%}else{%>
-              <td class="key width-50">Relationship to Client</td>
-              <%}%>
-              <% if(applicationType === "joint"){%>
-              <td class="key width-50">Relationship to Client 2</td>
-              <%}else{%>
-                <td class="key">Email ID</td>
-              <%}%>
-            </tr>
-            <tr>
-              <td class=""><%= person.relationshipToClient1 %></td>
-              <% if(applicationType === "joint"){%>
-              <td class=""><%= person.relationshipToClient2 %></td>
-              <%}else{%>
-                <td class=""><%= person.email %></td>
-                <%}%>
-            </tr>
-          </table>
-          <table class="mb-10">
-            <tr>
-              <td class="key width-50">Home Telephone</td>
-              <td class="key width-50">Mobile Number</td>
-            </tr>
-            <tr>
-              <td class=""><%= person.telephone %></td>
-              <td class=""><%= person.phoneNumber %></td>
-            </tr>
-          </table>
-          <% if(applicationType === "joint"){%>
-          <table class="mb-10">
-            <tr>
-              <td class="key">Email ID</td>
-            </tr>
-            <tr>
-              <td class=""><%= person.email %></td>
-            </tr>
-          </table>
-          <%}%>
-        </div>
-
-        <!-- row 2 -->
-        <div class="width-50">
-          <table class="mb-10">
-            <tr>
-              <td class="key">Gender</td>
-              <td class="key">Date of Birth</td>
-            </tr>
-            <tr>
-              <td><%= person.gender %></td>
-              <td><%= person.dob %></td>
-            </tr>
-          </table>
-          <table class="mb-10">
-            <tr>
-              <td class="key" colspan="2">Address</td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <div class="column">
-                  <%= person.address.street1 %>, <%= person.address.street2 %>, <%= person.address.city %>, <%= person.address.state %>, <%= person.address.country %>, <%= person.address.zip %>
+          <div class="single_address_item pt-60">
+            <!-- Heading -->
+            <div class="section">
+              <div class="hr"></div>
+              <div class="p-20">
+                <div class="text_big text-green text-bold">
+                  <%= person.fullname %>
                 </div>
-              </td>
-            </tr>
-          </table>
-          <table class="mb-10">
-            <tr>
-              <td class="key">Occupation</td>
-            </tr>
-            <tr>
-              <td class=""><%= person.occupation %></td>
-            </tr>
-          </table>
-        </div>
-      </div>
+                <div class="flex-row-only gap-10 text-small">
+                  <% person.personRole.forEach(function(role,index) { %>
+                    <% if(index===person.personRole.length - 1){%>
+                      <div>
+                        <%= role %>
+                      </div>
+                      <%}else{%>
+                        <div>
+                          <%= role %> /
+                        </div>
+                        <%}%>
+                          <%})%>
+                </div>
+              </div>
+              <div class="hr"></div>
+            </div>
 
-      <!-- Identification -->
-      <div class="text-bold py-20">Identification</div>
+            <!-- Profile details -->
+            <div class="section p-20">
+              <div class="flex-column-only text-top">
+                <!-- row 1 -->
+                <div class="width-50">
+                  <table class="mb-10 width-95">
+                    <tr>
+                      <td class="key">Full Name</td>
+                      <td class="key">Alias</td>
 
-      <!-- Certification Type -->
-      <div class="flex-row-only gap-20 text-top mb-10">
-        <table class="">
-          <tr>
-            <td class="key">Certification Type</td>
-          </tr>
-          <tr>
-            <td><%= person.identification.certificationType %></td>
-          </tr>
-        </table>
-        <!-- <div class="address_document_image"></div> -->
-      </div>
+                    </tr>
+                    <tr>
+                      <td class="">
+                        <%= person.fullname %>
+                      </td>
+                      <td class="">
+                        <%= person.alias %>
+                      </td>
 
-      <div class="flex-row-only-sb">
-        <!-- Personal ID Proof -->
-        <div class="flex-column gap-10 width-50">
-          <table class="width-95">
-            <tr>
-              <td class="key">Personal ID Proof</td>
-            </tr>
-            <tr>
-              <td><%= person.identification.personalProof.idProof %></td>
-            </tr>
-          </table>
-          <div class="address_document_image width-95"></div>
-        </div>
+                    </tr>
+                  </table>
+                  <table class="mb-10">
+                    <tr class="">
+                      <% if(applicationType==="joint" ){%>
+                        <td class="key width-50">Relationship to Client 1</td>
+                        <%}else{%>
+                          <td class="key width-50">Relationship to Client</td>
+                          <%}%>
+                            <% if(applicationType==="joint" ){%>
+                              <td class="key width-50">Relationship to Client 2</td>
+                              <%}else{%>
+                                <td class="key">Email ID</td>
+                                <%}%>
+                    </tr>
+                    <tr>
+                      <td class="">
+                        <%= person.relationshipToClient1 %>
+                      </td>
+                      <% if(applicationType==="joint" ){%>
+                        <td class="">
+                          <%= person.relationshipToClient2 %>
+                        </td>
+                        <%}else{%>
+                          <td class="">
+                            <%= person.email %>
+                          </td>
+                          <%}%>
+                    </tr>
+                  </table>
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key width-50">Mobile Number</td>
+                    </tr>
+                    <tr>
+                      <td class="">
+                        <%= person.phoneNumber %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="key width-50">Home Telephone</td>
+                    </tr>
+                    <tr>
+                      <td class="">
+                        <%= person.telephone %>
+                      </td>
+                    </tr>
+                  </table>
+                  <% if(applicationType==="joint" ){%>
+                    <table class="mb-10">
+                      <tr>
+                        <td class="key">Email ID</td>
+                      </tr>
+                      <tr>
+                        <td class="">
+                          <%= person.email %>
+                        </td>
+                      </tr>
+                    </table>
+                    <%}%>
+                </div>
 
-        <!-- Proof of Residency -->
-        <div class="flex-column gap-10 width-50">
-          <table class="width-95">
-            <tr>
-              <td class="key">Proof of Residency</td>
-            </tr>
-            <tr>
-              <td><%= person.identification.professionalAddress.type %></td>
-            </tr>
-          </table>
-          <div class="address_document_image width-95"></div>
-        </div>
-      </div>
+                <!-- row 2 -->
+                <div class="width-50">
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key">Gender</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <%= person.gender %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="key">Date of Birth</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <%= person.dob %>
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key" colspan="2">Address</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <div class="column">
+                          <%= person.address.street1 %>, <%= person.address.street2 %>, <%= person.address.city %>, <%=
+                                  person.address.state %>, <%= person.address.country %>, <%= person.address.zip %>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="mb-10">
+                    <tr>
+                      <td class="key">Occupation</td>
+                    </tr>
+                    <tr>
+                      <td class="">
+                        <%= person.occupation %>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
 
-      <!-- declaration -->
-      <div class="flex-row gap-20 my-20">
-        <div class="checkbox">✔</div>
-        <div class="text-bold">
-          I certify that the photo(s) above is a true copy of the original.
-        </div>
-      </div>
+              <!-- Identification -->
+              <div class="text-bold py-20">Identification</div>
 
-      <!-- signature -->
-      <table class="my-20">
-        <tr>
-          <td class="key pb-8">Consultant</td>
-          <td class="key pb-8">Date</td>
-          <td class="key pb-8">Signature</td>
-        </tr>
-        <tr>
-          <td class="text-top"><%= person.consultantName %></td>
-          <td class="text-top"><%= person.currentDate %></td>
-          <td class="signature_box"></td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <% }) %>
+              <!-- Certification Type -->
+              <div class="flex-row-only gap-20 text-top mb-10">
+                <table class="">
+                  <tr>
+                    <td class="key">Certification Type</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <%= person.identification.certificationType %>
+                    </td>
+                  </tr>
+                </table>
+                <!-- <div class="address_document_image"></div> -->
+              </div>
+
+              <div class="page-break-after"></div>
+
+              <div class="flex-column-only-sb">
+                <!-- Personal ID Proof -->
+                <div class="flex-column gap-10">
+                  <table class="width-95">
+                    <tr>
+                      <td class="key">Personal ID Proof</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <%= person.identification.personalProof.idProof %>
+                      </td>
+                    </tr>
+                  </table>
+                  <div class="address_document_image"></div>
+                </div>
+
+                <!-- Proof of Residency -->
+                <div class="flex-column gap-10 mt-10">
+                  <table class="width-95">
+                    <tr>
+                      <td class="key">Proof of Residency</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <%= person.identification.professionalAddress.type %>
+                      </td>
+                    </tr>
+                  </table>
+                  <div class="address_document_image"></div>
+                </div>
+              </div>
+
+              <!-- declaration -->
+              <div class="flex-row gap-20 my-20">
+                <div class="checkbox">✔</div>
+                <div class="text-bold">
+                  I certify that the photo(s) above is a true copy of the original.
+                </div>
+              </div>
+
+              <!-- signature -->
+              <table class="my-20">
+                <tr>
+                  <td class="key pb-8">Consultant</td>
+                  <td class="key pb-8">Date</td>
+                  <td class="key pb-8">Signature</td>
+                </tr>
+                <tr>
+                  <td class="text-top">
+                    <%= person.consultantName %>
+                  </td>
+                  <td class="text-top">
+                    <%= person.currentDate %>
+                  </td>
+                  <td class="signature_box"></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <% }) %>
 
 
-  </body>
+</body>
+
 </html>

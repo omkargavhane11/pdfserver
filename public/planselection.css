@@ -33,6 +33,14 @@ body{
     margin: 20px 0px;
 }
 
+.avoidPageBreak{
+    break-inside: avoid;
+}
+
+.breakPageAfter{
+    page-break-after: always;
+}
+
 .sub_section{
     margin: 40px 0px;
     padding: 0px 8%;

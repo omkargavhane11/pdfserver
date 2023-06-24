@@ -368,7 +368,7 @@ const factfindData = [
     isDependants: true,
     dependants: [
       {
-        isJoint: false,
+        isJoint: true,
         fullname: "P1_1",
         gender: "Male",
         dob: "2022-11-16T06:00:56.268Z",
@@ -401,6 +401,7 @@ const factfindData = [
         date: "2022-11-16T06:00:56.268Z",
         value: 245,
         _id: "6376dc5669be39653edf45af",
+        isJoint: true,
       },
     ],
     properties: [
@@ -1577,84 +1578,1356 @@ const will_questionare_data = {
     },
   ],
   capsuleOpportunityId: 13293574,
-  willQuestionaire: [
+  // willQuestionnaire: [
+  //   {
+  //     _id: "63bbebe406cf8dff4b82db19",
+  //     testators: {
+  //       fullname: "Anushka Sharma",
+  //       makeExecutorOrTrustee: "Solely",
+  //       marriageClause: false,
+  //       _id: "63bbebe406cf8dff4b82db1a",
+  //     },
+  //     executorsAndTrustees: [
+  //       {
+  //         isJoint: true,
+  //         fullname: "Jack",
+  //         role: "Trustee",
+  //         _id: "63bbebe406cf8dff4b82db1b",
+  //       },
+  //     ],
+  //     professionalExecutor: [
+  //       {
+  //         executors: "Squiggle Consult LTD",
+  //         fullname: "Monica",
+  //         address: {
+  //           street1: "efe",
+  //           street2: "erter",
+  //           city: "xyz town",
+  //           state: "xyz country",
+  //           country: "UK",
+  //           zip: "EC222postcode",
+  //           _id: "63bbebe406cf8dff4b82db1d",
+  //         },
+  //         feesAwareness: true,
+  //         _id: "63bbebe406cf8dff4b82db1c",
+  //       },
+  //       {
+  //         executors: "Squiggle Consult LTD",
+  //         fullname: "Monica",
+  //         address: {
+  //           street1: "efe",
+  //           street2: "erter",
+  //           city: "xyz town",
+  //           state: "xyz country",
+  //           country: "UK",
+  //           zip: "EC222postcode",
+  //           _id: "63bbebe406cf8dff4b82db1d",
+  //         },
+  //         feesAwareness: true,
+  //         _id: "63bbebe406cf8dff4b82db1c",
+  //       },
+  //     ],
+  //     guardians: [
+  //       {
+  //         isJoint: true,
+  //         fullname: "Karan",
+  //         guardianFor: [
+  //           {
+  //             id: "1234",
+  //             name: "Riya",
+  //             _id: "63bbebe406cf8dff4b82db1f",
+  //           },
+  //           {
+  //             id: "2345",
+  //             name: "Rene",
+  //             _id: "63bbebe406cf8dff4b82db20",
+  //           },
+  //           {
+  //             id: "5644",
+  //             name: "Ritika",
+  //             _id: "63bbebe406cf8dff4b82db21",
+  //           },
+  //         ],
+  //         _id: "63bbebe406cf8dff4b82db1e",
+  //       },
+  //       {
+  //         isJoint: true,
+  //         fullname: "Arjun",
+  //         goingToAct: "Reserve",
+  //         guardianFor: [
+  //           {
+  //             id: "1234",
+  //             name: "Riya",
+  //             _id: "63bbebe406cf8dff4b82db23",
+  //           },
+  //           {
+  //             id: "2345",
+  //             name: "Rene",
+  //             _id: "63bbebe406cf8dff4b82db24",
+  //           },
+  //           {
+  //             id: "5644",
+  //             name: "Ritika",
+  //             _id: "63bbebe406cf8dff4b82db25",
+  //           },
+  //         ],
+  //         _id: "63bbebe406cf8dff4b82db22",
+  //       },
+  //     ],
+  //     chattlesAndGifts: [
+  //       {
+  //         isJoint: false,
+  //         recipientName: "Madhuri",
+  //         relationship: "sister",
+  //         giftDetails: "xyz giftDetails",
+  //         perStripes: true,
+  //         onDeathOf: "Anushka Sharma",
+  //         _id: "63bbebe406cf8dff4b82db26",
+  //       },
+  //     ],
+  //     monetaryLegacies: [
+  //       {
+  //         isJoint: false,
+  //         recipientName: "Kareena",
+  //         relationship: "sister",
+  //         giftDetails: "xyz giftDetails",
+  //         perStripes: true,
+  //         onDeathOf: "Anushka Sharma",
+  //         _id: "63bbebe406cf8dff4b82db27",
+  //       },
+  //     ],
+  //     willTrusts: {
+  //       willTrustEstablishmentReason: "xyz willTrustEstablishmentReason",
+  //       isClauseIncluded: true,
+  //       guardianFor: [
+  //         {
+  //           id: "1234",
+  //           name: "Riya",
+  //           _id: "63bbebe406cf8dff4b82db29",
+  //         },
+  //       ],
+  //       isFLIT: true,
+  //       flexibleLifeInterestTrust: {
+  //         lifeTenantName: "Ankit",
+  //         lifeTenantDeath: false,
+  //         specificAge: {
+  //           age: 23,
+  //           status: false,
+  //           _id: "63bbebe406cf8dff4b82db2b",
+  //         },
+  //         marriageOrRemarriage: true,
+  //         cohabitationWithNewPartner: false,
+  //         beneficiary: [
+  //           {
+  //             ultimateBeneficiary: "xyz ultimateBeneficiary",
+  //             perStripes: false,
+  //             ageOfInheritance: 23,
+  //             percentageShare: 20,
+  //             _id: "63bbebe406cf8dff4b82db2c",
+  //           },
+  //         ],
+  //         _id: "63bbebe406cf8dff4b82db2a",
+  //       },
+  //       isRDT: true,
+  //       residuaryDiscretionaryTrust: {
+  //         RDT: [
+  //           {
+  //             ultimateBeneficiary: "abc ultimateBeneficiary",
+  //             perStripes: false,
+  //             ageOfInheritance: 33,
+  //             percentageShare: 20,
+  //             _id: "63bbebe406cf8dff4b82db2e",
+  //           },
+  //           {
+  //             ultimateBeneficiary: "abc1 ultimateBeneficiary",
+  //             perStripes: true,
+  //             ageOfInheritance: 43,
+  //             percentageShare: 10,
+  //             _id: "63bbebe406cf8dff4b82db2f",
+  //           },
+  //         ],
+  //         guidanceNotes: "guidanceNotes test",
+  //       },
+  //       isSOT: true,
+  //       severanceOfTenancy: [
+  //         {
+  //           property: {
+  //             id: "1234",
+  //             name: "prop1",
+  //           },
+  //           titleNumber: "A331TL",
+  //           percentageShare: 10,
+  //           type: "Freehold",
+  //           _id: "63bbebe406cf8dff4b82db30",
+  //         },
+  //         {
+  //           property: {
+  //             id: "1234",
+  //             name: "prop2",
+  //           },
+  //           titleNumber: "A331TL",
+  //           percentageShare: 10,
+  //           type: "Leasehold",
+  //           _id: "63bbebe406cf8dff4b82db31",
+  //         },
+  //       ],
+  //       isRTO: true,
+  //       rightToOccupy: [
+  //         {
+  //           isJoint: true,
+  //           property: {
+  //             id: "1234",
+  //             name: "prop1",
+  //           },
+  //           occupierName: "Hemangi",
+  //           outgoingPaymentRestriction: true,
+  //           lifeTenantDeath: false,
+  //           specificAge: {
+  //             age: 23,
+  //             status: false,
+  //             _id: "63bbebe406cf8dff4b82db33",
+  //           },
+  //           marriageOrRemarriage: false,
+  //           cohabitationWithNewPartner: false,
+  //           _id: "63bbebe406cf8dff4b82db32",
+  //         },
+  //       ],
+  //       isPPT: true,
+  //       propertyProtectionTrust: [
+  //         {
+  //           property: {
+  //             id: "1234",
+  //             name: "prop122",
+  //           },
+  //           isJoint: true,
+  //           lifeTenantName: "Nikki",
+  //           ongoingMaintenancePropertyRestriction: false,
+  //           sellAndPurchaseHouseRestriction: false,
+  //           beneficiary: [
+  //             {
+  //               ultimateBeneficiary: "ppt ultimateBeneficiary",
+  //               perStripes: false,
+  //               ageOfInheritance: 23,
+  //               percentageShare: 20,
+  //               _id: "63bbebe406cf8dff4b82db37",
+  //             },
+  //             {
+  //               ultimateBeneficiary: "ppt ultimateBeneficiaryerer",
+  //               perStripes: true,
+  //               ageOfInheritance: 23,
+  //               percentageShare: 20,
+  //               _id: "63bbebe406cf8dff4b82db37",
+  //             },
+  //           ],
+  //           _id: "63bbebe406cf8dff4b82db36",
+  //         },
+  //       ],
+  //       isDDT: true,
+  //       disabledDiscretionaryTrust: {
+  //         _id: "63bbebe406cf8dff4b82db38",
+  //         principleBeneficiaryName: "CCCC",
+  //         beneficiary: [
+  //           {
+  //             secondaryBeneficiary: "tiuerh",
+  //             perStripes: true,
+  //             ageOfInheritance: 34,
+  //             percentageShare: 21,
+  //           },
+  //           {
+  //             secondaryBeneficiary: "fff",
+  //             perStripes: true,
+  //             ageOfInheritance: 34,
+  //             percentageShare: 21,
+  //           },
+  //         ],
+  //       },
+  //       isIHT: true,
+  //       inheritanceTaxPlanning: [
+  //         {
+  //           companyName: "Iconnect",
+  //           bprAssets: true,
+  //           trustee: [
+  //             {
+  //               fullname: "t1",
+  //               _id: "63bbebe406cf8dff4b82db3a",
+  //             },
+  //             {
+  //               fullname: "t2",
+  //               _id: "63bbebe406cf8dff4b82db3b",
+  //             },
+  //           ],
+  //           beneficiary: [
+  //             {
+  //               ultimateBeneficiary: "ppt ultimateBeneficiary",
+  //               perStripes: false,
+  //               ageOfInheritance: 23,
+  //               percentageShare: 20,
+  //               _id: "63bbebe406cf8dff4b82db3c",
+  //             },
+  //             {
+  //               ultimateBeneficiary: "ppt ultimateBeneficiaryfdfgdgdfgf",
+  //               perStripes: true,
+  //               ageOfInheritance: 23,
+  //               percentageShare: 20,
+  //               _id: "63bbebe406cf8dff4b82db3c",
+  //             },
+  //           ],
+  //           _id: "63bbebe406cf8dff4b82db39",
+  //         },
+  //       ],
+  //       _id: "63bbebe406cf8dff4b82db28",
+  //     },
+  //     residueOfEstate: {
+  //       passToSpouseOrPartner: true,
+  //       passToChildrenOrGrandChildren: true,
+  //       beneficiaries: [
+  //         {
+  //           isMirror: true,
+  //           beneficiary: "beneficiary test",
+  //           perStripes: true,
+  //           ageOfInheritance: 23,
+  //           percentageShare: 20,
+  //           _id: "63bbebe406cf8dff4b82db3e",
+  //         },
+  //       ],
+  //       reserveBeneficiaries: [
+  //         {
+  //           isMirror: true,
+  //           beneficiary: "beneficiary test",
+  //           perStripes: true,
+  //           ageOfInheritance: 23,
+  //           percentageShare: 20,
+  //           _id: "63bbebe406cf8dff4b82db3f",
+  //         },
+  //       ],
+  //       _id: "63bbebe406cf8dff4b82db3d",
+  //     },
+  //     exclusions: [],
+  //     businessInterests: {
+  //       carryBusinessPower: true,
+  //       _id: "63bbebe406cf8dff4b82db41",
+  //     },
+  //     funeralWishes: {
+  //       type: "Burial",
+  //       requests: "no requests test",
+  //       _id: "63bbebe406cf8dff4b82db42",
+  //     },
+  //     informationNotes: {
+  //       notes: "jhdsbfjhsdbc notes",
+  //       _id: "63bbebe406cf8dff4b82db43",
+  //     },
+  //     __v: 0,
+  //     createdAt: "2023-01-09T10:26:44.151Z",
+  //     updatedAt: "2023-01-09T10:26:44.151Z",
+  //   },
+  //   {
+  //     _id: "63bbebe406cf8dff4b82db44",
+  //     testators: {
+  //       fullname: "Virat Kohli",
+  //       makeExecutorOrTrustee: "Solely",
+  //       marriageClause: false,
+  //       _id: "63bbebe406cf8dff4b82db45",
+  //     },
+  //     executorsAndTrustees: [
+  //       {
+  //         fullname: "Rose",
+  //         role: "Trustee",
+  //         _id: "63bbebe406cf8dff4b82db46",
+  //       },
+  //     ],
+  //     professionalExecutor: [
+  //       {
+  //         executors: "Squiggle Consult LTD",
+  //         fullname: "Monica",
+  //         address: {
+  //           street1: "efe",
+  //           street2: "erter",
+  //           city: "xyz town",
+  //           state: "xyz country",
+  //           country: "UK",
+  //           zip: "EC222postcode",
+  //           _id: "63bbebe406cf8dff4b82db1d",
+  //         },
+  //         feesAwareness: true,
+  //         _id: "63bbebe406cf8dff4b82db1c",
+  //       },
+  //       {
+  //         executors: "Squiggle Consult LTD",
+  //         fullname: "Monica",
+  //         address: {
+  //           street1: "efe",
+  //           street2: "erter",
+  //           city: "xyz town",
+  //           state: "xyz country",
+  //           country: "UK",
+  //           zip: "EC222postcode",
+  //           _id: "63bbebe406cf8dff4b82db1d",
+  //         },
+  //         feesAwareness: true,
+  //         _id: "63bbebe406cf8dff4b82db1c",
+  //       },
+  //     ],
+  //     guardians: [
+  //       {
+  //         fullname: "Mukesh",
+  //         guardianFor: [
+  //           {
+  //             id: "1234",
+  //             name: "Riyaee",
+  //             _id: "63bbebe406cf8dff4b82db4a",
+  //           },
+  //           {
+  //             id: "435",
+  //             name: "dvd",
+  //             _id: "63bbebe406cf8dff4b82db4b",
+  //           },
+  //         ],
+  //         _id: "63bbebe406cf8dff4b82db49",
+  //       },
+  //       {
+  //         fullname: "Niraj",
+  //         goingToAct: "Reserve",
+  //         guardianFor: [
+  //           {
+  //             id: "1234",
+  //             name: "Riyaee",
+  //             _id: "63bbebe406cf8dff4b82db4d",
+  //           },
+  //           {
+  //             id: "435",
+  //             name: "dvd",
+  //             _id: "63bbebe406cf8dff4b82db4e",
+  //           },
+  //         ],
+  //         _id: "63bbebe406cf8dff4b82db4c",
+  //       },
+  //     ],
+  //     chattlesAndGifts: [
+  //       {
+  //         recipientName: "Madhuri",
+  //         relationship: "sister",
+  //         giftDetails: "xyz giftDetails",
+  //         perStripes: true,
+  //         onDeathOf: "Anushka Sharma",
+  //         _id: "63bbebe406cf8dff4b82db4f",
+  //       },
+  //       {
+  //         recipientName: "Mrunal",
+  //         relationship: "sister",
+  //         giftDetails: "xyz giftDetails",
+  //         perStripes: true,
+  //         onDeathOf: "Anushka Sharma",
+  //         _id: "63bbebe406cf8dff4b82db4f",
+  //       },
+  //     ],
+  //     monetaryLegacies: [
+  //       {
+  //         recipientName: "Kareena",
+  //         relationship: "sister",
+  //         giftDetails: "xyz giftDetails",
+  //         perStripes: true,
+  //         onDeathOf: "Anushka Sharma",
+  //         _id: "63bbebe406cf8dff4b82db50",
+  //       },
+  //     ],
+  //     willTrusts: {
+  //       willTrustEstablishmentReason: "xyz willTrustEstablishmentReason",
+  //       isClauseIncluded: true,
+  //       guardianFor: [
+  //         {
+  //           id: "1234",
+  //           name: "Riyaee",
+  //           _id: "63bbebe406cf8dff4b82db52",
+  //         },
+  //       ],
+  //       isFLIT: true,
+  //       flexibleLifeInterestTrust: {
+  //         lifeTenantName: "Ankit",
+  //         lifeTenantDeath: false,
+  //         specificAge: {
+  //           age: 23,
+  //           status: false,
+  //           _id: "63bbebe406cf8dff4b82db54",
+  //         },
+  //         marriageOrRemarriage: false,
+  //         cohabitationWithNewPartner: false,
+  //         beneficiary: [
+  //           {
+  //             ultimateBeneficiary: "xyz ultimateBeneficiary",
+  //             perStripes: false,
+  //             ageOfInheritance: 23,
+  //             percentageShare: 20,
+  //             _id: "63bbebe406cf8dff4b82db55",
+  //           },
+  //           {
+  //             ultimateBeneficiary: "xyz1 ultimateBeneficiary",
+  //             perStripes: true,
+  //             ageOfInheritance: 23,
+  //             percentageShare: 20,
+  //             _id: "63bbebe406cf8dff4b82db56",
+  //           },
+  //         ],
+  //         _id: "63bbebe406cf8dff4b82db53",
+  //       },
+  //       isRDT: true,
+  //       residuaryDiscretionaryTrust: {
+  //         RDT: [
+  //           {
+  //             ultimateBeneficiary: "abc ultimateBeneficiary",
+  //             perStripes: false,
+  //             ageOfInheritance: 33,
+  //             percentageShare: 20,
+  //             _id: "63bbebe406cf8dff4b82db57",
+  //           },
+  //         ],
+  //         guidanceNotes: "guidanceNotes test",
+  //       },
+  //       isSOT: true,
+  //       severanceOfTenancy: [
+  //         {
+  //           property: {
+  //             id: "5444",
+  //             name: "prop33",
+  //           },
+  //           titleNumber: "A331TL",
+  //           percentageShare: 10,
+  //           type: "Freehold",
+  //           _id: "63bbebe406cf8dff4b82db59",
+  //         },
+  //         {
+  //           property: {
+  //             id: "1234",
+  //             name: "prop333",
+  //           },
+  //           titleNumber: "A331TL",
+  //           percentageShare: 10,
+  //           type: "Leasehold",
+  //           _id: "63bbebe406cf8dff4b82db5a",
+  //         },
+  //       ],
+  //       isRTO: true,
+  //       rightToOccupy: [
+  //         {
+  //           occupierName: "Hemangi",
+  //           property: {
+  //             id: "1234",
+  //             name: "prop1",
+  //           },
+  //           outgoingPaymentRestriction: true,
+  //           lifeTenantDeath: false,
+  //           specificAge: {
+  //             age: 23,
+  //             status: false,
+  //             _id: "63bbebe406cf8dff4b82db5c",
+  //           },
+  //           marriageOrRemarriage: false,
+  //           cohabitationWithNewPartner: false,
+  //           _id: "63bbebe406cf8dff4b82db5b",
+  //         },
+  //         {
+  //           occupierName: "Mrunalini",
+  //           property: {
+  //             id: "1234",
+  //             name: "prop1",
+  //           },
+  //           outgoingPaymentRestriction: true,
+  //           lifeTenantDeath: false,
+  //           specificAge: {
+  //             age: 27,
+  //             status: false,
+  //             _id: "63bbebe406cf8dff4b82db5e",
+  //           },
+  //           marriageOrRemarriage: false,
+  //           cohabitationWithNewPartner: false,
+  //           _id: "63bbebe406cf8dff4b82db5d",
+  //         },
+  //       ],
+  //       isPPT: true,
+  //       propertyProtectionTrust: [
+  //         {
+  //           property: {
+  //             id: "1234",
+  //             name: "prop2222",
+  //           },
+  //           lifeTenantName: "Nikki",
+  //           ongoingMaintenancePropertyRestriction: false,
+  //           sellAndPurchaseHouseRestriction: false,
+  //           beneficiary: [
+  //             {
+  //               ultimateBeneficiary: "ppt ultimateBeneficiary",
+  //               perStripes: false,
+  //               ageOfInheritance: 23,
+  //               percentageShare: 20,
+  //               _id: "63bbebe406cf8dff4b82db60",
+  //             },
+  //           ],
+  //           _id: "63bbebe406cf8dff4b82db5f",
+  //         },
+  //       ],
+  //       isDDT: true,
+  //       disabledDiscretionaryTrust: {
+  //         _id: "63bbebe406cf8dff4b82db61",
+  //         principleBeneficiaryName: "CCCCDDD",
+  //         beneficiary: [
+  //           {
+  //             secondaryBeneficiary: "tiuerh",
+  //             perStripes: true,
+  //             ageOfInheritance: 34,
+  //             percentageShare: 21,
+  //           },
+  //         ],
+  //       },
+  //       isIHT: true,
+  //       inheritanceTaxPlanning: [
+  //         {
+  //           companyName: "Iconnect",
+  //           bprAssets: true,
+  //           trustee: [
+  //             {
+  //               fullname: "t1",
+  //               _id: "63bbebe406cf8dff4b82db63",
+  //             },
+  //             {
+  //               fullname: "t2",
+  //               _id: "63bbebe406cf8dff4b82db64",
+  //             },
+  //           ],
+  //           beneficiary: [
+  //             {
+  //               ultimateBeneficiary: "ppt ultimateBeneficiary",
+  //               perStripes: false,
+  //               ageOfInheritance: 23,
+  //               percentageShare: 20,
+  //               _id: "63bbebe406cf8dff4b82db65",
+  //             },
+  //           ],
+  //           _id: "63bbebe406cf8dff4b82db62",
+  //         },
+  //       ],
+  //       _id: "63bbebe406cf8dff4b82db51",
+  //     },
+  //     residueOfEstate: {
+  //       passToSpouseOrPartner: true,
+  //       passToChildrenOrGrandChildren: true,
+  //       beneficiaries: [
+  //         {
+  //           beneficiary: "beneficiary test",
+  //           perStripes: true,
+  //           ageOfInheritance: 23,
+  //           percentageShare: 20,
+  //           _id: "63bbebe406cf8dff4b82db67",
+  //         },
+  //       ],
+  //       reserveBeneficiaries: [
+  //         {
+  //           perStripes: true,
+  //           beneficiary: "beneficiary test",
+  //           ageOfInheritance: 23,
+  //           percentageShare: 20,
+  //           _id: "63bbebe406cf8dff4b82db68",
+  //         },
+  //         {
+  //           perStripes: true,
+  //           beneficiary: "beneficiary test",
+  //           ageOfInheritance: 23,
+  //           percentageShare: 20,
+  //           _id: "63bbebe406cf8dff4b82db69",
+  //         },
+  //       ],
+  //       _id: "63bbebe406cf8dff4b82db66",
+  //     },
+  //     exclusions: [
+  //       {
+  //         name: "Rivan",
+  //         gender: "Male",
+  //         dob: "2022-11-16T06:00:56.268Z",
+  //         relationship: "needed to check",
+  //         reasonOfExclusion: "reasonOfExclusion test",
+  //         _id: "63bbebe406cf8dff4b82db6a",
+  //       },
+  //     ],
+  //     businessInterests: {
+  //       carryBusinessPower: true,
+  //       _id: "63bbebe406cf8dff4b82db6b",
+  //     },
+  //     funeralWishes: {
+  //       type: "Burial",
+  //       requests: "no requests test",
+  //       _id: "63bbebe406cf8dff4b82db6c",
+  //     },
+  //     informationNotes: {
+  //       notes: "jhdsbfjhsdbc notes",
+  //       _id: "63bbebe406cf8dff4b82db6d",
+  //     },
+  //     __v: 0,
+  //     createdAt: "2023-01-09T10:26:44.152Z",
+  //     updatedAt: "2023-01-09T10:26:44.152Z",
+  //   },
+  // ],
+  willQuestionnairess:[
     {
-      _id: "63bbebe406cf8dff4b82db19",
+      firstName: "Capsule",
+      lastName: "Crm",
       testators: {
-        fullname: "Anushka Sharma",
+        makeExecutorOrTrustee: "Jointly",
+        marriageClause: true,
+        fullName: "Capsule Crm"
+      },
+      executorsAndTrustees: [
+        {
+          ultimateBeneficiary: "",
+          perStripes: false,
+          ageOfInheritance: 0,
+          percentageShare: 0,
+          _id: "643503833490bc79e1453503",
+          fullName: "Hbdchbec",
+          role: "Trustee",
+          isJoint: true
+        },
+        {
+          from: "whatIf",
+          fullName: "Lalala",
+          isJoint: false,
+          inheritanceTaxTreatment: false,
+          role: "Executor"
+        }
+      ],
+      professionalExecutor: {
+        executors: "Squiggle",
+        fullName: "Rohan Talele",
+        address: {
+          street1: "Sanapada",
+          street2: "Vashi near shabri hotel last station",
+          city: "Near railway station ",
+          state: " ",
+          zip: "343434",
+          country: "United Kingdom"
+        }
+      },
+      guardians: [
+        {
+          isJoint: true,
+          fullName: "Fvfvfvtb",
+          guardianFor: [
+            "Surja"
+          ],
+          _id: "643506303490bc79e1453504",
+          inheritanceTaxTreatment: true
+        },
+        {
+          from: "whatIf",
+          fullName: "Hola",
+          isJoint: false,
+          inheritanceTaxTreatment: false,
+          executorsRoles: [],
+          goingToAct:"No",
+          guardianFor: [
+            "Salman", "shah"
+          ],
+        }
+      ],
+      chattlesAndGifts: [
+        {
+          isJoint: false,
+          recipientName: "Rynrhnthty",
+          relationship: "step-daughter",
+          giftDetails: "Fbtbtbtbt",
+          perStripes: false,
+          onDeathOf: "Second Death",
+          _id: "643506513490bc79e1453505"
+        }
+      ],
+      monetaryLegacies: [
+        {
+          isJoint: true,
+          recipientName: "Prakash Jadavh",
+          relationship: "step-daughter",
+          giftDetails: "Lambo",
+          perStripes: true,
+          onDeathOf: "T1",
+          _id: "643933fd3feb16d5fe5ba123"
+        },
+        {
+          isJoint: false,
+          recipientName: "Vipul Patil",
+          relationship: "step-son",
+          giftDetails: "Yogurt",
+          perStripes: true,
+          onDeathOf: "Second Death",
+          _id: "643934163feb16d5fe5ba124"
+        }
+      ],
+      exclusions: [
+        {
+          name: "Fcfcfctc",
+          gender: "Female",
+          dob: "Thu Jan 01 1998 00:00:00 GMT+0530 (India Standard Time)",
+          relationship: "daughter",
+          reasonForExclusion: "D fcfctv",
+          _id: "6434fe2c3490bc79e1453501",
+          isMirror: false,
+          reasonOfExclusion: "Reason Daldiya"
+        }
+      ],
+      businessInterests: {},
+      funeralWishes: {
+        type: "Burial",
+        requests: "Fbgbtbtbt"
+      },
+      informationNotes: {
+        notes: "Dcfvfvfbtbtbtbtbtbtbtbtbtbtbgbtbtbtbtbtbfvfvfvfbfbgbgbgbgbgbgbgb"
+      },
+      willTrusts: {
+        residuaryDiscretionaryTrust: {
+          RDT: [
+            {
+              _id: "643508243490bc79e145350d",
+              ultimateBeneficiary: "Tvyvyvy yvybyvy",
+              perStripes: true,
+              ageOfInheritance: 67,
+              percentageShare: 44
+            }
+          ],
+          guidanceNotes: "Gvgvyb"
+        },
+        disabledDiscretionaryTrust: {
+          beneficiary: [
+            {
+              isJoint: false,
+              isTrading: false,
+              partnership: false,
+              type: "",
+              fullName: "Hvhbhbh",
+              shareValue: "",
+              percentageShare: 37,
+              notIncludedInEstate: 0,
+              includedInEstate: 0,
+              properties: [],
+              _id: "643509e83490bc79e1453515",
+              perStripes: true,
+              ageOfInheritance: 888,
+              share: 98
+            }
+          ],
+          principleBeneficiaryName: "Hbhbjnjn"
+        },
+        severanceOfTenancy: [
+          {
+            property: {
+              name: "Rxrxrc"
+            },
+            titleNumber: 45,
+            percentageShare: 45,
+            type: "Freehold"
+          },
+          {
+            property: {
+              name: "Fcfcfcf"
+            },
+            titleNumber: 45,
+            percentageShare: 34,
+            type: "Freehold"
+          }
+        ],
+        rightToOccupy: [
+          {
+            isJoint: false,
+            property: {
+              name: "Fcfcfcf"
+            },
+            occupierName: "Tvgyvgbhb",
+            outgoingPaymentRestriction: true,
+            lifeTenantDeath: false,
+            specificAge: {
+              age: 55
+            },
+            marriageOrRemarriage: true,
+            cohabitationWithNewPartner: true,
+            _id: "6435095a3490bc79e145350f"
+          }
+        ],
+        inheritanceTaxPlanning: [
+          {
+            companyName: "Iconnect solutions pvt ltd",
+            bprAssets: false,
+            trustee: [
+              {
+                fullname: "",
+                _id: "64350be83490bc79e1453518",
+                fullName: "Jnjnjnjn",
+                notIncludedInEstate: 0,
+                includedInEstate: 0
+              }
+            ],
+            beneficiary: [
+              {
+                ultimateBeneficiary: "J jmkmj",
+                perStripes: false,
+                ageOfInheritance: 55,
+                percentageShare: 5,
+                _id: "64350c0f3490bc79e145351a"
+              }
+            ],
+            _id: "64350a043490bc79e1453517",
+            property: "Limited",
+            hold: true
+          }
+        ],
+        flexibleLifeInterestTrust: {
+          specificAge: {
+            age: 56
+          },
+          beneficiary: [
+            {
+              beneficiary: "",
+              ageOfInheritance: 1,
+              perStripes: false,
+              percentageShare: 18,
+              ultimateBeneficiary: "Card add karna"
+            }
+          ],
+          lifeTenantName: "Gvgvyvy",
+          marriageOrRemarriage: true,
+          cohabitationWithNewPartner: true
+        },
+        propertyProtectionTrust: [
+          {
+            property: {
+              name: "Rxrxrc"
+            },
+            lifeTenantName: "Tvgvgvyv",
+            ongoingMaintenancePropertyRestriction: true,
+            sellAndPurchaseHouseRestriction: true,
+            _id: "643509b13490bc79e1453512",
+            beneficiary: [
+              {
+                0: {
+                  notIncludedInEstate: 0,
+                  includedInEstate: 0
+                },
+                property: {},
+                isJoint: false,
+                lifeTenantName: "",
+                ongoingMaintenancePropertyRestriction: false,
+                sellAndPurchaseHouseRestriction: false,
+                beneficiary: [],
+                _id: "64395850efec1baf439e441f",
+                ultimateBeneficiary: "Left SIde me",
+                ageOfInheritance: 65,
+                percentageShare: 56
+              }
+            ],
+            isJoint: true
+          }
+        ],
+        willTrustEstablishmentReason: "Hbubunjn",
+        isSOT: true,
+        isFLIT: true,
+        isRDT: true,
+        isRTO: true,
+        isPPT: true,
+        isDDT: true,
+        isIHT: true
+      },
+      residueOfEstate: {
+        beneficiaries: [
+          {
+            beneficiary: "Yvyvubub",
+            ageOfInheritance: 67,
+            percentageShare: 87
+          }
+        ],
+        reserveBeneficiaries: [
+          {
+            _id: "643507b23490bc79e1453508",
+            beneficiary: "Hbububu",
+            ageOfInheritance: 56,
+            percentageShare: 56,
+            isMirror: true
+          },
+          {
+            _id: "643507bd3490bc79e145350a",
+            beneficiary: "Gvgvhbhb",
+            ageOfInheritance: 56,
+            percentageShare: 87
+          }
+        ],
+        passToChildrenOrGrandChildren: true
+      },
+      beneficiaries: [],
+      dependants: [
+        {
+          _id: "6434fa263490bc79e14534e3",
+          fullName: "Surja cfv ",
+          gender: "Male",
+          dob: "Thu Jan 01 1998 00:00:00 GMT+0530 (India Standard Time)",
+          isJoint: true,
+          dependantStatus: {
+            capacityIssues: false,
+            appointGuardians: true,
+            appointAsBeneficiary: true
+          }
+        }
+      ],
+      isClauseIncluded: false,
+      isFLIT: false,
+      isResidueTrust: false,
+      isSeveranceOfTenancy: false,
+      isRTO: false,
+      isPPT: false,
+      isDDT: false,
+      isIHT: false
+    },
+    {
+      firstName: "Will",
+      lastName: "Suite",
+      testators: {
+        makeExecutorOrTrustee: "Jointly",
+        fullName: "Will Suite"
+      },
+      executorsAndTrustees: [
+        {
+          ultimateBeneficiary: "",
+          perStripes: false,
+          ageOfInheritance: 0,
+          percentageShare: 0,
+          _id: "6437d8766b6fe20009232f63",
+          fullName: "Someone",
+          role: "Executor"
+        }
+      ],
+      professionalExecutor: {
+        executors: "Squiggle",
+        address: {},
+        feesAwareness: true
+      },
+      guardians: [
+        {
+          isJoint: true,
+          fullName: "Fvfvfvtb",
+          guardianFor: [
+            "Surja"
+          ],
+          _id: "643506303490bc79e1453504",
+          inheritanceTaxTreatment: true
+        },
+        {
+          from: "whatIf",
+          fullName: "Hola",
+          isJoint: false,
+          inheritanceTaxTreatment: false,
+          executorsRoles: [],
+          goingToAct:"No",
+          guardianFor: [
+            "Salman", "shah"
+          ],
+        }
+      ],
+      chattlesAndGifts: [
+        {
+          isJoint: false,
+          recipientName: "Fgnrhnthnt",
+          relationship: "step-daughter",
+          giftDetails: "Ghgyhybyh",
+          perStripes: true,
+          onDeathOf: "T2",
+          _id: "643506533490bc79e1453506"
+        }
+      ],
+      monetaryLegacies: [
+        {
+          isJoint: false,
+          recipientName: "Ad Kar",
+          relationship: "daughter",
+          giftDetails: "something",
+          perStripes: true,
+          onDeathOf: "T2",
+          _id: "643957d5efec1baf439e441e"
+        },
+        {
+          isJoint: false,
+          recipientName: "Ad Kar",
+          relationship: "daughter",
+          giftDetails: "smething",
+          perStripes: true,
+          onDeathOf: "T2",
+          _id: "643957d5efec1baf439e441e"
+        }
+      ],
+      exclusions: [
+        {
+          name: "Hvhvhbub",
+          gender: "Male",
+          dob: "Thu Jan 01 1998 00:00:00 GMT+0530 (India Standard Time)",
+          relationship: "step-son",
+          reasonForExclusion: "Hbhbjbub",
+          _id: "6434fe303490bc79e1453502",
+          reasonOfExclusion: "Osme bhi daldiya"
+        }
+      ],
+      businessInterests: {
+        carryBusinessPower: true
+      },
+      funeralWishes: {
+        requests: "Gbtbtbtbt"
+      },
+      informationNotes: {
+        notes: "Fbtbtbtbtbtbrc3wdwddvgnhmilik"
+      },
+      willTrusts: {
+        residuaryDiscretionaryTrust: {
+          RDT: [
+            {
+              _id: "643508263490bc79e145350e",
+              ultimateBeneficiary: "Gvybyby hbubub",
+              ageOfInheritance: 78,
+              percentageShare: 88
+            }
+          ],
+          guidanceNotes: "Ubunij"
+        },
+        disabledDiscretionaryTrust: {
+          beneficiary: [
+            {
+              isJoint: false,
+              isTrading: false,
+              partnership: false,
+              type: "",
+              fullName: "Hvhbhbh",
+              shareValue: "",
+              percentageShare: 37,
+              notIncludedInEstate: 0,
+              includedInEstate: 0,
+              properties: [],
+              _id: "643509e83490bc79e1453515",
+              perStripes: true,
+              ageOfInheritance: 888,
+              share: 98
+            }
+          ],
+          principleBeneficiaryName: "Hbhbjnjn"
+        },
+        severanceOfTenancy: [
+          {
+            property: {
+              name: "Rxrxrc"
+            },
+            titleNumber: 45,
+            percentageShare: "55",
+            type: "Freehold"
+          },
+          {
+            property: {
+              name: "Fcfcfcf"
+            },
+            titleNumber: 45,
+            percentageShare: "66",
+            type: "Freehold"
+          }
+        ],
+        rightToOccupy: [
+          {
+            isJoint: false,
+            property: {
+              name: "Rxrxrc"
+            },
+            occupierName: "Hbhbjnjn",
+            outgoingPaymentRestriction: true,
+            lifeTenantDeath: false,
+            specificAge: {
+              age: 78
+            },
+            marriageOrRemarriage: false,
+            cohabitationWithNewPartner: false,
+            _id: "6435095d3490bc79e1453510"
+          }
+        ],
+        inheritanceTaxPlanning: [
+          {
+            companyName: "Iconnect solutions pvt ltd",
+            bprAssets: false,
+            trustee: [
+              {
+                fullname: "",
+                _id: "64350be83490bc79e1453518",
+                fullName: "Jnjnjnjn",
+                notIncludedInEstate: 0,
+                includedInEstate: 0
+              }
+            ],
+            beneficiary: [
+              {
+                ultimateBeneficiary: "J jmkmj",
+                perStripes: false,
+                ageOfInheritance: 55,
+                percentageShare: 5,
+                _id: "64350c0f3490bc79e145351a"
+              }
+            ],
+            _id: "64350a043490bc79e1453517",
+            property: "Limited",
+            hold: true
+          }
+        ],
+        flexibleLifeInterestTrust: {
+          specificAge: {
+            age: 88
+          },
+          beneficiary: [
+            {
+              beneficiary: "",
+              ageOfInheritance: 69,
+              perStripes: false,
+              percentageShare: 67,
+              ultimateBeneficiary: "Hana Bus"
+            }
+          ],
+          lifeTenantName: "Gvhbhbhb",
+          lifeTenantDeath: true
+        },
+        propertyProtectionTrust: [
+          {
+            property: {
+              name: "Fcfcfcf"
+            },
+            lifeTenantName: "Ggvgvgvgv",
+            ongoingMaintenancePropertyRestriction: false,
+            sellAndPurchaseHouseRestriction: false,
+            _id: "643509ab3490bc79e1453511",
+            beneficiary: [
+              {
+                0: {
+                  notIncludedInEstate: 0,
+                  includedInEstate: 0
+                },
+                property: {},
+                isJoint: false,
+                lifeTenantName: "",
+                ongoingMaintenancePropertyRestriction: false,
+                sellAndPurchaseHouseRestriction: false,
+                beneficiary: [],
+                _id: "643509cd3490bc79e1453513",
+                ultimateBeneficiary: "Hbjnjnji",
+                perStripes: true,
+                ageOfInheritance: 78,
+                percentageShare: 99
+              }
+            ]
+          }
+        ],
+        willTrustEstablishmentReason: "Hbjnjmim",
+        isClauseIncluded: true
+      },
+      residueOfEstate: {
+        beneficiaries: [
+          {
+            beneficiary: "Hvhvhb",
+            perStripes: true,
+            ageOfInheritance: 78,
+            percentageShare: 98
+          }
+        ],
+        reserveBeneficiaries: [
+          {
+            _id: "643507f53490bc79e145350c",
+            beneficiary: "Hbububu",
+            ageOfInheritance: 56,
+            percentageShare: 56,
+            isMirror: false,
+            mirrored: true,
+            mirroredBy: "643507b23490bc79e1453508"
+          },
+          {
+            _id: "643507b43490bc79e1453509",
+            beneficiary: "Hbhbubub",
+            ageOfInheritance: 67,
+            percentageShare: 99
+          }
+        ],
+        passToSpouseOrPartner: true
+      },
+      beneficiaries: [],
+      dependants: [
+        {
+          _id: "6434fa273490bc79e14534e4",
+          fullName: " Omkar bhn",
+          gender: "Female",
+          dob: "Thu Jan 01 1998 00:00:00 GMT+0530 (India Standard Time)",
+          isJoint: false,
+          dependantStatus: {
+            capacityIssues: true,
+            appointGuardians: false,
+            appointAsBeneficiary: false
+          }
+        }
+      ]
+    }
+  ],
+  willQuestionnaire:[
+    {
+      testators: {
+        fullName: "Anushka Sharma",
         makeExecutorOrTrustee: "Solely",
-        marriageClause: false,
-        _id: "63bbebe406cf8dff4b82db1a",
+        marriageClause: false
       },
       executorsAndTrustees: [
         {
           isJoint: true,
-          fullname: "Jack",
-          role: "Trustee",
-          _id: "63bbebe406cf8dff4b82db1b",
-        },
+          fullName: "Jack",
+          role: "Trustee"
+        }
       ],
       professionalExecutor: {
         executors: "Squiggle Consult LTD",
-        fullname: "Monica",
+        fullName: "Monica",
         address: {
           street1: "efe",
           street2: "erter",
           city: "xyz town",
           state: "xyz country",
           country: "UK",
-          zip: "EC222postcode",
-          _id: "63bbebe406cf8dff4b82db1d",
+          zip: "EC222postcode"
         },
-        feesAwareness: true,
-        _id: "63bbebe406cf8dff4b82db1c",
+        feesAwareness: true
       },
       guardians: [
         {
           isJoint: true,
-          fullname: "Karan",
+          fullName: "Karan",
           guardianFor: [
             {
               id: "1234",
-              name: "Riya",
-              _id: "63bbebe406cf8dff4b82db1f",
+              name: "Riya"
             },
             {
               id: "2345",
-              name: "Rene",
-              _id: "63bbebe406cf8dff4b82db20",
+              name: "Rene"
             },
             {
               id: "5644",
-              name: "Ritika",
-              _id: "63bbebe406cf8dff4b82db21",
-            },
-          ],
-          _id: "63bbebe406cf8dff4b82db1e",
+              name: "Ritika"
+            }
+          ]
         },
         {
           isJoint: true,
-          fullname: "Arjun",
+          fullName: "Arjun",
           goingToAct: "Reserve",
           guardianFor: [
             {
               id: "1234",
-              name: "Riya",
-              _id: "63bbebe406cf8dff4b82db23",
+              name: "Riya"
             },
             {
               id: "2345",
-              name: "Rene",
-              _id: "63bbebe406cf8dff4b82db24",
+              name: "Rene"
             },
             {
               id: "5644",
-              name: "Ritika",
-              _id: "63bbebe406cf8dff4b82db25",
-            },
-          ],
-          _id: "63bbebe406cf8dff4b82db22",
-        },
+              name: "Ritika"
+            }
+          ]
+        }
       ],
       chattlesAndGifts: [
         {
@@ -1663,9 +2936,8 @@ const will_questionare_data = {
           relationship: "sister",
           giftDetails: "xyz giftDetails",
           perStripes: true,
-          onDeathOf: "Anushka Sharma",
-          _id: "63bbebe406cf8dff4b82db26",
-        },
+          onDeathOf: "Anushka Sharma"
+        }
       ],
       monetaryLegacies: [
         {
@@ -1674,9 +2946,8 @@ const will_questionare_data = {
           relationship: "sister",
           giftDetails: "xyz giftDetails",
           perStripes: true,
-          onDeathOf: "Anushka Sharma",
-          _id: "63bbebe406cf8dff4b82db27",
-        },
+          onDeathOf: "Anushka Sharma"
+        }
       ],
       willTrusts: {
         willTrustEstablishmentReason: "xyz willTrustEstablishmentReason",
@@ -1684,9 +2955,8 @@ const will_questionare_data = {
         guardianFor: [
           {
             id: "1234",
-            name: "Riya",
-            _id: "63bbebe406cf8dff4b82db29",
-          },
+            name: "Riya"
+          }
         ],
         isFLIT: true,
         flexibleLifeInterestTrust: {
@@ -1694,8 +2964,7 @@ const will_questionare_data = {
           lifeTenantDeath: false,
           specificAge: {
             age: 23,
-            status: false,
-            _id: "63bbebe406cf8dff4b82db2b",
+            status: false
           },
           marriageOrRemarriage: true,
           cohabitationWithNewPartner: false,
@@ -1704,11 +2973,9 @@ const will_questionare_data = {
               ultimateBeneficiary: "xyz ultimateBeneficiary",
               perStripes: false,
               ageOfInheritance: 23,
-              percentageShare: 20,
-              _id: "63bbebe406cf8dff4b82db2c",
-            },
-          ],
-          _id: "63bbebe406cf8dff4b82db2a",
+              percentageShare: 20
+            }
+          ]
         },
         isRDT: true,
         residuaryDiscretionaryTrust: {
@@ -1717,69 +2984,63 @@ const will_questionare_data = {
               ultimateBeneficiary: "abc ultimateBeneficiary",
               perStripes: false,
               ageOfInheritance: 33,
-              percentageShare: 20,
-              _id: "63bbebe406cf8dff4b82db2e",
+              percentageShare: 20
             },
             {
               ultimateBeneficiary: "abc1 ultimateBeneficiary",
               perStripes: true,
               ageOfInheritance: 43,
-              percentageShare: 10,
-              _id: "63bbebe406cf8dff4b82db2f",
-            },
+              percentageShare: 10
+            }
           ],
-          guidanceNotes: "guidanceNotes test",
+          guidanceNotes: "guidanceNotes test"
         },
         isSOT: true,
         severanceOfTenancy: [
           {
             property: {
-              id: "1234",
-              name: "prop1",
+              propId: "1234",
+              name: "prop1"
             },
             titleNumber: "A331TL",
             percentageShare: 10,
-            type: "Freehold",
-            _id: "63bbebe406cf8dff4b82db30",
+            type: "Freehold"
           },
           {
             property: {
-              id: "1234",
-              name: "prop2",
+              propId: "1234",
+              name: "prop2"
             },
             titleNumber: "A331TL",
             percentageShare: 10,
-            type: "Leasehold",
-            _id: "63bbebe406cf8dff4b82db31",
-          },
+            type: "Leasehold"
+          }
         ],
         isRTO: true,
         rightToOccupy: [
           {
             isJoint: true,
             property: {
-              id: "1234",
-              name: "prop1",
+              propId: "1234",
+              name: "prop1"
             },
             occupierName: "Hemangi",
             outgoingPaymentRestriction: true,
             lifeTenantDeath: false,
             specificAge: {
               age: 23,
-              status: false,
-              _id: "63bbebe406cf8dff4b82db33",
+              status: false
             },
             marriageOrRemarriage: false,
-            cohabitationWithNewPartner: false,
-            _id: "63bbebe406cf8dff4b82db32",
-          },
+            cohabitationWithNewPartner: false
+          }
         ],
         isPPT: true,
         propertyProtectionTrust: [
           {
             property: {
-              id: "1234",
-              name: "prop122",
+              propId: "1234",
+              name: "prop122"
             },
             isJoint: true,
             lifeTenantName: "Nikki",
@@ -1790,38 +3051,34 @@ const will_questionare_data = {
                 ultimateBeneficiary: "ppt ultimateBeneficiary",
                 perStripes: false,
                 ageOfInheritance: 23,
-                percentageShare: 20,
-                _id: "63bbebe406cf8dff4b82db37",
+                percentageShare: 20
               },
               {
                 ultimateBeneficiary: "ppt ultimateBeneficiaryerer",
                 perStripes: true,
                 ageOfInheritance: 23,
-                percentageShare: 20,
-                _id: "63bbebe406cf8dff4b82db37",
-              },
-            ],
-            _id: "63bbebe406cf8dff4b82db36",
-          },
+                percentageShare: 20
+              }
+            ]
+          }
         ],
         isDDT: true,
         disabledDiscretionaryTrust: {
-          _id: "63bbebe406cf8dff4b82db38",
           principleBeneficiaryName: "CCCC",
           beneficiary: [
             {
               secondaryBeneficiary: "tiuerh",
               perStripes: true,
               ageOfInheritance: 34,
-              percentageShare: 21,
+              percentageShare: 21
             },
             {
               secondaryBeneficiary: "fff",
               perStripes: true,
               ageOfInheritance: 34,
-              percentageShare: 21,
-            },
-          ],
+              percentageShare: 21
+            }
+          ]
         },
         isIHT: true,
         inheritanceTaxPlanning: [
@@ -1830,34 +3087,28 @@ const will_questionare_data = {
             bprAssets: true,
             trustee: [
               {
-                fullname: "t1",
-                _id: "63bbebe406cf8dff4b82db3a",
+                fullName: "t1"
               },
               {
-                fullname: "t2",
-                _id: "63bbebe406cf8dff4b82db3b",
-              },
+                fullName: "t2"
+              }
             ],
             beneficiary: [
               {
                 ultimateBeneficiary: "ppt ultimateBeneficiary",
                 perStripes: false,
                 ageOfInheritance: 23,
-                percentageShare: 20,
-                _id: "63bbebe406cf8dff4b82db3c",
+                percentageShare: 20
               },
               {
                 ultimateBeneficiary: "ppt ultimateBeneficiaryfdfgdgdfgf",
                 perStripes: true,
                 ageOfInheritance: 23,
-                percentageShare: 20,
-                _id: "63bbebe406cf8dff4b82db3c",
-              },
-            ],
-            _id: "63bbebe406cf8dff4b82db39",
-          },
-        ],
-        _id: "63bbebe406cf8dff4b82db28",
+                percentageShare: 20
+              }
+            ]
+          }
+        ]
       },
       residueOfEstate: {
         passToSpouseOrPartner: true,
@@ -1868,9 +3119,8 @@ const will_questionare_data = {
             beneficiary: "beneficiary test",
             perStripes: true,
             ageOfInheritance: 23,
-            percentageShare: 20,
-            _id: "63bbebe406cf8dff4b82db3e",
-          },
+            percentageShare: 20
+          }
         ],
         reserveBeneficiaries: [
           {
@@ -1878,107 +3128,106 @@ const will_questionare_data = {
             beneficiary: "beneficiary test",
             perStripes: true,
             ageOfInheritance: 23,
-            percentageShare: 20,
-            _id: "63bbebe406cf8dff4b82db3f",
-          },
-        ],
-        _id: "63bbebe406cf8dff4b82db3d",
+            percentageShare: 20
+          }
+        ]
       },
       exclusions: [],
       businessInterests: {
-        carryBusinessPower: true,
-        _id: "63bbebe406cf8dff4b82db41",
+        carryBusinessPower: true
       },
       funeralWishes: {
         type: "Burial",
-        requests: "no requests test",
-        _id: "63bbebe406cf8dff4b82db42",
+        requests: "no requests test"
       },
       informationNotes: {
-        notes: "jhdsbfjhsdbc notes",
-        _id: "63bbebe406cf8dff4b82db43",
-      },
-      __v: 0,
-      createdAt: "2023-01-09T10:26:44.151Z",
-      updatedAt: "2023-01-09T10:26:44.151Z",
+        notes: "jhdsbfjhsdbc notes"
+      }
     },
     {
-      _id: "63bbebe406cf8dff4b82db44",
       testators: {
-        fullname: "Virat Kohli",
+        fullName: "Anushka Sharma",
         makeExecutorOrTrustee: "Solely",
-        marriageClause: false,
-        _id: "63bbebe406cf8dff4b82db45",
+        marriageClause: false
       },
       executorsAndTrustees: [
         {
-          fullname: "Rose",
-          role: "Trustee",
-          _id: "63bbebe406cf8dff4b82db46",
-        },
+          isJoint: true,
+          fullName: "Jack",
+          role: "Trustee"
+        }
       ],
+      professionalExecutor: {
+        executors: "Squiggle Consult LTD",
+        fullName: "Monica",
+        address: {
+          street1: "efe",
+          street2: "erter",
+          city: "xyz town",
+          state: "xyz country",
+          country: "UK",
+          zip: "EC222postcode"
+        },
+        feesAwareness: true
+      },
       guardians: [
         {
-          fullname: "Mukesh",
+          isJoint: true,
+          fullName: "Karan",
           guardianFor: [
             {
               id: "1234",
-              name: "Riyaee",
-              _id: "63bbebe406cf8dff4b82db4a",
+              name: "Riya"
             },
             {
-              id: "435",
-              name: "dvd",
-              _id: "63bbebe406cf8dff4b82db4b",
+              id: "2345",
+              name: "Rene"
             },
-          ],
-          _id: "63bbebe406cf8dff4b82db49",
+            {
+              id: "5644",
+              name: "Ritika"
+            }
+          ]
         },
         {
-          fullname: "Niraj",
+          isJoint: true,
+          fullName: "Arjun",
           goingToAct: "Reserve",
           guardianFor: [
             {
               id: "1234",
-              name: "Riyaee",
-              _id: "63bbebe406cf8dff4b82db4d",
+              name: "Riya"
             },
             {
-              id: "435",
-              name: "dvd",
-              _id: "63bbebe406cf8dff4b82db4e",
+              id: "2345",
+              name: "Rene"
             },
-          ],
-          _id: "63bbebe406cf8dff4b82db4c",
-        },
+            {
+              id: "5644",
+              name: "Ritika"
+            }
+          ]
+        }
       ],
       chattlesAndGifts: [
         {
+          isJoint: false,
           recipientName: "Madhuri",
           relationship: "sister",
           giftDetails: "xyz giftDetails",
           perStripes: true,
-          onDeathOf: "Anushka Sharma",
-          _id: "63bbebe406cf8dff4b82db4f",
-        },
-        {
-          recipientName: "Mrunal",
-          relationship: "sister",
-          giftDetails: "xyz giftDetails",
-          perStripes: true,
-          onDeathOf: "Anushka Sharma",
-          _id: "63bbebe406cf8dff4b82db4f",
-        },
+          onDeathOf: "Anushka Sharma"
+        }
       ],
       monetaryLegacies: [
         {
+          isJoint: false,
           recipientName: "Kareena",
           relationship: "sister",
           giftDetails: "xyz giftDetails",
           perStripes: true,
-          onDeathOf: "Anushka Sharma",
-          _id: "63bbebe406cf8dff4b82db50",
-        },
+          onDeathOf: "Anushka Sharma"
+        }
       ],
       willTrusts: {
         willTrustEstablishmentReason: "xyz willTrustEstablishmentReason",
@@ -1986,9 +3235,8 @@ const will_questionare_data = {
         guardianFor: [
           {
             id: "1234",
-            name: "Riyaee",
-            _id: "63bbebe406cf8dff4b82db52",
-          },
+            name: "Riya"
+          }
         ],
         isFLIT: true,
         flexibleLifeInterestTrust: {
@@ -1996,28 +3244,18 @@ const will_questionare_data = {
           lifeTenantDeath: false,
           specificAge: {
             age: 23,
-            status: false,
-            _id: "63bbebe406cf8dff4b82db54",
+            status: false
           },
-          marriageOrRemarriage: false,
+          marriageOrRemarriage: true,
           cohabitationWithNewPartner: false,
           beneficiary: [
             {
               ultimateBeneficiary: "xyz ultimateBeneficiary",
               perStripes: false,
               ageOfInheritance: 23,
-              percentageShare: 20,
-              _id: "63bbebe406cf8dff4b82db55",
-            },
-            {
-              ultimateBeneficiary: "xyz1 ultimateBeneficiary",
-              perStripes: true,
-              ageOfInheritance: 23,
-              percentageShare: 20,
-              _id: "63bbebe406cf8dff4b82db56",
-            },
-          ],
-          _id: "63bbebe406cf8dff4b82db53",
+              percentageShare: 20
+            }
+          ]
         },
         isRDT: true,
         residuaryDiscretionaryTrust: {
@@ -2026,79 +3264,65 @@ const will_questionare_data = {
               ultimateBeneficiary: "abc ultimateBeneficiary",
               perStripes: false,
               ageOfInheritance: 33,
-              percentageShare: 20,
-              _id: "63bbebe406cf8dff4b82db57",
+              percentageShare: 20
             },
+            {
+              ultimateBeneficiary: "abc1 ultimateBeneficiary",
+              perStripes: true,
+              ageOfInheritance: 43,
+              percentageShare: 10
+            }
           ],
-          guidanceNotes: "guidanceNotes test",
+          guidanceNotes: "guidanceNotes test"
         },
         isSOT: true,
         severanceOfTenancy: [
           {
             property: {
-              id: "5444",
-              name: "prop33",
+              propId: "1234",
+              name: "prop1"
             },
             titleNumber: "A331TL",
             percentageShare: 10,
-            type: "Freehold",
-            _id: "63bbebe406cf8dff4b82db59",
+            type: "Freehold"
           },
           {
             property: {
-              id: "1234",
-              name: "prop333",
+              propId: "1234",
+              name: "prop2"
             },
             titleNumber: "A331TL",
             percentageShare: 10,
-            type: "Leasehold",
-            _id: "63bbebe406cf8dff4b82db5a",
-          },
+            type: "Leasehold"
+          }
         ],
         isRTO: true,
         rightToOccupy: [
           {
-            occupierName: "Hemangi",
+            isJoint: true,
             property: {
-              id: "1234",
-              name: "prop1",
+              propId: "1234",
+              name: "prop1"
             },
+            occupierName: "Hemangi",
             outgoingPaymentRestriction: true,
             lifeTenantDeath: false,
             specificAge: {
               age: 23,
-              status: false,
-              _id: "63bbebe406cf8dff4b82db5c",
+              status: false
             },
             marriageOrRemarriage: false,
-            cohabitationWithNewPartner: false,
-            _id: "63bbebe406cf8dff4b82db5b",
-          },
-          {
-            occupierName: "Mrunalini",
-            property: {
-              id: "1234",
-              name: "prop1",
-            },
-            outgoingPaymentRestriction: true,
-            lifeTenantDeath: false,
-            specificAge: {
-              age: 27,
-              status: false,
-              _id: "63bbebe406cf8dff4b82db5e",
-            },
-            marriageOrRemarriage: false,
-            cohabitationWithNewPartner: false,
-            _id: "63bbebe406cf8dff4b82db5d",
-          },
+            cohabitationWithNewPartner: false
+          }
         ],
         isPPT: true,
         propertyProtectionTrust: [
           {
             property: {
-              id: "1234",
-              name: "prop2222",
+              propId: "1234",
+              name: "prop122"
             },
+            isJoint: true,
             lifeTenantName: "Nikki",
             ongoingMaintenancePropertyRestriction: false,
             sellAndPurchaseHouseRestriction: false,
@@ -2107,25 +3331,34 @@ const will_questionare_data = {
                 ultimateBeneficiary: "ppt ultimateBeneficiary",
                 perStripes: false,
                 ageOfInheritance: 23,
-                percentageShare: 20,
-                _id: "63bbebe406cf8dff4b82db60",
+                percentageShare: 20
               },
-            ],
-            _id: "63bbebe406cf8dff4b82db5f",
-          },
+              {
+                ultimateBeneficiary: "ppt ultimateBeneficiaryerer",
+                perStripes: true,
+                ageOfInheritance: 23,
+                percentageShare: 20
+              }
+            ]
+          }
         ],
         isDDT: true,
         disabledDiscretionaryTrust: {
-          _id: "63bbebe406cf8dff4b82db61",
-          principleBeneficiaryName: "CCCCDDD",
+          principleBeneficiaryName: "CCCC",
           beneficiary: [
             {
               secondaryBeneficiary: "tiuerh",
               perStripes: true,
               ageOfInheritance: 34,
-              percentageShare: 21,
+              percentageShare: 21
             },
-          ],
+            {
+              secondaryBeneficiary: "fff",
+              perStripes: true,
+              ageOfInheritance: 34,
+              percentageShare: 21
+            }
+          ]
         },
         isIHT: true,
         inheritanceTaxPlanning: [
@@ -2134,86 +3367,65 @@ const will_questionare_data = {
             bprAssets: true,
             trustee: [
               {
-                fullname: "t1",
-                _id: "63bbebe406cf8dff4b82db63",
+                fullName: "t1"
               },
               {
-                fullname: "t2",
-                _id: "63bbebe406cf8dff4b82db64",
-              },
+                fullName: "t2"
+              }
             ],
             beneficiary: [
               {
                 ultimateBeneficiary: "ppt ultimateBeneficiary",
                 perStripes: false,
                 ageOfInheritance: 23,
-                percentageShare: 20,
-                _id: "63bbebe406cf8dff4b82db65",
+                percentageShare: 20
               },
-            ],
-            _id: "63bbebe406cf8dff4b82db62",
-          },
-        ],
-        _id: "63bbebe406cf8dff4b82db51",
+              {
+                ultimateBeneficiary: "ppt ultimateBeneficiaryfdfgdgdfgf",
+                perStripes: true,
+                ageOfInheritance: 23,
+                percentageShare: 20
+              }
+            ]
+          }
+        ]
       },
       residueOfEstate: {
         passToSpouseOrPartner: true,
         passToChildrenOrGrandChildren: true,
         beneficiaries: [
           {
+            isMirror: true,
             beneficiary: "beneficiary test",
             perStripes: true,
             ageOfInheritance: 23,
-            percentageShare: 20,
-            _id: "63bbebe406cf8dff4b82db67",
-          },
+            percentageShare: 20
+          }
         ],
         reserveBeneficiaries: [
           {
-            perStripes: true,
+            isMirror: true,
             beneficiary: "beneficiary test",
-            ageOfInheritance: 23,
-            percentageShare: 20,
-            _id: "63bbebe406cf8dff4b82db68",
-          },
-          {
             perStripes: true,
-            beneficiary: "beneficiary test",
             ageOfInheritance: 23,
-            percentageShare: 20,
-            _id: "63bbebe406cf8dff4b82db69",
-          },
-        ],
-        _id: "63bbebe406cf8dff4b82db66",
+            percentageShare: 20
+          }
+        ]
       },
-      exclusions: [
-        {
-          name: "Rivan",
-          gender: "Male",
-          dob: "2022-11-16T06:00:56.268Z",
-          relationship: "needed to check",
-          reasonOfExclusion: "reasonOfExclusion test",
-          _id: "63bbebe406cf8dff4b82db6a",
-        },
-      ],
+      exclusions: [],
       businessInterests: {
-        carryBusinessPower: true,
-        _id: "63bbebe406cf8dff4b82db6b",
+        carryBusinessPower: true
       },
       funeralWishes: {
         type: "Burial",
-        requests: "no requests test",
-        _id: "63bbebe406cf8dff4b82db6c",
+        requests: "no requests test"
       },
       informationNotes: {
-        notes: "jhdsbfjhsdbc notes",
-        _id: "63bbebe406cf8dff4b82db6d",
-      },
-      __v: 0,
-      createdAt: "2023-01-09T10:26:44.152Z",
-      updatedAt: "2023-01-09T10:26:44.152Z",
-    },
-  ],
+        notes: "jhdsbfjhsdbc notes"
+      }
+    }
+  ]
+
 };
 
 const clientCareLetter = {
@@ -2343,63 +3555,68 @@ const clientCareLetter = {
       quantity: 0,
     },
   ],
-  estate_planning_cost:[
+  estate_planning_cost: [
     {
-      particulars:"Fixed Cost of Legacy & Estate Planning services",
+      particulars: "Fixed Cost of Legacy & Estate Planning services",
       cost: 2589,
     },
     {
-      particulars:"VAT (@ 20% of qualifying costs)",
+      particulars: "VAT (@ 20% of qualifying costs)",
       cost: 50,
     },
     {
-      particulars:"Total",
+      particulars: "Total",
       cost: 507,
     },
     {
-      particulars:"Total Payments (including below disbursements)",
+      particulars: "Total Payments (including below disbursements)",
       cost: 3107,
     },
   ],
-  payment_information_and_breakdown:[
+  payment_information_and_breakdown: [
     {
-      particulars:"Payment to Squiggle Consult LTD.",
+      particulars: "Payment to Squiggle Consult LTD.",
       cost: 2589,
     },
     {
-      particulars:"Payment to Land Registry",
+      particulars: "Payment to Land Registry",
       cost: 50,
     },
     {
-      particulars:"Payment to the Office of Public Guardian",
+      particulars: "Payment to the Office of Public Guardian",
       cost: 507,
     },
   ],
   check_as_appropriate: [
     {
       checked: true,
-      item:"I/We give our Consultant permission to share my/our details along with any and all information collected, with Squiggle for quality control purposes in relation to our Legacy and Estate Planning instructions."
+      item: "I/We give our Consultant permission to share my/our details along with any and all information collected, with Squiggle for quality control purposes in relation to our Legacy and Estate Planning instructions.",
     },
     {
       checked: true,
-      item:"I/We give Squiggle permission to instruct and to share my/our relevant information with one or more third parties as per the ‘Confidentiality and your information’ section of this document, for the purposes of providing Legacy & Estate Planning documents and services."
-    },{
-      checked: true,
-      item:"It has been explained to me/us that my/our Consultant accepts sole responsibility for the consulting process that resulted in me/us providing these specific instructions and that the professionals who draft the documents or provide the services hold responsibility for the quality of the document(s)/ service only."
-    },{
-      checked: true,
-      item:"I/We have elected to instruct Squiggle to commence arrangements for the provision of my/our chosen Legacy and Estate Planning documents and/or services immediately. I/We understand that if I/we cancel my/our instructions during or after the 14 day cancellation period I/we may be liable to pay the cost of any works undertaken."
-    },{
-      checked: false,
-      item:"I/We request that either my Consultant or Squiggle refer me to an appropriate Financial Adviser or Protection Adviser and give permission to share with them my/our contact details."
-    },{
-      checked: false,
-      item:"I/We request that either my Consultant or Squiggle refer me to an appropriate Tax Planning Adviser and give permission to share with them my/our contact details."
-    },{
-      checked: false,
-      item:"I/We instruct Squiggle to notify my Executors, Trustees and Attorneys of their responsibilities and the nature of my/our Legacy & Estate Planning but not the specific detail"
+      item: "I/We give Squiggle permission to instruct and to share my/our relevant information with one or more third parties as per the ‘Confidentiality and your information’ section of this document, for the purposes of providing Legacy & Estate Planning documents and services.",
     },
-  ]
+    {
+      checked: true,
+      item: "It has been explained to me/us that my/our Consultant accepts sole responsibility for the consulting process that resulted in me/us providing these specific instructions and that the professionals who draft the documents or provide the services hold responsibility for the quality of the document(s)/ service only.",
+    },
+    {
+      checked: true,
+      item: "I/We have elected to instruct Squiggle to commence arrangements for the provision of my/our chosen Legacy and Estate Planning documents and/or services immediately. I/We understand that if I/we cancel my/our instructions during or after the 14 day cancellation period I/we may be liable to pay the cost of any works undertaken.",
+    },
+    {
+      checked: false,
+      item: "I/We request that either my Consultant or Squiggle refer me to an appropriate Financial Adviser or Protection Adviser and give permission to share with them my/our contact details.",
+    },
+    {
+      checked: false,
+      item: "I/We request that either my Consultant or Squiggle refer me to an appropriate Tax Planning Adviser and give permission to share with them my/our contact details.",
+    },
+    {
+      checked: false,
+      item: "I/We instruct Squiggle to notify my Executors, Trustees and Attorneys of their responsibilities and the nature of my/our Legacy & Estate Planning but not the specific detail",
+    },
+  ],
 };
 
 // const addressbook_data = [
@@ -2415,15 +3632,15 @@ const clientCareLetter = {
 const addressbook_data = [
   {
     opportunityId: "63dc15362bf0d64cf370b5c9",
-    consultantName:"Salman Khan",
+    consultantName: "Salman Khan",
     fullname: "Sujit Mandal",
     alias: "Sujit",
     gender: "Male",
     dob: "1996-12-17",
     personRole: ["Guardian", "Testator"],
     telephone: "8779957294",
-    relationshipToClient1:"Neice",
-    relationshipToClient2:"Some relationship",
+    relationshipToClient1: "Neice",
+    relationshipToClient2: "Some relationship",
     phoneNumber: "8779957294",
     email: "msujit017@gmail.com",
     occupation: "Jr. Engg",
@@ -2434,7 +3651,7 @@ const addressbook_data = [
       city: "xyz town",
       state: "xyz country",
       country: "UK",
-      zip: "EC222postcode"
+      zip: "EC222postcode",
     },
     identification: {
       professionalname: "Paul",
@@ -2442,34 +3659,34 @@ const addressbook_data = [
       certificationType: "Squiggle Consultant",
       personalProof: {
         idProof: "Driving License",
-        imgProof: "xyz----."
+        imgProof: "xyz----.",
       },
       professionalAddress: {
-        type:"Aadhar card",
-        address:{
+        type: "Aadhar card",
+        address: {
           street1: "efe",
           street2: "erter",
           city: "xyz town",
           state: "xyz country",
           country: "UK",
-          zip: "EC222postcode"
-        }
+          zip: "EC222postcode",
+        },
       },
       clarification: "true",
     },
-    currentDate:"11-12-2023"
+    currentDate: "11-12-2023",
   },
   {
     opportunityId: "63dc15362bf0d64cf370b5c9",
-    consultantName:"Salman Khan",
+    consultantName: "Salman Khan",
     fullname: "Sujit Mandal",
     alias: "Sujit",
     gender: "Male",
     dob: "1996-12-17",
     personRole: ["Guardian", "Testator"],
     telephone: "8779957294",
-    relationshipToClient1:"Neice",
-    relationshipToClient2:"Some relationship",
+    relationshipToClient1: "Neice",
+    relationshipToClient2: "Some relationship",
     phoneNumber: "8779957294",
     email: "msujit017@gmail.com",
     occupation: "Jr. Engg",
@@ -2480,7 +3697,7 @@ const addressbook_data = [
       city: "xyz town",
       state: "xyz country",
       country: "UK",
-      zip: "EC222postcode"
+      zip: "EC222postcode",
     },
     identification: {
       professionalname: "Paul",
@@ -2488,34 +3705,34 @@ const addressbook_data = [
       certificationType: "Squiggle Consultant",
       personalProof: {
         idProof: "Driving License",
-        imgProof: "xyz----."
+        imgProof: "xyz----.",
       },
       professionalAddress: {
-        type:"Aadhar card",
-        address:{
+        type: "Aadhar card",
+        address: {
           street1: "efe",
           street2: "erter",
           city: "xyz town",
           state: "xyz country",
           country: "UK",
-          zip: "EC222postcode"
-        }
+          zip: "EC222postcode",
+        },
       },
       clarification: "true",
     },
-    currentDate:"11-12-2023"
+    currentDate: "11-12-2023",
   },
   {
     opportunityId: "63dc15362bf0d64cf370b5c9",
-    consultantName:"Salman Khan",
+    consultantName: "Salman Khan",
     fullname: "Sujit Mandal",
     alias: "Sujit",
     gender: "Male",
     dob: "1996-12-17",
     personRole: ["Guardian", "Testator"],
     telephone: "8779957294",
-    relationshipToClient1:"Neice",
-    relationshipToClient2:"Some relationship",
+    relationshipToClient1: "Neice",
+    relationshipToClient2: "Some relationship",
     phoneNumber: "8779957294",
     email: "msujit017@gmail.com",
     occupation: "Jr. Engg",
@@ -2526,7 +3743,7 @@ const addressbook_data = [
       city: "xyz town",
       state: "xyz country",
       country: "UK",
-      zip: "EC222postcode"
+      zip: "EC222postcode",
     },
     identification: {
       professionalname: "Paul",
@@ -2534,34 +3751,34 @@ const addressbook_data = [
       certificationType: "Squiggle Consultant",
       personalProof: {
         idProof: "Driving License",
-        imgProof: "xyz----."
+        imgProof: "xyz----.",
       },
       professionalAddress: {
-        type:"Aadhar card",
-        address:{
+        type: "Aadhar card",
+        address: {
           street1: "efe",
           street2: "erter",
           city: "xyz town",
           state: "xyz country",
           country: "UK",
-          zip: "EC222postcode"
-        }
+          zip: "EC222postcode",
+        },
       },
       clarification: "true",
     },
-    currentDate:"11-12-2023"
+    currentDate: "11-12-2023",
   },
   {
     opportunityId: "63dc15362bf0d64cf370b5c9",
-    consultantName:"Salman Khan",
+    consultantName: "Salman Khan",
     fullname: "Sujit Mandal",
     alias: "Sujit",
     gender: "Male",
     dob: "1996-12-17",
     personRole: ["Guardian", "Testator"],
     telephone: "8779957294",
-    relationshipToClient1:"Neice",
-    relationshipToClient2:"Some relationship",
+    relationshipToClient1: "Neice",
+    relationshipToClient2: "Some relationship",
     phoneNumber: "8779957294",
     email: "msujit017@gmail.com",
     occupation: "Jr. Engg",
@@ -2572,7 +3789,7 @@ const addressbook_data = [
       city: "xyz town",
       state: "xyz country",
       country: "UK",
-      zip: "EC222postcode"
+      zip: "EC222postcode",
     },
     identification: {
       professionalname: "Paul",
@@ -2580,25 +3797,24 @@ const addressbook_data = [
       certificationType: "Squiggle Consultant",
       personalProof: {
         idProof: "Driving License",
-        imgProof: "xyz----."
+        imgProof: "xyz----.",
       },
       professionalAddress: {
-        type:"Aadhar card",
-        address:{
+        type: "Aadhar card",
+        address: {
           street1: "efe",
           street2: "erter",
           city: "xyz town",
           state: "xyz country",
           country: "UK",
-          zip: "EC222postcode"
-        }
+          zip: "EC222postcode",
+        },
       },
       clarification: "true",
     },
-    currentDate:"11-12-2023"
+    currentDate: "11-12-2023",
   },
-
-]
+];
 
 const tickIcon = tick;
 const crossIcon = cross;
@@ -2637,7 +3853,7 @@ app.get("/planselection", (req, res) => {
 // })
 
 app.get("/will_questionare", (req, res) => {
-  res.render("willQ2.ejs", { moment: moment, data: will_questionare_data });
+  res.render("willQ2_2.ejs", { moment: moment, data: will_questionare_data });
 });
 
 //  LPA QUESTIONARE
@@ -2662,13 +3878,16 @@ app.get("/living_will_questionare", (req, res) => {
 
 //  ADDRESS BOOK
 app.get("/address_book", (req, res) => {
-  res.render("address_book.ejs", { ...party ,addressbook_data });
+  res.render("address_book.ejs", { ...party, addressbook_data });
 });
 
 //  ADDRESS BOOK SINGLE
 app.get("/address_book_single", (req, res) => {
-  res.render("address_book_single.ejs", { ...party ,addressbook_data });
+  res.render("address_book_single.ejs", { ...party, addressbook_data });
 });
+// app.get("/address_book_single", (req, res) => {
+//   res.render("address_book_single_2.ejs", { ...party, addressbook_data });
+// });
 
 //  APPOINTMENT DECLARATION
 app.get("/appointment_declaration", (req, res) => {

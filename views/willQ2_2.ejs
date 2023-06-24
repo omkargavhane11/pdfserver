@@ -782,13 +782,8 @@
 
 
                                 <td>
-                                  <% guar?.guardianFor?.forEach((child, indi)=> { %>
-                                    <% if(indi !==0) {%>
-                                      , <%=child%>
-                                        <%}else{%>
-                                          <%=child%>
-                                            <%}%>
-                                              <% }) %>
+                                  
+                                              <%=guar?.guardianFor?.join(",")%>
                                 </td>
                               </tr>
                             </table>
